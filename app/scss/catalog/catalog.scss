@@ -1,0 +1,95 @@
+.catalog {
+  margin-bottom: 100px;
+
+  &__title {
+    @extend %sf-bold;
+    font-size: $fs-extra-big;
+    line-height: 36px;
+    margin-bottom: 26px;
+  }
+
+  &__filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+
+  &__filter-items button {
+    font-size: $fs-smaller;
+    line-height: $lh-extra-small;
+    opacity: 0.7;
+    border: none;
+    background: $base
+    border-radius: 3px;
+    padding: 5px 22px;
+    cursor: pointer;
+  }
+
+  &__filter-items button + button {
+    margin-left: 8px;
+  }
+
+  &__filter-btn button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__filter-btn button + button {
+    margin-left: 10px;
+  }
+
+  &__filter-btn {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn-grid {
+    width: 26px;
+    height: 21px;
+  }
+
+  &__btn-line {
+    width: 26px;
+    height: 21px;
+  }
+
+  &__filter-button {
+    opacity: 0.3;
+    outline: none;
+  }
+
+  &__filter-button--active {
+    opacity: 1;
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__inner-asside {
+    min-width: 270px;
+    max-width: 270px;
+    margin-right: 10px;
+  }
+
+  &__product-list {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 1400px;
+  }
+
+  &__inner-list .product-item__wrapper {
+    margin-bottom: 30px;
+  }
+
+  &__select-item {
+    border: 2px solid $base;
+    outline: none;
+    margin-right: 5px;
+    padding: 3px;
+    font-size: $fs-extra-small;
+  }
+}

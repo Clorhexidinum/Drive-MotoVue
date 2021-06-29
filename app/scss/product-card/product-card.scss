@@ -1,0 +1,141 @@
+.product-card {
+  margin-bottom: 80px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__img-box {
+    width: 500px;
+    padding-top: 64px;
+    text-align: center;
+    @extend %barlow-regular;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__img-box::before {
+    font-size: $fs-smaller;
+    line-height: $lh-small;
+    letter-spacing: 0.12em;
+    padding: 13px 25px;
+    border-radius: 3px;
+  }
+
+  &__img {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  &__price-old {
+    font-size: $fs-extra-big;
+    line-height: 44px;
+    opacity: 0.6;
+    display: inline-block;
+    background-image: url("../images/old-line.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  &__price-new {
+    font-weight: $bold;
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 17px;
+  }
+
+  &__link {
+    font-size: $fs-smaller;
+    line-height: $lh-extra-small;
+    color: $active;
+  }
+
+  &__content {
+    width: 570px;
+  }
+
+  &__title {
+    @extend %sf-bold;
+    font-size: $fs-extra-big;
+    line-height: 36px;
+    margin-bottom: 10px;
+  }
+
+  &__code {
+    font-size: $fs-smaller;
+    line-height: $lh-small;
+    color: $main-text;
+    opacity: 0.6;
+    margin-bottom: 22px;
+  }
+
+  &__buttons {
+    margin-bottom: 50px;
+  }
+
+  &__buttons a + a {
+    margin-left: 30px;
+  }
+
+  &__tab {
+    font-size: $fs-bigger;
+    line-height: $lh-medium;
+    color: $main-text;
+    opacity: 0.6;
+    padding-bottom: 7px;
+    padding-right: 17px;
+    margin-bottom: 5px;
+  }
+
+  &__tab + &__tab {
+    padding-left: 17px;
+  }
+
+  &__tab.tab--active {
+    opacity: 1;
+    border-bottom: 2px solid $active;
+    @extend %sf-bold;
+  }
+
+  &__list {
+    max-width: 445px;
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    padding: 15px 0 6px;
+    border-bottom: 1px solid rgba(47, 48, 51, 0.1);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item-left {
+    padding-right: 15px;
+  }
+
+  &__item-right {
+    width: 125px;
+  }
+
+  &__more {
+    font-size: $fs-smaller;
+    line-height: $lh-extra-small;
+    color: $active;
+    border-bottom: 1px solid $active;
+    margin-bottom: 40px;
+  }
+
+  &__btn button {
+    font-size: $fs-smaller;
+    line-height: $lh-extra-small;
+    letter-spacing: 0.12em;
+    padding: 16px 56px;
+  }
+
+  &__btn-mobile {
+    display: none;
+  }
+}

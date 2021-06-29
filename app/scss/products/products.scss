@@ -1,0 +1,41 @@
+.products {
+  margin-bottom: 80px;
+  &__title {
+    @extend %barlow-bold;
+    font-size: $fs-big;
+    line-height: $lh-big;
+    margin-bottom: 25px;
+  }
+
+  &__tabs {
+    margin-bottom: 25px;
+  }
+
+  &__tab + &__tab {
+    margin-left: 50px;
+  }
+
+  &__tab {
+    padding-bottom: 10px;
+
+    &.tab--active {
+      border-bottom: 2px solid $active;
+    }
+  }
+
+  &__more {
+    text-align: center;
+    margin: 35px 0 0;
+  }
+
+  &__more-link {
+    display: inline-block;
+    font-size: $fs-smaller;
+    line-height: $lh-small;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $main-text;
+    padding: 16px 43px;
+    background: $base;
+  }
+}

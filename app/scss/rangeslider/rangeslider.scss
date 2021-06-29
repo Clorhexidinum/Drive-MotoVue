@@ -1,0 +1,39 @@
+.range {
+  width: 290px;
+  height: 3px;
+  border-radius: 1px;
+  background-color: $base;
+  position: relative;
+  margin-top: 40px;
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    width: 15px;
+    height: 15px;
+    cursor: move;
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 50%;
+    background-color: $base;
+  }
+
+  &__between {
+    position: absolute;
+    height: 3px;
+    border: none;
+    background-color: $active;
+  }
+
+  &__inpt {
+    height: min-content;
+    position: absolute;
+    top: -40px;
+    font-size: $fs-medium;
+    width: 85px;
+
+    &--right {
+      right: 0;
+    }
+  }
+}
