@@ -26,31 +26,7 @@
     margin-right: 50px;
   }
 
-  &__form {
-    margin-top: 34px;
-    display: flex;
-    justify-content: space-between;
-  }
 
-  &__form-input {
-    background-color: $base;
-    border: none;
-    font-size: $fs-smaller;
-    line-height: $lh-extra-small;
-    padding: 0 12px;
-  }
-
-  &__form-input::placeholder {
-    color: $additional;
-  }
-
-  &__form-btn {
-    @extend %sf-semibold;
-    padding: 10px 16px;
-    font-size: $fs-extra-small;
-    line-height: $lh-extra-smaller;
-    letter-spacing: 0.12em;
-  }
 
   &__list {
     font-size: $fs-smaller;

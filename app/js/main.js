@@ -1,3 +1,4 @@
+//Menu
 Vue.component("menu", {
     template: `
     <nav class="menu">
@@ -124,6 +125,27 @@ Vue.component("menuCategories", {
     },
 });
 
+//banner
+Vue.component("saleItem", {
+    template: `
+        <div class="sale-item">
+            <div class="sale-item__top">
+                <p class="sale-item__info">акция</p>
+                <div class="sale-item__price">
+                    <div class="price price__new">190 000</div>
+                    <div class="price price__old">225 000</div>
+                </div>
+            </div>
+            <img class="sale-item__img" src="images/content/sale-1.png" alt=""/>
+            <h5 class="sale-item__title"> Лодочный мотор Suzuki DF9.9BRS </h5>
+            <p class="sale-item__footer"> Акция действует до <span>31.08.2020</span></p>
+        </div>
+    `,
+});
+
+//search
+
+//categories
 Vue.component("categories", {
     template: `
         <ul class="categories__inner">
@@ -155,6 +177,7 @@ Vue.component("categories", {
     },
 });
 
+//Tabs
 Vue.component("tabsCategories", {
     template: `
         <div class="tabs__wrapper">
@@ -229,4 +252,35 @@ Vue.component("tabsCategories", {
             "аксессуары",
         ],
     },
+});
+
+//footer
+
+Vue.component("footer__top-title", {
+    template: `
+        <form class="subscription__form" action="#">
+            <div class="subscription__box">
+                <h3 class="subscription__title">Подписывайтесь на нашу рассылку с новостями и акциями</h3>
+                <div>
+                    <label>
+                        <input type="email" name="mailing" class="subscription__input"/>
+                    </label>
+                    <button type="submit" class="btn subscription__btn">Подписаться</button>
+                </div>
+            </div>
+            <img class="subscription__img" src="images/content/banner-selection.jpg" alt=""/>
+        </form>
+    `,
+});
+
+Vue.component("footerForm", {
+    template: `
+        <div class="footer__top-item footer__top-lewsletter">
+            <h6 class="footer__top-title">Подпишитесь на нашу рассылку и узнавайте о акциях быстрее</h6>
+            <form class="footer-form">
+                <input class="footer-form__input" type="text" placeholder="Введите ваш e-mail:"/>
+                <button class="footer-form__btn btn" type="submit">Отправить</button>
+            </form>
+        </div>
+    `,
 });
