@@ -26,36 +26,6 @@
     margin-right: 50px;
   }
 
-
-
-  &__list {
-    font-size: $fs-smaller;
-    line-height: $lh-smaller;
-    color: $main-text;
-  }
-
-  &__top-social.footer__top-item {
-    width: 250px;
-  }
-
-  &__social-list {
-    display: flex;
-    align-items: center;
-    height: 100%;
-  }
-
-  &__social-item {
-    opacity: 0.6;
-  }
-
-  &__social-item:hover {
-    opacity: 1;
-  }
-
-  &__social-item + &__social-item {
-    margin-left: 30px;
-  }
-
   &__bottom {
     display: flex;
     justify-content: center;

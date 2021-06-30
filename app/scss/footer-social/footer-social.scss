@@ -1,0 +1,21 @@
+.footer-social {
+  width: 250px;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__item {
+    opacity: 0.6;
+  }
+
+  &__item:hover {
+    opacity: 1;
+  }
+
+  &__item + &__item {
+    margin-left: 30px;
+  }
+}
