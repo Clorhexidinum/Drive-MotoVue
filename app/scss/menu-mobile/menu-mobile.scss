@@ -1,13 +1,11 @@
 .menu-mobile {
-  &__list {
-    width: 243px;
-    transition: all 0.3s;
-    position: absolute;
-    z-index: 10;
-    background-color: $base;
-    transform: translateX(-100%);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
-  }
+  width: 243px;
+  transition: all 0.3s;
+  position: absolute;
+  z-index: 10;
+  background-color: $base;
+  transform: translateX(-100%);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
 
   &__list--active {
     transform: translateX(0);
@@ -36,27 +34,5 @@
     position: absolute;
     left: 11px;
     bottom: 10px;
-  }
-
-  &__line-wrapper {
-    @extend %sf-bold;
-    display: none;
-    font-size: $fs-bigger;
-    line-height: $lh-medium;
-    background-color: $base;
-    overflow-x: scroll;
-  }
-
-  &__line {
-    display: flex;
-    align-items: center;
-    width: 420px;
-    color: $main-text;
-    padding: 14px 0 14px 15px;
-    margin: 0 auto;
-  }
-
-  &__line-item:not(:last-child) {
-    padding-right: 25px;
   }
 }
