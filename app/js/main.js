@@ -126,6 +126,25 @@ Vue.component("menuCategories", {
 });
 
 //banner
+Vue.component("bannerSlider", {
+    template: `
+        <div class="banner-slider">
+            <a v-for="slide in slides"> class="banner-slider__item" href="#">
+                <img class="banner-slider__img" src="images/content/{{ slide }}" alt=""/>
+            </a>
+        </div>
+    `,
+    data: {
+        сategories: [
+            "banner-slider.jpg",
+            "banner-slider.jpg",
+            "banner-slider.jpg",
+            "banner-slider.jpg",
+            "banner-slider.jpg",
+        ],
+    },
+});
+
 Vue.component("saleItem", {
     template: `
         <div class="sale-item">
@@ -144,6 +163,34 @@ Vue.component("saleItem", {
 });
 
 //search
+Vue.component("searchTabs", {
+    template: `
+        <div class="search__tabs tabs__wrapper">
+            <div class="mobile-overflow">
+                <a class="tab search__tabs-item tab--active" href="#tab-1" >Поиск по номеру</a>
+            </div>
+        </div>
+    `,
+    data: {
+        tabs: ["номеру", "марке", "названию товара"],
+    },
+});
+
+Vue.component("searchTabsContent", {
+    template: `
+        <div class="search__content">
+            <div class=" tabs__content search__content-item tabs__content--active" id="tab-1">
+                <form class="search__content-form">
+                    <input class="search__content-input" type="text" placeholder="Введите номер"/>
+                    <button class="search__content-btn btn" type="submit">искать</button>
+                </form>
+            </div>
+        </div>
+    `,
+    data: {
+        content: ["номер", "марку", "названию товара"],
+    },
+});
 
 //categories
 Vue.component("categories", {
@@ -267,8 +314,8 @@ Vue.component("footerFormBox", {
 
 Vue.component("footerForm", {
     template: `
-        <div class="footer__top-item footer__top-lewsletter">
-            <h6 class="footer__top-title">Подпишитесь на нашу рассылку и узнавайте о акциях быстрее</h6>
+        <div class="footer__top-item footer-form__lewsletter">
+            <!--Тут был footerTitle-->
             <form class="footer-form">
                 <input class="footer-form__input" type="text" placeholder="Введите ваш e-mail:"/>
                 <button class="footer-form__btn btn" type="submit">Отправить</button>
@@ -280,7 +327,7 @@ Vue.component("footerForm", {
 Vue.component("footerMenu", {
     template: `
     <div class="footer-menu__top-item">
-        <h6 class="footer-menu__title footer__topdrop">{{ title }}</h6>
+        <!--Тут был footerTitle-->
         <ul class="footer-menu__list">
             <li v-for="category in сategories">
                 <a href="#">{{ category }}</a>
@@ -289,7 +336,6 @@ Vue.component("footerMenu", {
     </div>
     `,
     data: {
-        titles: ["Информация", "Интернет-магазин"],
         сategories: ["О компании", "Контакты", "Акции", "Магазины"],
         сategories2: [
             "Доставка и самовывоз",
@@ -300,12 +346,25 @@ Vue.component("footerMenu", {
     },
 });
 
+Vue.component("footerTitle", {
+    template: `
+        <h6 class="footer-menu__title footer__topdrop">{{ title }}</h6>
+    `,
+    data: {
+        titles: [
+            "Подпишитесь на нашу рассылку и узнавайте о акциях быстрее",
+            "Информация",
+            "Интернет-магазин",
+        ],
+    },
+});
+
 Vue.component("footerSocial", {
     template: `
         <div class="footer-social footer__top-social">
             <ul class="footer-social__list">
                 <li v-for="item in items" class="footer-social__item">
-                    <a href="#"></a>
+                    <a href="#">{{ item }}</a>
                 </li>
             </ul>
         </div>
@@ -317,5 +376,16 @@ Vue.component("footerSocial", {
             '<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><defs/><path d="M17.419 29.805zM17.719 29.753c-.06.012-.12.022-.18.032.06-.01.12-.02.18-.032zM16.707 29.903zM16.995 29.867zM18.127 29.672zM19.14 29.42c-.042.013-.085.024-.127.036l.127-.035zM18.834 29.505l-.14.036.14-.037zM18.433 29.605l-.148.033.148-.033zM16.262 29.947zM30 15c0-8.283-6.717-15-15-15C6.717 0 0 6.717 0 15c0 8.283 6.717 15 15 15l.264-.003V18.32H12.04v-3.756h3.223V11.8c0-3.205 1.956-4.95 4.816-4.95 1.369 0 2.546.103 2.889.148v3.35h-1.972c-1.555 0-1.857.74-1.857 1.824v2.392h3.72l-.485 3.756H19.14v11.1C25.41 27.623 30 21.848 30 15zM15.991 29.967zM15.513 29.99z" fill="#2F3035"/></svg>',
             '<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><defs/><path d="M13.132 17.81l4.88-2.81-4.88-2.81v5.62z" fill="#2F3035"/><path d="M15 0C6.717 0 0 6.717 0 15c0 8.283 6.717 15 15 15 8.283 0 15-6.717 15-15 0-8.283-6.717-15-15-15zm9.373 15.015s0 3.042-.386 4.51a2.349 2.349 0 01-1.652 1.651c-1.467.387-7.335.387-7.335.387s-5.852 0-7.335-.402a2.349 2.349 0 01-1.652-1.652C5.627 18.057 5.627 15 5.627 15s0-3.042.386-4.509a2.396 2.396 0 011.652-1.667C9.132 8.438 15 8.438 15 8.438s5.868 0 7.334.401c.803.216 1.436.85 1.653 1.652.401 1.467.386 4.524.386 4.524z" fill="#2F3035"/></svg>',
         ],
+    },
+});
+
+Vue.component("policy", {
+    template: `
+        <div class="policy">
+            <a v-for="item in items" class="policy__link" href="#">{{ item }}</a>
+        </div>
+    `,
+    data: {
+        items: ["Договор оферты", "Политика обработки персональных данных"],
     },
 });

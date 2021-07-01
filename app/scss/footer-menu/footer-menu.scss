@@ -11,4 +11,7 @@
   line-height: $lh-smaller;
   color: $main-text;
 }
+&__topdrop {
+  pointer-events: none;
+}
 }

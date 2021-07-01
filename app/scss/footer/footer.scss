@@ -20,26 +20,4 @@
     line-height: $lh-extra-small;
     color: $main-text;
   }
-
-  &__top-lewsletter {
-    width: 295px;
-    margin-right: 50px;
-  }
-
-  &__bottom {
-    display: flex;
-    justify-content: center;
-    padding: 46px 0 22px;
-  }
-
-  &__bottom-link {
-    font-size: 10px;
-    line-height: 12px;
-    color: #48494d;
-    margin: 0 40px;
-  }
-
-  &__topdrop {
-    pointer-events: none;
-  }
 }
