@@ -245,6 +245,28 @@ Vue.component("tabsCategories", {
     },
 });
 
+Vue.component("tabsContainer", {
+    template: `
+        <div class="tabs__container">
+            <div class="products__content tabs__content tabs__content--active" id="pr-tab-1">
+                <div class="product-slider">
+                    <!--Тут был productSliderItem-->
+                </div>
+            </div>
+        </div>
+        `,
+    data: {
+        сategories: [
+            "запчасти",
+            "моторы",
+            "шины",
+            "электроник",
+            "инструменты",
+            "аксессуары",
+        ],
+    },
+});
+
 Vue.component("productSliderItem", {
     template: `
     <div class="product-slider__item">
@@ -299,6 +321,18 @@ Vue.component("tabsCategories", {
             "аксессуары",
         ],
     },
+});
+
+//Banner
+Vue.component("banner", {
+    template: `
+        <a class="banner-promo-link" href="#">
+            <picture>
+                <source media="(max-width: 320px)" srcset="images/content/banner-mobile.jpg"/>
+                <img src="images/content/banner.jpg" alt="" />
+            </picture>
+        </a>
+    `,
 });
 
 //footer
