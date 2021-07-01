@@ -469,10 +469,10 @@ Vue.component("product-item", {
             <a class="product-item__notify-link"><span>Сообщить о поступлении</span></a>
             <a class="product-item" href="#">
               <p class="product-item__hover-text">посмотреть товар</p>
-              <img class="product-item__img" src="#" alt="">
-              <h4 class="product-item__title">Product_name</h4>
-              <p class="product-item__price-old">product_price-old</p>
-              <p class="product-item__price price">product_price</p>
+              <img class="product-item__img" src="----------" alt="">
+              <h4 class="product-item__title">----------</h4>
+              <p class="product-item__price-old">----------</p>
+              <p class="product-item__price price">----------</p>
               <p class="product-item__notify-text">нет в наличии</p>
             </a>
         </div>
@@ -490,4 +490,24 @@ Vue.component("pagination", {
             </ul>
         </div>
     `,
+});
+
+//productTabs
+Vue.component("productTabs", {
+    template: `
+        <div class="tabs card__tab-box mobile-overflow">
+            <a class="tab card__tab tab--active" href="#prod-tab-1">О товаре</a>
+        </div>
+    `,
+    data: {
+        items: [
+            "О товаре",
+            "Характеристики",
+            "Отзывы",
+            "Самовывоз",
+            "Доставка",
+            "Cервис",
+            "Гарантия",
+        ],
+    },
 });
