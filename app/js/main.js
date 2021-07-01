@@ -323,6 +323,23 @@ Vue.component("tabsCategories", {
     },
 });
 
+Vue.component("title", {
+    template: `
+        <h4 class="products__title">Популярные товары</h4>
+    `,
+    data: {
+        сategories: ["Популярные товары", "С этим товаром покупают"],
+    },
+});
+
+Vue.component("moreBtn", {
+    template: `
+        <div class="more-btn">
+            <a class="more-btn__link" href="">Показать еще</a>
+        </div>
+    `,
+});
+
 //Banner
 Vue.component("banner", {
     template: `
@@ -422,4 +439,55 @@ Vue.component("policy", {
     data: {
         items: ["Договор оферты", "Политика обработки персональных данных"],
     },
+});
+
+//breadcrumbs
+Vue.component("breadcrumbs", {
+    template: `
+         <div class="breadcrumbs">
+            <ul class="breadcrumbs__list mobile-overflow">
+                <li v-for="item in items" class="breadcrumbs__item"><a href="#">Главная</a></li>
+            </ul>
+        </div>
+    `,
+    data: {
+        items: [
+            "Главная",
+            "Гидроциклы",
+            "Гидроцикл BRP SeaDoo GTI 155hp SE Long Blue Metallic",
+        ],
+    },
+});
+
+//Product
+Vue.component("product-item", {
+    template: `
+        <div class="product-item__wrapper">
+            <button class="product-item__favorite"></button>
+            <button class="product-item__compare"></button>
+            <button class="product-item__basket"><img src="images/basket-white.svg" alt=""></button>
+            <a class="product-item__notify-link"><span>Сообщить о поступлении</span></a>
+            <a class="product-item" href="#">
+              <p class="product-item__hover-text">посмотреть товар</p>
+              <img class="product-item__img" src="#" alt="">
+              <h4 class="product-item__title">Product_name</h4>
+              <p class="product-item__price-old">product_price-old</p>
+              <p class="product-item__price price">product_price</p>
+              <p class="product-item__notify-text">нет в наличии</p>
+            </a>
+        </div>
+    `,
+});
+
+//Pagination
+Vue.component("pagination", {
+    template: `
+        <div class="pagination">
+            <ul class="pagination__list">
+              <li class="pagination__item pagination__item--active"><a href="#">1</a></li>
+              <li class="pagination__item pagination__item--dots"><span>...</span></li>
+              <li class="pagination__item"><a href="#">11</a></li>
+            </ul>
+        </div>
+    `,
 });
