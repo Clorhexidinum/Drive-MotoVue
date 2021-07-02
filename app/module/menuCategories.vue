@@ -8,7 +8,7 @@
 
 <script>
     export default {
-        name: "userList",
+        name: "menyCategories",
         data: {
             сategories: [
                 "Квадроциклы",

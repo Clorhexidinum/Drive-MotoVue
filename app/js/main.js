@@ -151,92 +151,9 @@ Vue.component("tabsCategories", {
     },
 });
 
-Vue.component("title", {
-    template: `
-        <h4 class="products__title">Популярные товары</h4>
-    `,
-    data: {
-        сategories: ["Популярные товары", "С этим товаром покупают"],
-    },
-});
-
-Vue.component("moreBtn", {
-    template: `
-        <div class="more-btn">
-            <a class="more-btn__link" href="">Показать еще</a>
-        </div>
-    `,
-});
-
 //Banner
-Vue.component("banner", {
-    template: `
-        <a class="banner-promo-link" href="#">
-            <picture>
-                <source media="(max-width: 320px)" srcset="images/content/banner-mobile.jpg"/>
-                <img src="images/content/banner.jpg" alt="" />
-            </picture>
-        </a>
-    `,
-});
 
 //footer
-
-Vue.component("footerFormBox", {
-    template: `
-        <div class="footer__top-item footer__top-lewsletter">
-            <h6 class="footer__top-title">Подпишитесь на нашу рассылку и узнавайте о акциях быстрее</h6>
-            <!--Тут был footerForm-->
-        </div>
-    `,
-});
-
-Vue.component("footerForm", {
-    template: `
-        <div class="footer__top-item footer-form__lewsletter">
-            <!--Тут был footerTitle-->
-            <form class="footer-form">
-                <input class="footer-form__input" type="text" placeholder="Введите ваш e-mail:"/>
-                <button class="footer-form__btn btn" type="submit">Отправить</button>
-            </form>
-        </div>
-    `,
-});
-
-Vue.component("footerMenu", {
-    template: `
-    <div class="footer-menu__top-item">
-        <!--Тут был footerTitle-->
-        <ul class="footer-menu__list">
-            <li v-for="category in сategories">
-                <a href="#">{{ category }}</a>
-            </li>
-        </ul>
-    </div>
-    `,
-    data: {
-        сategories: ["О компании", "Контакты", "Акции", "Магазины"],
-        сategories2: [
-            "Доставка и самовывоз",
-            "Оплата",
-            "Возврат-обмен",
-            "Новости",
-        ],
-    },
-});
-
-Vue.component("footerTitle", {
-    template: `
-        <h6 class="footer-menu__title footer__topdrop">{{ title }}</h6>
-    `,
-    data: {
-        titles: [
-            "Подпишитесь на нашу рассылку и узнавайте о акциях быстрее",
-            "Информация",
-            "Интернет-магазин",
-        ],
-    },
-});
 
 Vue.component("footerSocial", {
     template: `

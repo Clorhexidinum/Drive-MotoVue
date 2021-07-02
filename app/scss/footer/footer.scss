@@ -13,11 +13,4 @@
   &__top-item {
     width: 200px;
   }
-
-  &__top-title {
-    @extend %sf-bold;
-    font-size: $fs-smaller;
-    line-height: $lh-extra-small;
-    color: $main-text;
-  }
 }

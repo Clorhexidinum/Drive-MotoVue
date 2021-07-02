@@ -6,7 +6,11 @@
     </button>
 </template>
 
-<script></script>
+<script>
+    export default {
+        name: "menuBtn",
+    };
+</script>
 
 <style lang="scss">
     @media (max-width: 968px) {

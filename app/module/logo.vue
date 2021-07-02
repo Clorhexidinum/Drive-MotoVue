@@ -6,8 +6,7 @@
 
 <script>
     export default {
-        name: "adress",
-    };
+        name: "logo"
 </script>
 
 <style lang="scss"></style>
