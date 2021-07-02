@@ -1,10 +1,10 @@
 <template>
-    <h4 class="product__title">{{}}</h4>
+    <h4 class="product-title">{{}}</h4>
 </template>
 
 <script>
     export default {
-        name: "title",
+        name: "productTitle",
         data: {
             сategories: ["Популярные товары", "С этим товаром покупают"],
         },
@@ -12,7 +12,7 @@
 </script>
 
 <style lang="scss">
-    .product__title {
+    .product-title {
         @extend %barlow-bold;
         font-size: $fs-big;
         line-height: $lh-big;

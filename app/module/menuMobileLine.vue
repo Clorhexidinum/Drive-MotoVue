@@ -10,7 +10,7 @@
 
 <script>
     export default {
-        name: "menuMobile",
+        name: "menuMobileLine",
         data: {
             сategories: ["Магазины", "Акции", "Доставка и оплата"],
         },

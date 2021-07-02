@@ -8,7 +8,7 @@
 
 <script>
     export default {
-        name: "menuBtn",
+        name: "mobileMenuBtn",
     };
 </script>
 

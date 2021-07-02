@@ -20,7 +20,7 @@
 
 <script>
     export default {
-        name: "mcategories",
+        name: "categories",
         data: {
            сategories: {
                Квадроциклы: "categories-1.png",
