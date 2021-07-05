@@ -22,14 +22,14 @@
     export default {
         name: "categories",
         data: {
-           сategories: {
+           сategories: [
                Квадроциклы: "categories-1.png",
                Гидроциклы: "categories-2.png",
                Катера: "categories-3.png",
                Снегоходы: "categories-4.png",
                Вездеходы: "categories-5.png",
                Двигатели: "categories-6.png",
-           },
+           ],
        },
     };
 </script>
