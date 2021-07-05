@@ -9,7 +9,7 @@
 
 <script>
     export default {
-        name: "adress",
+        name: "HeaderAdress",
     };
 </script>
 

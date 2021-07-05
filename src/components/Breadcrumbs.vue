@@ -10,7 +10,7 @@
 
 <script>
     export default {
-        name: "breadcrumbs",
+        name: "Breadcrumbs",
         data: {
             items: [
                 "Главная",

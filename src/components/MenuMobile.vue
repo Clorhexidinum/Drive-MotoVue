@@ -17,7 +17,7 @@
 
 <script>
     export default {
-        name: "menuMobile",
+        name: "MenuMobile",
         data: {
             сategories: {
                 Войти: "user.svg",

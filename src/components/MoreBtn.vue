@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: "moreBtn",
+        name: "MoreBtn",
         data: {
             сategories: ["Популярные товары", "С этим товаром покупают"],
         },

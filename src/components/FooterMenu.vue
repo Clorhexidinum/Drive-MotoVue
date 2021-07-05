@@ -8,7 +8,7 @@
 
 <script>
     export default {
-        name: "footerMenu",
+        name: "FooterMenu",
         data: {
             сategories: ["О компании", "Контакты", "Акции", "Магазины"],
             сategories2: [

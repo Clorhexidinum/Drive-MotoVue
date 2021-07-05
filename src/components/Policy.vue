@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: "policy",
+        name: "Policy",
         data: {
             items: ["Договор оферты", "Политика обработки персональных данных"],
         },

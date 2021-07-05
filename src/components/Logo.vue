@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: "logo"
+        name: "Logo"
 </script>
 
 <style lang="scss"></style>

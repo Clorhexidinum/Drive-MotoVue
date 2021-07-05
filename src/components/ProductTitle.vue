@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: "productTitle",
+        name: "ProductTitle",
         data: {
             сategories: ["Популярные товары", "С этим товаром покупают"],
         },

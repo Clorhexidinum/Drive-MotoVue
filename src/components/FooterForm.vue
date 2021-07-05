@@ -11,7 +11,7 @@
 
 <script>
     export default {
-        name: "footerForm",
+        name: "FooterForm",
     };
 </script>
 

@@ -8,7 +8,7 @@
 
 <script>
     export default {
-        name: "menuCategories",
+        name: "MenuCategories",
         data: {
             сategories: [
                 "Квадроциклы",
