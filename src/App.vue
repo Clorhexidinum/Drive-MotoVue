@@ -44,7 +44,7 @@
   <section class="categories page-section">
     <div class="container">
       <div class="categories__inner">
-        <categories></categories>
+        <categories-with-image></categories-with-image>
       </div>
     </div>
   </section>
@@ -55,14 +55,14 @@
         <!--Тут был title-->
         <!--Тут был tabsCategories-->
         <!--Тут был tabsContainer-->
-        <!--Тут был moreBtn-->
+        <more-btn></more-btn>
       </div>
     </div>
   </section>
 
   <div class="banner-promo">
     <div class="container">
-      <!--Тут был banner-->
+      <main-banner></main-banner>
     </div>
   </div>
 
@@ -80,7 +80,7 @@
 <main>
   <div class="breadcrumbs">
     <div class="container">
-      <!--Тут был breadcrumbs-->
+      <breadcrumbs></breadcrumbs>
     </div>
   </div>
 
@@ -379,7 +379,7 @@
 <main>
   <div class="breadcrumbs">
     <div class="container">
-      <!--Тут был breadcrumbs-->
+      <breadcrumbs>
     </div>
   </div>
 
@@ -651,9 +651,9 @@
         </asside>
         <div class="catalog__inner-list">
           <div class="catalog__product-list">
-            <!--Тут был product-item-->
+            <product-item></product-item>
           </div>
-          <!--Тут был pagination-->
+          <pagination></pagination>
         </div>
       </div>
     </div>
@@ -665,20 +665,20 @@
     <div class="footer__top">
       <div class="footer__top-inner">
         <div class="footer__top-item footer__top-lewsletter">
-          <!--Тут был footerForm-->
+          <footer-form></footer-form>
         </div>
         <div class="footer__top-item">
-          <!--Тут был footerMenu-->
+          <footer-menu></footer-menu>
         </div>
         <div class="footer__top-item">
-          <!--Тут был footerMenu-->
+          <footer-menu></footer-menu>
         </div>
         <div class="footer__top-item footer__top-social">
-          <!--Тут был footerSocial-->
+          <footer-social></footer-social>
         </div>
       </div>
     </div>
-    <!--Тут был policy-->
+    <policy></policy>
   </div>
 </footer>
 </template>
@@ -695,7 +695,16 @@ import MenuCategories from './components/MenuCategories.vue';
 import SaleItem from './components/SaleItem.vue';
 // SearchTabs
 // SearchTabsContent
-import Categories from './components/Categories.vue';
+import CategoriesWithImage from './components/CategoriesWithImage.vue';
+import MoreBtn from './components/MoreBtn.vue';
+import MainBanner from './components/mMainBanner.vue';
+import Breadcrumbs from './components/Breadcrumbs.vue';
+import ProductItem from './components/ProductItem.vue';
+import Pagination from './components/Pagination.vue';
+import FooterForm from './components/FooterForm.vue';
+import FooterMenu from './components/FooterMenu.vue';
+import FooterSocial from './components/FooterSocial.vue';
+import Policy from './components/Policy.vue';
 
 export default {
   name: "App",
@@ -707,7 +716,16 @@ export default {
     MenuMobile,
     MenuCategories,
     SaleItem,
-    Categories,
+    CategoriesWithImage,
+    MoreBtn,
+    MainBanner,
+    Breadcrumbs,
+    ProductItem,
+    Pagination,
+    FooterForm,
+    FooterMenu,
+    FooterSocial,
+    Policy,
   },
 };
 </script>
