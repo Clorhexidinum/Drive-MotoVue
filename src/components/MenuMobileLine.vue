@@ -11,9 +11,11 @@
 <script>
     export default {
         name: "MenuMobileLine",
-        data: {
+        data: function() {
+return {
             сategories: ["Магазины", "Акции", "Доставка и оплата"],
-        },
+        };
+},
     };
 </script>
 

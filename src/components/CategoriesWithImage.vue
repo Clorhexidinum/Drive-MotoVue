@@ -21,7 +21,8 @@
 <script>
 export default {
   name: "Categories",
-  data: {
+  data() {
+            return {
     сategories: [{
         title: "Квадроциклы",
         image: "categories-1.png"
@@ -47,7 +48,7 @@ export default {
         image: "categories-6.png"
       },
     ],
-  },
+  },}
 };
 </script>
 

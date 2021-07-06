@@ -7,7 +7,7 @@
                 <div class="price price__old">225 000</div>
             </div>
         </div>
-        <img class="sale-item__img" src="images/content/sale-1.png" alt="" />
+        <img class="sale-item__img" src="" alt="" />
         <h5 class="sale-item__title">Лодочный мотор Suzuki DF9.9BRS</h5>
         <p class="sale-item__footer">
             Акция действует до <span>31.08.2020</span>

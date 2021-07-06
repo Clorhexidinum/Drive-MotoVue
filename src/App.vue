@@ -277,7 +277,7 @@
 <main>
   <div class="breadcrumbs">
     <div class="container">
-      <breadcrumbs>
+      <breadcrumbs></breadcrumbs>
     </div>
   </div>
 
@@ -326,8 +326,8 @@
                       <div class="aside-filter__content-box">
                         <label class="aside-filter__content-label">
                           <input class="filter__checkbox visually-hidden" name="availability" type="checkbox">
-                          <span>В наличии
-                        </label></span>
+                          <span>В наличии</span>
+                        </label>
                       </div>
                       <div class="aside-filter__content-box">
                         <label class="aside-filter__content-label">
@@ -582,7 +582,7 @@
 </template>
 
 <script>
-import MainMenu from "components/MainMenu.vue";
+import MainMenu from "./components/MainMenu.vue";
 import Logo from './components/Logo.vue';
 import HeaderAdress from './components/HeaderAdress.vue';
 import UserList from './components/UserList.vue';
@@ -595,7 +595,7 @@ import SaleItem from './components/SaleItem.vue';
 // SearchTabsContent
 import CategoriesWithImage from './components/CategoriesWithImage.vue';
 import MoreBtn from './components/MoreBtn.vue';
-import MainBanner from './components/mMainBanner.vue';
+import MainBanner from './components/MainBanner.vue';
 import Breadcrumbs from './components/Breadcrumbs.vue';
 import ProductItem from './components/ProductItem.vue';
 import Pagination from './components/Pagination.vue';
@@ -607,7 +607,7 @@ import Policy from './components/Policy.vue';
 export default {
   name: "App",
   components: {
-    MainMenu
+    MainMenu,
     Logo,
     HeaderAdress,
     UserList,
@@ -629,4 +629,6 @@ export default {
 </script>
 
 <style lang="scss">
+
+
 </style>

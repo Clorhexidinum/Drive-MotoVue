@@ -5,9 +5,11 @@
 <script>
     export default {
         name: "ProductTitle",
-        data: {
+        data: function() {
+return {
             сategories: ["Популярные товары", "С этим товаром покупают"],
-        },
+        };
+},
     };
 </script>
 

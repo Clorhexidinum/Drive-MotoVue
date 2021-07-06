@@ -3,9 +3,9 @@
         <picture>
             <source
                 media="(max-width: 320px)"
-                srcset="images/content/banner-mobile.jpg"
+                srcset=""
             />
-            <img src="images/content/banner.jpg" alt="" />
+            <img src="" alt="" />
         </picture>
     </a>
 </template>

@@ -3,7 +3,7 @@
         <button class="product-item__favorite"></button>
         <button class="product-item__compare"></button>
         <button class="product-item__basket">
-            <img src="images/basket-white.svg" alt="" />
+            <img src="" alt="" />
         </button>
         <a class="product-item__notify-link"
             ><span>Сообщить о поступлении</span></a
@@ -110,11 +110,11 @@
             height: 22px;
             top: 0;
             left: 0;
-            background-image: url("../images/favorite.svg");
+            // background-image: url("../images/favorite.svg");
         }
 
         &__favorite--active::before {
-            background-image: url("../images/favorite-active.svg");
+            // background-image: url("../images/favorite-active.svg");
         }
 
         &__compare {
@@ -137,11 +137,11 @@
             height: 22px;
             top: 0;
             left: 30px;
-            background-image: url("../images/favorite.svg");
+            // background-image: url("../images/favorite.svg");
         }
 
         &__compare--active::before {
-            background-image: url("../images/favorite-active.svg");
+            // background-image: url("../images/favorite-active.svg");
         }
 
         &__basket {
@@ -170,7 +170,7 @@
             line-height: 35px;
             opacity: 0.6;
             display: inline-block;
-            background-image: url("../images/old-line.svg");
+            // background-image: url("../images/old-line.svg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;

@@ -9,7 +9,8 @@
 <script>
     export default {
         name: "MenuCategories",
-        data: {
+        data: function() {
+return {
             сategories: [
                 "Квадроциклы",
                 "Катера",
@@ -20,7 +21,8 @@
                 "Двигатели",
                 "Запчасти",
             ],
-        },
+        };
+},
     };
 </script>
 

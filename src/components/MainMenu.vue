@@ -2,7 +2,7 @@
 <nav class="mainMenu">
   <!--Тут был mobileMenuBtn-->
   <ul class="mainMenu__list">
-    <li class="mainMenu__iten" v-for="category in сategories">
+    <li class="mainMenu__iten" v-for="category in сategories" :key="category">
       <a class="mainMenu__link" href="#">{{ category }}</a>
     </li>
   </ul>
@@ -12,9 +12,11 @@
 <script>
 export default {
   name: "MainMenu",
-  data: {
+  data: function() {
+return {
     сategories: ["Магазины", "Акции", "Доставка и оплата"],
-  },
+  };
+},
 };
 </script>
 
@@ -49,4 +51,5 @@ export default {
   .mainMenu__list {
     display: none;
   }
+}
 </style>

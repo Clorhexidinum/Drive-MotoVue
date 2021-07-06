@@ -9,7 +9,8 @@
 <script>
     export default {
         name: "FooterMenu",
-        data: {
+        data: function() {
+return {
             сategories: ["О компании", "Контакты", "Акции", "Магазины"],
             сategories2: [
                 "Доставка и самовывоз",
@@ -17,7 +18,8 @@
                 "Возврат-обмен",
                 "Новости",
             ],
-        },
+        };
+},
     };
 </script>
 

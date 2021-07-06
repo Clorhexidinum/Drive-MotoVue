@@ -22,7 +22,7 @@ export default {
   &::before {
     content: "";
     position: absolute;
-    background-image: url("../images/arrow-down.svg");
+    // background-image: url("../images/arrow-down.svg");
     left: 0;
     bottom: 5px;
     width: 12px;

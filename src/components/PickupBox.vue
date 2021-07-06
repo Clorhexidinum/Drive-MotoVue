@@ -29,7 +29,8 @@
 <script>
     export default {
         name: "PickupBox",
-        data: {
+        data: function() {
+return {
             items: [{
               address: "Москва, ул. Науки 25",
               avialable: 1,
@@ -46,7 +47,8 @@
               address: "Киев, ул Шевченко 167",
               avialable: 0,
             }],
-        },
+        };
+},
     };
 </script>
 

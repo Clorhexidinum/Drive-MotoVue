@@ -7,9 +7,11 @@
 <script>
     export default {
         name: "Policy",
-        data: {
+        data: function() {
+return {
             items: ["Договор оферты", "Политика обработки персональных данных"],
-        },
+        };
+},
     };
 </script>
 

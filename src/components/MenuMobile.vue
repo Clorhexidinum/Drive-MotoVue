@@ -1,11 +1,11 @@
 <template>
     <ul class="menu-mobile">
-        <li class="menu-mobile__item" v-for="(value, property) in сategories">
+        <li class="menu-mobile__item" v-for="(value, property) in сategories" :key="value">
             <a class="menu-mobile__link" href="#">{{ value }}</a>
             <img
                 v-if="property !== ''"
                 class="menu-mobile__img"
-                src="../images/{{ property }}"
+                src=""
                 alt=""
             />
         </li>
@@ -18,25 +18,27 @@
 <script>
     export default {
         name: "MenuMobile",
-        data: {
-            сategories: {
-                Войти: "user.svg",
-                Регистрация: "heart.svg",
-                Избранное: "heart.svg",
-                Корзина: "basket.svg",
-                Магазины: "house.svg",
-                Акции: "percent.svg",
-                "Доставка и оплата": "box.svg",
-                Квадроциклы: "",
-                Катера: "",
-                Гидроциклы: "",
-                Лодки: "",
-                Вездеходы: "",
-                Снегоходы: "",
-                Двигатели: "",
-                Запчасти: "",
-            },
-        },
+        // data() {
+        //     return {
+        //         сategories: {
+        //         // Войти: "user.svg",
+        //         // Регистрация: "heart.svg",
+        //         // Избранное: "heart.svg",
+        //         // Корзина: "basket.svg",
+        //         // Магазины: "house.svg",
+        //         // Акции: "percent.svg",
+        //         // "Доставка и оплата": "box.svg",
+        //         // Квадроциклы: "",
+        //         // Катера: "",
+        //         // Гидроциклы: "",
+        //         // Лодки: "",
+        //         // Вездеходы: "",
+        //         // Снегоходы: "",
+        //         // Двигатели: "",
+        //         // Запчасти: "",
+        //         },
+        //     };
+        // },
     };
 </script>
 
@@ -50,7 +52,7 @@
         transform: translateX(-100%);
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
 
-        &__list--active {
+        &--active {
             transform: translateX(0);
         }
 

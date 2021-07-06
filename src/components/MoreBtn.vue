@@ -7,9 +7,11 @@
 <script>
     export default {
         name: "MoreBtn",
-        data: {
+        data: function() {
+return {
             сategories: ["Популярные товары", "С этим товаром покупают"],
-        },
+        };
+},
     };
 </script>
 

@@ -1,8 +1,8 @@
 <template>
     <div class="breadcrumbs">
         <ul class="breadcrumbs__list mobile-overflow">
-            <li class="breadcrumbs__item" v-for="item in items">
-                <a href="#">Главная</a>
+            <li class="breadcrumbs__item" v-for="item in items" :key="item">
+                <a href="#">{{item}}</a>
             </li>
         </ul>
     </div>
@@ -11,12 +11,14 @@
 <script>
     export default {
         name: "Breadcrumbs",
-        data: {
+        data() {
+            return {
             items: [
                 "Главная",
                 "Гидроциклы",
                 "Гидроцикл BRP SeaDoo GTI 155hp SE Long Blue Metallic",
             ],
+            };
         },
     };
 </script>
@@ -39,7 +41,7 @@
             content: "";
             position: absolute;
             right: 0;
-            background-image: url("../images/link-arrow.svg");
+            // background-image: url("../images/link-arrow.svg");
             width: 5px;
             height: 9px;
             bottom: 4px;
