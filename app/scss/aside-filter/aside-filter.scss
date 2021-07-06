@@ -33,43 +33,6 @@
     margin: 40px 0;
   }
 
-  &__item-title {
-    @extend %sf-semibold;
-    font-size: $fs-small;
-    line-height: $lh-small;
-    padding-left: 26px;
-  }
-
-  &__item-title-drop {
-    position: relative;
-    cursor: pointer;
-  }
-
-  &__item-title-drop::before {
-    content: "";
-    position: absolute;
-    background-image: url("../images/arrow-down.svg");
-    left: 0;
-    bottom: 5px;
-    width: 12px;
-    height: 8px;
-    transform: rotate(0deg);
-  }
-
-  &__item-title-drop--active::before {
-    transform: rotate(180deg);
-  }
-
-  &__content {
-    display: none;
-    flex-wrap: wrap;
-    margin-top: 10px;
-  }
-
-  &__item-title-drop--active + .aside-filter__content {
-    display: flex;
-  }
-
   &__content-label > span::before {
     content: "";
     display: inline-block;
