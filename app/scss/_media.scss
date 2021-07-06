@@ -185,24 +185,6 @@
       margin-bottom: 25px;
       margin-left: 0;
     }
-
-    &__list {
-      display: flex;
-      overflow-x: scroll;
-    }
-
-    &__list-item {
-      display: block;
-    }
-
-    &__list-item div {
-      margin-bottom: 15px;
-    }
-
-    &__list-item-title {
-      display: none;
-    }
-  }
 }
 
 @media (max-width: 640px) {

@@ -248,109 +248,7 @@
               </label>
             </div>
           </form>
-          <ul class="card__list">
-            <li class="
-                                        card__list-item card__list-item-title
-                                    ">
-              <div class="card__list-address">Адрес</div>
-              <div class="card__list-workhours">
-                Режим работы
-              </div>
-              <div class="card__list-avialable">
-                Доступно
-              </div>
-              <div class="card__list-num">Количество</div>
-              <div class="card__list-btn btn"></div>
-            </li>
-            <li class="card__list-item">
-              <div class="card__list-address">
-                Москва, ул. Науки 25
-              </div>
-              <div class="card__list-workhours">
-                <div class="card__list-workhours-columns">
-                  <span>пн-сб: </span><span>08:00-19:00</span>
-                </div>
-                <div class="card__list-workhours-columns">
-                  <span>вс: </span><span>09:00-17:00</span>
-                </div>
-              </div>
-              <div class="card__list-avialable">
-                В наличии
-              </div>
-              <div class="card__list-num">1</div>
-              <div class="card__list-btn btn">
-                <button class="card__list-button btn" type="submit">
-                  купить
-                </button>
-              </div>
-            </li>
-            <li class="card__list-item">
-              <div class="card__list-address">
-                Москва, ул. Южная 134
-              </div>
-              <div class="card__list-workhours">
-                <div class="card__list-workhours-columns">
-                  <span>пн-сб: </span><span>08:00-19:00</span>
-                </div>
-                <div class="card__list-workhours-columns">
-                  <span>вс: </span><span>09:00-17:00</span>
-                </div>
-              </div>
-              <div class="card__list-avialable">
-                В наличии
-              </div>
-              <div class="card__list-num">2</div>
-              <div class="card__list-btn btn">
-                <button class="card__list-button btn" type="submit">
-                  купить
-                </button>
-              </div>
-            </li>
-            <li class="card__list-item">
-              <div class="card__list-address">
-                Санкт-Петербург,<br />ул. Красная 19
-              </div>
-              <div class="card__list-workhours">
-                <div class="card__list-workhours-columns">
-                  <span>пн-сб: </span><span>08:00-19:00</span>
-                </div>
-                <div class="card__list-workhours-columns">
-                  <span>вс: </span><span>09:00-17:00</span>
-                </div>
-              </div>
-              <div class="card__list-avialable">
-                Нет в наличии
-              </div>
-              <div class="card__list-num">0</div>
-              <div class="card__list-btn">
-                <button class="card__list-button btn" type="submit">
-                  купить
-                </button>
-              </div>
-            </li>
-            <li class="card__list-item">
-              <div class="card__list-address">
-                Киев, ул Шевченко 167
-              </div>
-              <div class="card__list-workhours">
-                <div class="card__list-workhours-columns">
-                  <span>пн-сб: </span><span>08:00-19:00</span>
-                </div>
-                <div class="card__list-workhours-columns">
-                  <span>вс: </span><span>09:00-17:00</span>
-                </div>
-              </div>
-              <div class="card__list-avialable">
-                Нет в наличии
-              </div>
-              <div class="card__list-num">0</div>
-              <div class="card__list-btn">
-                <button class="card__list-button btn" type="submit">
-                  купить
-                </button>
-              </div>
-            </li>
-          </ul>
+          <pickup-box></pickup-box>
         </div>
         <div class="tabs__content card__content" id="prod-tab-5">
           Доставка
@@ -731,5 +629,4 @@ export default {
 </script>
 
 <style lang="scss">
-
 </style>
