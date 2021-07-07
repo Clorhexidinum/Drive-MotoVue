@@ -2,14 +2,14 @@
     <ul class="menu-mobile">
         <li
             class="menu-mobile__item"
-            v-for="(value, property) in сategories"
-            :key="value"
+            v-for="item in сategories"
+            :key="item.category"
         >
-            <a class="menu-mobile__link" href="#">{{ value }}</a>
+            <a class="menu-mobile__link" href="#">{{ item.category }}</a>
             <img
                 v-if="property !== ''"
                 class="menu-mobile__img"
-                src=""
+                :src="item.image"
                 alt=""
             />
         </li>
@@ -22,27 +22,72 @@
 <script>
     export default {a
         name: "MenuMobile",
-        // data() {
-        //     return {
-        //         сategories: {
-        //         // Войти: "user.svg",
-        //         // Регистрация: "heart.svg",
-        //         // Избранное: "heart.svg",
-        //         // Корзина: "basket.svg",
-        //         // Магазины: "house.svg",
-        //         // Акции: "percent.svg",
-        //         // "Доставка и оплата": "box.svg",
-        //         // Квадроциклы: "",
-        //         // Катера: "",
-        //         // Гидроциклы: "",
-        //         // Лодки: "",
-        //         // Вездеходы: "",
-        //         // Снегоходы: "",
-        //         // Двигатели: "",
-        //         // Запчасти: "",
-        //         },
-        //     };
-        // },
+        data() {
+            return {
+                сategories: {
+                    {
+                        category: "Войти",
+                        image: "user.svg",
+                    },
+                    {
+                        category: "Регистрация",
+                        image: "heart.svg",
+                    },
+                    {
+                        category: "Избранное",
+                        image: "heart.svg",
+                    },
+                    {
+                        category: "Корзина",
+                        image: "basket.svg",
+                    },
+                    {
+                        category: "Магазины",
+                        image: "house.svg",
+                    },
+                    {
+                        category: "Акции",
+                        image: "percent.svg",
+                    },
+                    {
+                        category: "Доставка и оплата",
+                        image: "box.svg",
+                    },
+                    {
+                        category: "Квадроциклы",
+                        image: "",
+                    },
+                    {
+                        category: "Катера",
+                        image: "",
+                    },
+                    {
+                        category: "Гидроциклы",
+                        image: "",
+                    },
+                    {
+                        category: "Лодки",
+                        image: "",
+                    },
+                    {
+                        category: "Вездеходы",
+                        image: "",
+                    },
+                    {
+                        category: "Снегоходы",
+                        image: "",
+                    },
+                    {
+                        category: "Двигатели",
+                        image: "",
+                    },
+                    {
+                        category: "Запчасти",
+                        image: "",
+                    },
+                },
+            };
+        },
     };
 </script>
 

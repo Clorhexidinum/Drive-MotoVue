@@ -1,12 +1,18 @@
 <template>
-    <p class="title-drop">Наличие</p>
-    <div class="title-drop__content"></div>
+    <p class="title-drop" @click="toggleContent">Наличие</p>
+    <div v-if="isOpened" class="title-drop__content"></div>
 </template>
 
 <script>
     export default {
         name: "TitleDrop",
         isOpened: false,
+
+        methods: {
+            toggleContent() {
+                isOpened = !isOpened;
+            },
+        },
     };
 </script>
 
