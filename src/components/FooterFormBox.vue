@@ -1,6 +1,8 @@
 <template>
     <div class="footer__top-item footer-form-box">
-        <!--Тут был footerTitle-->
+        <h6 class="footer-title footer__topdrop">
+            Подпишитесь на нашу рассылку и узнавайте о акциях быстрее
+        </h6>
         <!--Тут был footerForm-->
     </div>
 </template>

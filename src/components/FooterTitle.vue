@@ -1,5 +1,5 @@
 <template>
-    <h6 class="footer-title footer__topdrop">{{ title }}</h6>
+    <p class="footer-title footer__topdrop">{{ title }}</p>
 </template>
 
 <script>

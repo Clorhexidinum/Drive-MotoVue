@@ -1,6 +1,8 @@
 <template>
-    <p class="title-drop" @click="toggleContent">Наличие</p>
-    <div v-if="isOpened" class="title-drop__content"></div>
+    <p class="title-drop" @click="toggleContent">{{ title }}</p>
+    <div v-if="isOpened" class="title-drop__content">
+        сюда передать FooterMenu с массивом
+    </div>
 </template>
 
 <script>
@@ -12,6 +14,10 @@
             toggleContent() {
                 isOpened = !isOpened;
             },
+        },
+
+        props: {
+            title: String,
         },
     };
 </script>

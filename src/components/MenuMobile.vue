@@ -9,7 +9,7 @@
             <img
                 v-if="property !== ''"
                 class="menu-mobile__img"
-                :src="item.image"
+                :src="`images/${item.image}`"
                 alt=""
             />
         </li>
