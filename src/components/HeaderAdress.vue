@@ -23,7 +23,7 @@
         &::before {
             content: "";
             position: absolute;
-            // background-image: url("../images/adress-icon.svg");
+            background-image: url("images/adress-icon.svg");
             background-repeat: no-repeat;
             width: 30px;
             height: 40px;

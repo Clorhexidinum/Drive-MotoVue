@@ -38,7 +38,7 @@
       &__topdrop::after {
         position: absolute;
         content: "";
-        // background-image: url("../images/arrow-down.svg");
+        background-image: url("images/arrow-down.svg");
         right: 0;
         top: 21px;
         width: 12px;

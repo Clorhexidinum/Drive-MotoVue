@@ -1,6 +1,10 @@
 <template>
     <ul class="menu-mobile">
-        <li class="menu-mobile__item" v-for="(value, property) in сategories" :key="value">
+        <li
+            class="menu-mobile__item"
+            v-for="(value, property) in сategories"
+            :key="value"
+        >
             <a class="menu-mobile__link" href="#">{{ value }}</a>
             <img
                 v-if="property !== ''"
@@ -16,7 +20,7 @@
 </template>
 
 <script>
-    export default {
+    export default {a
         name: "MenuMobile",
         // data() {
         //     return {

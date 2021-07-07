@@ -1,11 +1,11 @@
 <template>
     <a class="banner-promo" href="#">
-        <picture>
+        ]<picture>
             <source
                 media="(max-width: 320px)"
-                srcset=""
+                srcset="images/content/banner-mobile.jpg"
             />
-            <img src="" alt="" />
+            <img src="images/content/banner.jpg" alt="" />
         </picture>
     </a>
 </template>
