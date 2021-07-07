@@ -1,54 +1,54 @@
 <template>
-<ul class="categories__inner">
-  <li v-for="item in сategories">
-    <a class="categories__item" href="#">
-      <div class="categories__item-info">
-        <h4 class="categories__item-title">
-          {{ item.title }}
-        </h4>
-        <p class="categories__item-text">
-          Подробее
-        </p>
-      </div>
-      <div class="categories__item-img">
-        <img :src="item.image" alt="" />
-      </div>
-    </a>
-  </li>
-  <ul>
+  <ul class="categories__inner">
+    <li v-for="item in сategories" :key="item">
+      <a class="categories__item" href="#">
+        <div class="categories__item-info">
+          <h4 class="categories__item-title">
+            {{ item.title }}
+          </h4>
+          <p class="categories__item-text">Подробее</p>
+        </div>
+        <div class="categories__item-img">
+          <img :src="item.image" alt="" />
+        </div>
+      </a>
+    </li>
+  </ul>
 </template>
 
 <script>
 export default {
   name: "Categories",
   data() {
-            return {
-    сategories: [{
-        title: "Квадроциклы",
-        image: "categories-1.png"
-      },
-      {
-        title: "Гидроциклы",
-        image: "categories-2.png"
-      },
-      {
-        title: "Катера",
-        image: "categories-3.png"
-      },
-      {
-        title: "Снегоходы",
-        image: "categories-4.png"
-      },
-      {
-        title: "Вездеходы",
-        image: "categories-5.png"
-      },
-      {
-        title: "Двигатели",
-        image: "categories-6.png"
-      },
-    ],
-  },}
+    return {
+      сategories: [
+        {
+          title: "Квадроциклы",
+          image: "categories-1.png",
+        },
+        {
+          title: "Гидроциклы",
+          image: "categories-2.png",
+        },
+        {
+          title: "Катера",
+          image: "categories-3.png",
+        },
+        {
+          title: "Снегоходы",
+          image: "categories-4.png",
+        },
+        {
+          title: "Вездеходы",
+          image: "categories-5.png",
+        },
+        {
+          title: "Двигатели",
+          image: "categories-6.png",
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -93,7 +93,7 @@ export default {
   }
 
   &__item-text::after {
-    content: url("../images/link-arrow.svg");
+    // content: url("../images/link-arrow.svg");
     padding-left: 2px;
   }
 
