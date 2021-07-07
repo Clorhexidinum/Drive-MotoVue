@@ -1,6 +1,6 @@
 <template>
     <ul class="categories__inner">
-        <li v-for="item in сategories" :key="item">
+        <li v-for="item in сategories" :key="item.title">
             <a class="categories__item" href="#">
                 <div class="categories__item-info">
                     <h4 class="categories__item-title">
