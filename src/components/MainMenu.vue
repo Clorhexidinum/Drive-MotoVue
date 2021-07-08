@@ -1,8 +1,5 @@
 <template>
     <nav class="main-menu">
-        <slot>
-            {{ item }}
-        </slot>
         <ul class="main-menu__list">
             <li
                 class="main-menu__item"
@@ -23,7 +20,6 @@
                 сategories: ["Магазины", "Акции", "Доставка и оплата"],
             };
         },
-        props: ["item"],
     };
 </script>
 

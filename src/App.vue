@@ -3,7 +3,8 @@
         <div class="header__top">
             <div class="container">
                 <div class="header__top-inner">
-                    <main-menu><mobile-menu-btn></mobile-menu-btn></main-menu>
+                    <mobile-menu-btn></mobile-menu-btn>
+                    <main-menu></main-menu>
                     <logo></logo>
                     <div class="header__box">
                         <header-adress></header-adress>
