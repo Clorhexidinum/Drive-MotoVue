@@ -1,17 +1,22 @@
 <template>
     <div class="policy">
-        <a class="policy__link" v-for="item in items" href="#">{{ item }}</a>
+        <a class="policy__link" v-for="item in items" :key="item" href="#">{{
+            item
+        }}</a>
     </div>
 </template>
 
 <script>
     export default {
         name: "Policy",
-        data: function() {
-return {
-            items: ["Договор оферты", "Политика обработки персональных данных"],
-        };
-},
+        data: function () {
+            return {
+                items: [
+                    "Договор оферты",
+                    "Политика обработки персональных данных",
+                ],
+            };
+        },
     };
 </script>
 

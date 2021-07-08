@@ -1,19 +1,22 @@
 <template>
-    <ul class="categories__inner">
-        <li v-for="item in сategories" :key="item.title">
-            <a class="categories__item" href="#">
-                <div class="categories__item-info">
-                    <h4 class="categories__item-title">
-                        {{ item.title }}
-                    </h4>
-                    <p class="categories__item-text">Подробее</p>
-                </div>
-                <div class="categories__item-img">
-                    <img :src="`images/${item.image}`" alt="" />
-                </div>
-            </a>
-        </li>
-    </ul>
+    <div class="categories__inner">
+        <a
+            v-for="item in сategories"
+            :key="item.title"
+            class="categories__item"
+            href="#"
+        >
+            <div class="categories__item-info">
+                <h4 class="categories__item-title">
+                    {{ item.title }}
+                </h4>
+                <p class="categories__item-text">Подробее</p>
+            </div>
+            <div class="categories__item-img">
+                <img :src="`images/${item.image}`" alt="" />
+            </div>
+        </a>
+    </div>
 </template>
 
 <script>
