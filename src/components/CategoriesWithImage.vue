@@ -93,7 +93,7 @@
         }
 
         &__item-text::after {
-            content: url("images/link-arrow.svg");
+            content: url("/images/link-arrow.svg");
             padding-left: 2px;
         }
 

@@ -1,6 +1,6 @@
 <template>
     <ul class="menu-categories">
-        <li class="menu-categories__item" v-for="category in сategories">
+        <li class="menu-categories__item" v-for="category in сategories" :key="category">
             <a class="menu-categories__link" href="#">{{ category }}</a>
         </li>
     </ul>

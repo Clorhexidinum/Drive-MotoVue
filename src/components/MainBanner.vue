@@ -1,6 +1,6 @@
 <template>
     <a class="banner-promo" href="#">
-        ]<picture>
+        <picture>
             <source
                 media="(max-width: 320px)"
                 srcset="images/content/banner-mobile.jpg"

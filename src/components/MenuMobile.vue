@@ -20,11 +20,11 @@
 </template>
 
 <script>
-    export default {a
+    export default {
         name: "MenuMobile",
         data() {
             return {
-                сategories: {
+                сategories: [
                     {
                         category: "Войти",
                         image: "user.svg",
@@ -85,7 +85,7 @@
                         category: "Запчасти",
                         image: "",
                     },
-                },
+                ],
             };
         },
     };
