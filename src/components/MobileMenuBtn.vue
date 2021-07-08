@@ -1,8 +1,8 @@
 <template>
-    <button class="menu__btn">
-        <span class="menu__btn-line"></span>
-        <span class="menu__btn-line"></span>
-        <span class="menu__btn-line"></span>
+    <button class="menu-btn">
+        <span class="menu-btn__line"></span>
+        <span class="menu-btn__line"></span>
+        <span class="menu-btn__line"></span>
     </button>
 </template>
 
@@ -13,16 +13,18 @@
 </script>
 
 <style lang="scss">
-    @media (max-width: 968px) {
-        .menu {
-            &__btn {
-                display: block;
-                border: none;
-                background-color: transparent;
-                cursor: pointer;
-            }
+    .menu-btn {
+        display: none;
+    }
 
-            &__btn-line {
+    @media (max-width: 968px) {
+        .menu-btn {
+            display: block;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+
+            &__line {
                 display: block;
                 background-color: #2f3035;
                 border-radius: 3px;

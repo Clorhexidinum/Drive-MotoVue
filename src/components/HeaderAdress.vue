@@ -1,8 +1,5 @@
 <template>
-    <a
-        target="_blank"
-        class="header__adress"
-        href="https://yandex.ru/maps/-/CBFIIMryLB"
+    <a target="_blank" class="adress" href="https://yandex.ru/maps/-/CBFIIMryLB"
         >Москва, ул. Науки 25
     </a>
 </template>

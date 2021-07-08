@@ -3,7 +3,7 @@
         <div class="header__top">
             <div class="container">
                 <div class="header__top-inner">
-                    <main-menu></main-menu>
+                    <main-menu><mobile-menu-btn></mobile-menu-btn></main-menu>
                     <logo></logo>
                     <div class="header__box">
                         <header-adress></header-adress>
@@ -14,7 +14,9 @@
         </div>
         <div class="menu-mobile-box">
             <menu-mobile></menu-mobile>
-            <!--Тут был menuMobileLine-->
+            <menu-mobile-line>
+                <main-menu></main-menu>
+            </menu-mobile-line>
         </div>
         <div class="header__bottom">
             <div class="container">
@@ -22,6 +24,7 @@
             </div>
         </div>
     </header>
+
     <main>
         <section class="banner page-section">
             <div class="container">
@@ -1198,8 +1201,9 @@
     import HeaderAdress from "./components/HeaderAdress.vue";
     import UserList from "./components/UserList.vue";
     import MenuMobile from "./components/MenuMobile.vue";
-    // menuMobileLine
+    import MenuMobileLine from "./components/MenuMobileLine.vue";
     import MenuCategories from "./components/MenuCategories.vue";
+    import MobileMenuBtn from "./components/MobileMenuBtn.vue";
     // BannerSlider
     import SaleItem from "./components/SaleItem.vue";
     // SearchTabs
@@ -1223,7 +1227,9 @@
             HeaderAdress,
             UserList,
             MenuMobile,
+            MenuMobileLine,
             MenuCategories,
+            MobileMenuBtn,
             SaleItem,
             CategoriesWithImage,
             MoreBtn,
