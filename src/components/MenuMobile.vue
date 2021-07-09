@@ -101,10 +101,6 @@
         transform: translateX(-100%);
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
 
-        &--active {
-            transform: translateX(0);
-        }
-
         &__item {
             position: relative;
         }
@@ -129,6 +125,10 @@
             left: 11px;
             bottom: 10px;
         }
+    }
+
+    .menu-mobile.active {
+        transform: translateX(0);
     }
 
     @media (max-width: 968px) {

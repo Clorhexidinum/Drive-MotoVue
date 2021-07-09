@@ -31,10 +31,8 @@
 }
 
 @media (max-width: 968px) {
-  .header {
-    &__bottom {
-      display: none;
-    }
+  .header__bottom {
+    display: none;
   }
 
   .banner {

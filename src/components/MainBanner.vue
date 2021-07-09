@@ -19,6 +19,7 @@
 <style lang="scss">
     .banner-promo {
         margin-bottom: 80px;
+        width: auto;
     }
 
     @media (max-width: 1200px) {

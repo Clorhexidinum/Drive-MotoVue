@@ -38,7 +38,7 @@ p {
 }
 
 body {
-  background-color: #fff;
+  background-color: $background;
   color: $main-text;
   @extend %sf-regular;
   font-size: $fs-bigger;

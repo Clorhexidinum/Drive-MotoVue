@@ -3,7 +3,10 @@
         <div class="header__top">
             <div class="container">
                 <div class="header__top-inner">
-                    <mobile-menu-btn></mobile-menu-btn>
+                    <mobile-menu-btn
+                        :class="{ active: menuActive }"
+                        @click="menuActive = !menuActive"
+                    ></mobile-menu-btn>
                     <main-menu></main-menu>
                     <logo></logo>
                     <div class="header__box">
@@ -14,7 +17,7 @@
             </div>
         </div>
         <div class="menu-mobile-box">
-            <menu-mobile></menu-mobile>
+            <menu-mobile :class="{ active: menuActive }"></menu-mobile>
             <menu-mobile-line>
                 <main-menu></main-menu>
             </menu-mobile-line>
@@ -1177,14 +1180,14 @@
         <div class="container">
             <div class="footer__top">
                 <div class="footer__top-inner">
-                    <div class="footer__top-item footer__top-lewsletter">
+                    <div class="footer__top-item">
                         <footer-form></footer-form>
                     </div>
                     <div class="footer__top-item">
                         <footer-menu></footer-menu>
                     </div>
                     <div class="footer__top-item">
-                        <footer-menu></footer-menu>
+                        <topdrop-title title="Интернет-магазин"></topdrop-title>
                     </div>
                     <div class="footer__top-item footer__top-social">
                         <footer-social></footer-social>
@@ -1216,6 +1219,7 @@
     import ProductItem from "./components/ProductItem.vue";
     import Pagination from "./components/Pagination.vue";
     import FooterForm from "./components/FooterForm.vue";
+    import TopdropTitle from "./components/TopdropTitle.vue";
     import FooterMenu from "./components/FooterMenu.vue";
     import FooterSocial from "./components/FooterSocial.vue";
     import Policy from "./components/Policy.vue";
@@ -1240,8 +1244,14 @@
             Pagination,
             FooterForm,
             FooterMenu,
+            TopdropTitle,
             FooterSocial,
             Policy,
+        },
+        data: function () {
+            return {
+                menuActive: false,
+            };
         },
     };
 </script>
@@ -1285,8 +1295,8 @@
             justify-content: space-between;
         }
 
-        &__top-item {
-            width: 200px;
-        }
+        // &__top-item {
+        //     width: 200px;
+        // }
     }
 </style>

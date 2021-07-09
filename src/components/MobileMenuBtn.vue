@@ -1,9 +1,5 @@
 <template>
-    <button
-        class="menu__btn"
-        :class="{ active: isActive }"
-        @click="isActive = !isActive"
-    >
+    <button class="menu__btn">
         <span class="menu__btn-line"></span>
     </button>
 </template>
@@ -11,15 +7,14 @@
 <script>
     export default {
         name: "MobileMenuBtn",
-        data: function () {
-            return {
-                isActive: false,
-            };
-        },
     };
 </script>
 
 <style lang="scss">
+    .menu__btn {
+        display: none;
+    }
+
     @media (max-width: 968px) {
         .menu {
             &__btn {
