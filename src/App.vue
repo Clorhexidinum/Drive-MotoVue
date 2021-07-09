@@ -1184,10 +1184,18 @@
                         <footer-form></footer-form>
                     </div>
                     <div class="footer__top-item">
-                        <footer-menu></footer-menu>
+                        <topdrop-title
+                            title="Информация"
+                            titleClass="filter-title"
+                            ><footer-menu></footer-menu>
+                        </topdrop-title>
                     </div>
                     <div class="footer__top-item">
-                        <topdrop-title title="Интернет-магазин"></topdrop-title>
+                        <topdrop-title
+                            title="Интернет-магазин"
+                            titleClass="filter-title"
+                            ><footer-menu></footer-menu>
+                        </topdrop-title>
                     </div>
                     <div class="footer__top-item footer__top-social">
                         <footer-social></footer-social>

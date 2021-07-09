@@ -1,7 +1,6 @@
 <template>
     <p
-        class="topdrop-title"
-        :class="{ rotate: isOpened }"
+        :class="[titleClass, { rotate: isOpened }]"
         @click="isOpened = !isOpened"
     >
         {{ title }}
@@ -20,12 +19,20 @@
             };
         },
 
-        props: ["title"],
+        props: ["title", "titleClass"],
     };
 </script>
 
 <style lang="scss">
-    .topdrop-title {
+    .footer-title {
+        @extend %sf-bold;
+        font-size: $fs-smaller;
+        line-height: $lh-extra-small;
+        color: $main-text;
+        position: relative;
+    }
+
+    .filter-title {
         @extend %sf-semibold;
         font-size: $fs-small;
         line-height: $lh-small;
@@ -43,14 +50,38 @@
             height: 8px;
             transform: rotate(0deg);
         }
+    }
 
-        &__content {
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
+    .topdrop-title__content {
+        flex-wrap: wrap;
+        margin-top: 10px;
     }
 
     .rotate::before {
         transform: rotate(180deg);
+    }
+
+    @media (max-width: 540px) {
+        .footer-title {
+            font-weight: 500;
+            font-size: $fs-smaller;
+            line-height: $lh-small;
+            color: #7f7f7f;
+            padding: 15px 0;
+
+            &::after {
+                position: absolute;
+                content: "";
+                background-image: url("/images/arrow-down.svg");
+                right: 0;
+                top: 21px;
+                width: 12px;
+                height: 8px;
+            }
+        }
+
+        .rotate::after {
+            transform: rotate(180deg);
+        }
     }
 </style>
