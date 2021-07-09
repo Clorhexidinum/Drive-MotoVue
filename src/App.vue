@@ -1186,18 +1186,32 @@
                     <div class="footer__top-item">
                         <topdrop-title
                             title="Информация"
-                            titleClass="filter-title"
-                            ><footer-menu></footer-menu>
+                            titleClass="footer-title"
+                            ><footer-menu
+                                :categorys="[
+                                    'О компании',
+                                    'Контакты',
+                                    'Акции',
+                                    'Магазины',
+                                ]"
+                            ></footer-menu>
                         </topdrop-title>
                     </div>
                     <div class="footer__top-item">
                         <topdrop-title
                             title="Интернет-магазин"
-                            titleClass="filter-title"
-                            ><footer-menu></footer-menu>
+                            titleClass="footer-title"
+                            ><footer-menu
+                                :categorys="[
+                                    'Доставка и самовывоз',
+                                    'Оплата',
+                                    'Возврат-обмен',
+                                    'Новости',
+                                ]"
+                            ></footer-menu>
                         </topdrop-title>
                     </div>
-                    <div class="footer__top-item footer__top-social">
+                    <div class="footer__top-item">
                         <footer-social></footer-social>
                     </div>
                 </div>
@@ -1301,10 +1315,7 @@
         &__top-inner {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
-
-        // &__top-item {
-        //     width: 200px;
-        // }
     }
 </style>

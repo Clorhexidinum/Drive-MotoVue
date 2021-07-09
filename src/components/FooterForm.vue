@@ -24,8 +24,7 @@
 
 <style lang="scss">
     .footer-form {
-        width: 295px;
-        margin-right: 50px;
+        width: 320px;
 
         &__box {
             margin-top: 34px;
@@ -61,11 +60,11 @@
         }
     }
 
-    @media (max-width: 780px) {
-        .footer-form {
-            width: 100%;
-        }
-    }
+    // @media (max-width: 720px) {
+    //     .footer-form {
+    //         width: 100%;
+    //     }
+    // }
 
     @media (max-width: 540px) {
         .footer-form {

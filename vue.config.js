@@ -5,6 +5,7 @@ module.exports = {
                 prependData: `
                   @import "@/assets/var.scss";
                   @import "@/assets/global.scss";
+                  @import "@/assets/media.scss";
                 `,
             },
         },
