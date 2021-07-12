@@ -3,14 +3,14 @@
         <div class="sale-item__top">
             <p class="sale-item__info">акция</p>
             <div class="sale-item__price">
-                <div class="price price__new">190 000</div>
-                <div class="price price__old">225 000</div>
+                <div class="price price__new">{{ newPrice }}</div>
+                <div class="price price__old">{{ price }}</div>
             </div>
         </div>
-        <img class="sale-item__img" src="" alt="" />
-        <h5 class="sale-item__title">Лодочный мотор Suzuki DF9.9BRS</h5>
+        <img class="sale-item__img" :src="`images/content/${img}`" alt="" />
+        <h5 class="sale-item__title">{{ title }}</h5>
         <p class="sale-item__footer">
-            Акция действует до <span>31.08.2020</span>
+            Акция действует до <span>{{ ending }}</span>
         </p>
     </div>
 </template>
@@ -18,6 +18,21 @@
 <script>
     export default {
         name: "SaleItem",
+        data: function () {
+            return {
+                title: "Лодочный мотор Suzuki DF9.9BRS",
+                ending: "31.08.2020",
+                price: 225000,
+                sale: 15,
+                img: "sale-1.png"
+            };
+        },
+
+        computed: {
+            newPrice() {
+                return (this.price / 100) * (100 - this.sale);
+            }
+        }
     };
 </script>
 
@@ -46,6 +61,8 @@
             font-size: $fs-extra-small;
             line-height: $lh-extra-smaller;
             letter-spacing: 0.1em;
+            position: relative;
+            top: -1px;
         }
 
         &__price {
