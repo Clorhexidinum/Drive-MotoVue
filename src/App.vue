@@ -59,7 +59,7 @@
     <section class="products page-section">
       <div class="container">
         <div class="products__inner">
-          <!--Тут был title-->
+          <h4 class="product-title">Популярные товары</h4>
           <!--Тут был tabsCategories-->
           <!--Тут был tabsContainer-->
           <more-btn></more-btn>
@@ -76,7 +76,7 @@
     <section class="products page-section">
       <div class="container">
         <div class="products__inner">
-          <!--Тут был title-->
+          <h4 class="product-title">С этим товаром покупают</h4>
           <!--Тут был tabsCategories-->
           <!--Тут был tabsContainer-->
         </div>
@@ -145,31 +145,7 @@
                   "
                   id="prc-tab-1"
                 >
-                  <ul class="product-card__list">
-                    <li class="product-card__item">
-                      <div class="product-card__item-left">Производитель</div>
-                      <div class="product-card__item-right">Канада</div>
-                    </li>
-                    <li class="product-card__item">
-                      <div class="product-card__item-left">
-                        Количество мест, шт:
-                      </div>
-                      <div class="product-card__item-right">3</div>
-                    </li>
-                    <li class="product-card__item">
-                      <div class="product-card__item-left">Мощность, л.с.</div>
-                      <div class="product-card__item-right">155</div>
-                    </li>
-                    <li class="product-card__item">
-                      <div class="product-card__item-left">Тип двигателя</div>
-                      <div class="product-card__item-right">Бензиновый</div>
-                    </li>
-                    <li class="product-card__item">
-                      <div class="product-card__item-left">Год выпуска</div>
-                      <div class="product-card__item-right">2018</div>
-                    </li>
-                  </ul>
-                  <a class="product-card__more" href="#">Показать еще</a>
+                  <characteristics-list></characteristics-list>
                   <div>
                     <button class="product-card__btn btn">купить</button>
                   </div>
@@ -795,6 +771,7 @@ import MoreBtn from "./components/MoreBtn.vue";
 import MainBanner from "./components/MainBanner.vue";
 import Breadcrumbs from "./components/Breadcrumbs.vue";
 import ProductItem from "./components/ProductItem.vue";
+import CharacteristicsList from "./components/CharacteristicsList.vue";
 import Pagination from "./components/Pagination.vue";
 import FooterForm from "./components/FooterForm.vue";
 import TopdropTitle from "./components/TopdropTitle.vue";
@@ -819,6 +796,7 @@ export default {
     MainBanner,
     Breadcrumbs,
     ProductItem,
+    CharacteristicsList,
     Pagination,
     FooterForm,
     FooterMenu,

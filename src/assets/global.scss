@@ -74,3 +74,10 @@ body {
   border-radius: 3px;
   text-transform: uppercase;
 }
+
+.product-title {
+  @extend %barlow-bold;
+  font-size: $fs-big;
+  line-height: $lh-big;
+  margin-bottom: 25px;
+}

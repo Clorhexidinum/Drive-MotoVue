@@ -29,15 +29,27 @@
     <button class="product-item__compare" @click="isСompare = !isСompare">
       <svg
         :class="{ active: isСompare }"
-        width="28"
+        width="20"
         height="28"
-        viewBox="0 0 24 24"
+        viewBox="0 0 20 28"
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <defs />
-        <path
-          d="M19.7 6h-3.8c-.4-2-2-3-3.9-3S8.6 4 8.1 6H4.3l-3.2 8h2.2L5 9.7 7.5 16H0v1c0 2.8 2.2 5 5 5s5-2.2 5-5v-.2L6.5 8h1.7c.4 2 2 3 3.9 3s3.4-1 3.9-3h1.5L15 14h2.2L19 9.5l2.6 6.5H14v1c0 2.8 2.2 5 5 5s5-2.2 5-5v-.2L19.7 6zM5 20c-1.3 0-2.4-1-2.8-2h5.7c-.5 1-1.6 2-2.9 2zm7-11c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm7 11c-1.3 0-2.4-1-2.8-2h5.7c-.5 1-1.6 2-2.9 2z"
+        <rect
+          x="16"
+          y="15.7708"
+          width="4"
+          height="11.7255"
+          rx="2"
         />
+        <rect
+          x="8"
+          y="0.527588"
+          width="4"
+          height="26.9687"
+          rx="2"
+        />
+        <rect y="9.90796" width="4" height="17.5883" rx="2"/>
       </svg>
     </button>
     <button v-if="item.availability > 0" class="product-item__basket">
@@ -151,6 +163,10 @@ export default {
     &:hover {
       fill: $active;
     }
+    
+    & svg {
+      fill: $main-text;
+    }
   }
 
   &__compare {
@@ -166,6 +182,10 @@ export default {
 
     &:hover {
       fill: $active;
+    }
+
+    & svg {
+      fill: $main-text;
     }
 
     & > .active {
