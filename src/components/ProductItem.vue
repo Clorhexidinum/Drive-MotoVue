@@ -1,25 +1,70 @@
 <template>
   <div class="product-item__wrapper">
-    <button class="product-item__favorite"></button>
-    <button class="product-item__compare"></button>
-    <button v-if="this.availability > 0" class="product-item__basket">
-      <img src="" alt="" />
+    <button class="product-item__favorite" @click="isFavotite = !isFavotite">
+      <svg
+        v-if="isFavotite === false"
+        width="24"
+        height="22"
+        viewBox="0 0 24 22"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 8.22892C12.234 7.10892 13.547 1.99992 17.382 1.99992C19.602 1.99992 22 3.55092 22 7.00292C22 10.9099 18.373 15.4729 12 19.6319C5.627 15.4729 2 10.9099 2 7.00292C2 3.51892 4.369 1.99792 6.577 1.99792C10.5 1.99792 11.722 7.12392 12 8.22892ZM0 7.00292C0 11.0709 3.06 16.4839 12 21.9999C20.94 16.4839 24 11.0709 24 7.00292C24 -0.959077 14.352 -2.02508 12 3.26592C9.662 -1.99608 0 -1.00408 0 7.00292Z"
+        />
+      </svg>
+      <svg
+        v-else
+        width="24"
+        height="22"
+        viewBox="0 0 24 22"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 3.43498C10.011 -1.96402 0 -1.16202 0 7.00298C0 11.071 3.06 16.484 12 22C20.94 16.484 24 11.071 24 7.00298C24 -1.11502 14 -1.99602 12 3.43498Z"
+          fill="#1C62CD"
+        />
+      </svg>
     </button>
-
+    <button class="product-item__compare" @click="isСompare = !isСompare">
+      <svg
+        :class="{ active: isСompare }"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs />
+        <path
+          d="M19.7 6h-3.8c-.4-2-2-3-3.9-3S8.6 4 8.1 6H4.3l-3.2 8h2.2L5 9.7 7.5 16H0v1c0 2.8 2.2 5 5 5s5-2.2 5-5v-.2L6.5 8h1.7c.4 2 2 3 3.9 3s3.4-1 3.9-3h1.5L15 14h2.2L19 9.5l2.6 6.5H14v1c0 2.8 2.2 5 5 5s5-2.2 5-5v-.2L19.7 6zM5 20c-1.3 0-2.4-1-2.8-2h5.7c-.5 1-1.6 2-2.9 2zm7-11c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm7 11c-1.3 0-2.4-1-2.8-2h5.7c-.5 1-1.6 2-2.9 2z"
+        />
+      </svg>
+    </button>
+    <button v-if="item.availability > 0" class="product-item__basket">
+      <img src="/images/basket-white.svg" alt="" />
+    </button>
+    <span v-if="item.sale > 0" class="product-item__sale">sale</span>
     <a class="product-item" href="#">
       <p class="product-item__hover-text">посмотреть товар</p>
-      <img class="product-item__img" :src="`images/content/${img}`" alt="" />
-      <h4 class="product-item__title">{{ title }}</h4>
-      <p v-if="this.availability > 0" class="product-item__price-old">
-        {{ price }}
+      <img
+        class="product-item__img"
+        :src="`images/content/${item.img}`"
+        alt=""
+      />
+      <h4 class="product-item__title">{{ item.title }}</h4>
+      <p
+        v-if="item.availability > 0 && item.sale > 0"
+        class="product-item__price-old"
+      >
+        {{ item.price.toLocaleString() }} ₽
       </p>
-      <p v-if="this.availability > 0" class="product-item__price price">
-        {{ newPrice }}
+      <p v-if="item.availability > 0" class="product-item__price">
+        {{ item.sale > 0 ? newPrice : item.price.toLocaleString() }} ₽
       </p>
-      <p v-if="this.availability == 0" class="product-item__notify-text">
+      <p v-if="item.availability == 0" class="product-item__notify-text">
         нет в наличии
       </p>
-      <a v-if="this.availability == 0" class="product-item__notify-link"
+      <a v-if="item.availability == 0" class="product-item__notify-link"
         >Сообщить о поступлении</a
       >
     </a>
@@ -29,29 +74,26 @@
 <script>
 export default {
   name: "ProductItem",
+
   data: function () {
     return {
-      title: "BRP SeaDoo GTI 155hp SE Long Blue Metallic",
-      img: "gidrotsikl-1.png",
-      price: 1100475,
-      sale: 5,
-      rate: 0,
-      availability: 0,
-      country: "Канада",
-      numberOfPlaces: 3,
-      power: 155,
-      motor: "Бензиновый",
-      release: 2018,
-      length: 2790,
-      width: 1180,
-      weigth: 186,
-      fuelTank: 30,
+      item: {
+        title: "BRP SeaDoo GTI 155hp SE Long Blue Metallic",
+        img: "gidrotsikl-1.png",
+        price: 1100475,
+        sale: 10,
+        availability: 1,
+      },
+      isFavotite: false,
+      isСompare: false,
     };
   },
 
   computed: {
     newPrice() {
-      return Math.floor((this.price / 100) * (100 - this.sale));
+      return Math.floor(
+        (this.item.price / 100) * (100 - this.item.sale)
+      ).toLocaleString();
     },
   },
 };
@@ -84,21 +126,6 @@ export default {
     width: 271px;
     transition: all 0.3s;
     margin: 0 auto;
-
-    &.product-item__not-available .product-item__title {
-      padding-bottom: 13px;
-    }
-
-    &.product-item__not-available .product-item__notify-text {
-      display: block;
-      font-weight: 700;
-      font-size: $fs-medium;
-      line-height: $lh-smaller;
-    }
-  }
-
-  &__wrapper.product-item__wrapper--list {
-    width: 100%;
   }
 
   &__title {
@@ -119,58 +146,42 @@ export default {
     outline: none;
     z-index: 50;
     cursor: pointer;
-  }
+    padding: 0;
 
-  &__favorite::before {
-    content: "";
-    position: absolute;
-    width: 24px;
-    height: 22px;
-    top: 0;
-    left: 0;
-    background-image: url("/images/favorite.svg");
-  }
-
-  &__favorite--active::before {
-    background-image: url("/images/favorite-active.svg");
+    &:hover {
+      fill: $active;
+    }
   }
 
   &__compare {
     position: absolute;
-    top: 16px;
-    right: 19px;
-    width: 24px;
-    height: 22px;
+    top: 12px;
+    right: 50px;
     background-color: transparent;
     border: none;
     outline: none;
     z-index: 50;
     cursor: pointer;
-  }
+    padding: 0;
 
-  &__compare::before {
-    content: "";
-    position: absolute;
-    width: 24px;
-    height: 22px;
-    top: 0;
-    left: 30px;
-    background-image: url("/images/favorite.svg");
-  }
+    &:hover {
+      fill: $active;
+    }
 
-  &__compare--active::before {
-    background-image: url("/images/favorite-active.svg");
+    & > .active {
+      fill: $active;
+    }
   }
 
   &__basket {
     position: absolute;
     width: 60px;
     height: 40px;
-    background: $active !important;
+    background: $active;
     border-radius: 10px 0px 0px 0px;
     border: none;
-    bottom: 0;
-    right: 0;
+    bottom: 1px;
+    right: 1px;
     outline: none;
     padding-top: 7px;
     cursor: pointer;
@@ -181,6 +192,7 @@ export default {
     font-weight: $bold;
     font-size: $fs-extra-big;
     line-height: 36px;
+    position: relative;
   }
 
   &__price-old {
@@ -192,6 +204,7 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    position: relative;
   }
 
   &__hover-text {
@@ -205,14 +218,15 @@ export default {
     top: 30%;
     opacity: 0;
     transition: all 0.3s;
+    left: 20px;
+    right: 20px;
   }
 
   &__img {
     max-width: 100%;
   }
 
-  &--sale::before {
-    content: "SALE";
+  &__sale {
     padding: 8px 15px;
     background-color: $active;
     color: $base;
@@ -221,29 +235,26 @@ export default {
     font-size: $fs-extra-small;
     line-height: $lh-extra-smaller;
     letter-spacing: 0.07em;
-    top: 0;
-    left: 0;
+    top: 1px;
+    left: 1px;
   }
 
   &:hover {
     position: relative;
-    box-shadow: 3px 3px 20px rgba(50, 50, 50, 0.25) !important;
-    border-radius: 3px;
+    box-shadow: 3px 3px 20px rgba(50, 50, 50, 0.25);
+    border-radius: 0 3px;
     color: $active;
     z-index: 10;
-    border: 1px;
+    border: 1px solid $additional;
 
     & .product-item__hover-text {
       opacity: 1;
       color: $main-text;
     }
 
-    .product-item__notify-text {
-      color: $main-text;
-    }
-
     & .product-item__price-old {
       color: $main-text;
+      opacity: 0.6;
     }
   }
 }
