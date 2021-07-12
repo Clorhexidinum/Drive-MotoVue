@@ -35,32 +35,25 @@
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect
-          x="16"
-          y="15.7708"
-          width="4"
-          height="11.7255"
-          rx="2"
-        />
-        <rect
-          x="8"
-          y="0.527588"
-          width="4"
-          height="26.9687"
-          rx="2"
-        />
-        <rect y="9.90796" width="4" height="17.5883" rx="2"/>
+        <rect x="16" y="15.7708" width="4" height="11.7255" rx="2" />
+        <rect x="8" y="0.527588" width="4" height="26.9687" rx="2" />
+        <rect y="9.90796" width="4" height="17.5883" rx="2" />
       </svg>
     </button>
     <button v-if="item.availability > 0" class="product-item__basket">
       <img src="/images/basket-white.svg" alt="" />
     </button>
-    <span v-if="item.sale > 0" class="product-item__sale">sale</span>
+    <span
+      v-if="item.availability > 0 && item.sale > 0"
+      class="product-item__sale"
+      >sale</span
+    >
     <a class="product-item" href="#">
       <p class="product-item__hover-text">посмотреть товар</p>
       <img
         class="product-item__img"
         :src="`images/content/${item.img}`"
+        :class="{ notAvalible: item.availability == 0 }"
         alt=""
       />
       <h4 class="product-item__title">{{ item.title }}</h4>
@@ -147,12 +140,9 @@ export default {
     line-height: $lh-smaller;
   }
 
-  &__favorite {
+  &__favorite,
+  &__compare {
     position: absolute;
-    top: 16px;
-    right: 19px;
-    width: 24px;
-    height: 22px;
     background-color: transparent;
     border: none;
     outline: none;
@@ -160,33 +150,25 @@ export default {
     cursor: pointer;
     padding: 0;
 
-    &:hover {
+    &:hover svg {
       fill: $active;
     }
-    
+
     & svg {
       fill: $main-text;
     }
   }
 
+  &__favorite {
+    top: 16px;
+    right: 19px;
+    width: 24px;
+    height: 22px;
+  }
+
   &__compare {
-    position: absolute;
     top: 12px;
     right: 50px;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    z-index: 50;
-    cursor: pointer;
-    padding: 0;
-
-    &:hover {
-      fill: $active;
-    }
-
-    & svg {
-      fill: $main-text;
-    }
 
     & > .active {
       fill: $active;
@@ -255,7 +237,7 @@ export default {
     font-size: $fs-extra-small;
     line-height: $lh-extra-smaller;
     letter-spacing: 0.07em;
-    top: 1px;
+    top: 0;
     left: 1px;
   }
 
@@ -276,6 +258,14 @@ export default {
       color: $main-text;
       opacity: 0.6;
     }
+
+    & .notAvalible {
+      filter: grayscale(0);
+    }
+  }
+
+  & .notAvalible {
+    filter: grayscale(1);
   }
 }
 </style>

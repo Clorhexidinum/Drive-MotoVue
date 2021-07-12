@@ -94,7 +94,8 @@
     <section class="product-card">
       <div class="container">
         <div class="product-card__inner">
-          <div class="product-card__img-box product-item--sale">
+            <!-- тут юыл productCard -->
+          <!-- <div class="product-card__img-box product-item--sale">
             <img
               class="product-card__img"
               src="images/content/gidrotsikl-large.png"
@@ -158,7 +159,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
+        <product-card></product-card>
+        <characteristics-list></characteristics-list>
         </div>
       </div>
     </section>
@@ -771,6 +774,7 @@ import MoreBtn from "./components/MoreBtn.vue";
 import MainBanner from "./components/MainBanner.vue";
 import Breadcrumbs from "./components/Breadcrumbs.vue";
 import ProductItem from "./components/ProductItem.vue";
+import ProductCard from "./components/ProductCard.vue";
 import CharacteristicsList from "./components/CharacteristicsList.vue";
 import Pagination from "./components/Pagination.vue";
 import FooterForm from "./components/FooterForm.vue";
@@ -796,6 +800,7 @@ export default {
     MainBanner,
     Breadcrumbs,
     ProductItem,
+    ProductCard,
     CharacteristicsList,
     Pagination,
     FooterForm,

@@ -1,0 +1,267 @@
+<template>
+  <div class="product-card__inner">
+    <div class="product-card__img-box">
+      <span v-if="item.availability > 0 && item.sale > 0" class="product-item__sale">sale</span>
+      <img
+        class="product-card__img"
+        :src="`images/content/${item.img}`"
+        alt=""
+      />
+      <p v-if="item.availability > 0 && item.sale > 0" class="product-card__price-old">{{ item.price.toLocaleString() }} ₽</p>
+      <p v-if="item.availability > 0" class="product-card__price-new">{{ item.sale > 0 ? newPrice : item.price.toLocaleString() }} ₽</p>
+      <p v-if="item.availability == 0" class="product-card__notify-text">
+        нет в наличии
+      </p>
+      <a v-if="item.availability == 0" class="product-card__notify-link"
+        >Сообщить о поступлении</a
+      >
+      <a class="product-card__link" href="#">Нашли дешевле? Снизим цену!</a>
+      <div class="product-card__btn product-card__btn-mobile">
+        <button>купить</button>
+      </div>
+    </div>
+    <div class="product-card__content">
+      <h1 class="product-card__title">
+        Гидроцикл {{ item.title}}
+      </h1>
+      <p class="product-card__code">Код товара: {{ item.article }}</p>
+      <div class="product-card__buttons">
+        <button
+          class="product-card__favorite"
+          @click="isFavotite = !isFavotite"
+        >
+          <svg
+            v-if="isFavotite === false"
+            width="24"
+            height="22"
+            viewBox="0 0 24 22"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 8.22892C12.234 7.10892 13.547 1.99992 17.382 1.99992C19.602 1.99992 22 3.55092 22 7.00292C22 10.9099 18.373 15.4729 12 19.6319C5.627 15.4729 2 10.9099 2 7.00292C2 3.51892 4.369 1.99792 6.577 1.99792C10.5 1.99792 11.722 7.12392 12 8.22892ZM0 7.00292C0 11.0709 3.06 16.4839 12 21.9999C20.94 16.4839 24 11.0709 24 7.00292C24 -0.959077 14.352 -2.02508 12 3.26592C9.662 -1.99608 0 -1.00408 0 7.00292Z"
+            />
+          </svg>
+          <svg
+            v-else
+            width="24"
+            height="22"
+            viewBox="0 0 24 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 3.43498C10.011 -1.96402 0 -1.16202 0 7.00298C0 11.071 3.06 16.484 12 22C20.94 16.484 24 11.071 24 7.00298C24 -1.11502 14 -1.99602 12 3.43498Z"
+              fill="#1C62CD"
+            />
+          </svg>
+        </button>
+        <button class="product-card__compare" @click="isСompare = !isСompare">
+          <svg
+            :class="{ active: isСompare }"
+            width="20"
+            height="28"
+            viewBox="0 0 20 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect x="16" y="15.7708" width="4" height="11.7255" rx="2" />
+            <rect x="8" y="0.527588" width="4" height="26.9687" rx="2" />
+            <rect y="9.90796" width="4" height="17.5883" rx="2" />
+          </svg>
+        </button>
+        <a class="rate" href="#">
+          <div class="rate-yo" data-rateyo-rating="4"></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "ProductCard",
+  data: function () {
+    return {
+      item: {
+        article: "366666-1",
+        title: "BRP SeaDoo GTI 155hp SE Long Blue Metallic",
+        img: "gidrotsikl-1.png",
+        price: 1100475,
+        sale: 10,
+        availability: 1,
+      },
+      isFavotite: false,
+      isСompare: false,
+    };
+  },
+
+  computed: {
+    newPrice() {
+      return Math.floor(
+        (this.item.price / 100) * (100 - this.item.sale)
+      ).toLocaleString();
+    },
+  },
+};
+</script>
+
+<style lang="scss">
+.product-card {
+  margin-bottom: 80px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__img-box {
+    width: 500px;
+    padding-top: 64px;
+    text-align: center;
+    @extend %barlow-regular;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__img-box::before {
+    font-size: $fs-smaller;
+    line-height: $lh-small;
+    letter-spacing: 0.12em;
+    padding: 13px 25px;
+    border-radius: 3px;
+  }
+
+  &__img {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  &__price-old {
+    font-size: $fs-extra-big;
+    line-height: 44px;
+    opacity: 0.6;
+    display: inline-block;
+    background-image: url("/images/old-line.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  &__price-new {
+    font-weight: $bold;
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 17px;
+  }
+
+  &__sale {
+    font-size: $fs-smaller;
+    line-height: $lh-small;
+    letter-spacing: 0.12em;
+    padding: 13px 25px;
+    border-radius: 3px;
+    background-color: $active;
+    color: $base;
+    position: absolute;
+    text-transform: uppercase;
+    top: 1px;
+    left: 1px;
+  }
+
+  &__link {
+    font-size: $fs-smaller;
+    line-height: $lh-extra-small;
+    color: $active;
+    margin: 0 auto;
+  }
+
+  &__content {
+    width: 570px;
+  }
+
+  &__title {
+    @extend %sf-bold;
+    font-size: $fs-extra-big;
+    line-height: 36px;
+    margin-bottom: 10px;
+  }
+
+  &__code {
+    font-size: $fs-smaller;
+    line-height: $lh-small;
+    color: $main-text;
+    opacity: 0.6;
+    margin-bottom: 22px;
+  }
+
+  &__favorite,
+  &__compare {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    z-index: 50;
+    cursor: pointer;
+    padding: 0;
+
+    &:hover svg{
+      fill: $active;
+    }
+    
+    & svg {
+      fill: $main-text;
+    }
+  }
+
+  &__compare {
+    margin-left: 15px;
+
+    & > .active {
+      fill: $active;
+    }
+  }
+
+  &__notify-link {
+    display: block;
+    margin: 15px auto;
+    color: $active;
+    font-size: $fs-small;
+    line-height: $lh-small;
+    text-align: center;
+    border-bottom: 1px solid $active;
+    cursor: pointer;
+  }
+
+  // &__tab {
+  //   font-size: $fs-bigger;
+  //   line-height: $lh-medium;
+  //   color: $main-text;
+  //   opacity: 0.6;
+  //   padding-bottom: 7px;
+  //   padding-right: 17px;
+  //   margin-bottom: 5px;
+  // }
+
+  // &__tab + &__tab {
+  //   padding-left: 17px;
+  // }
+
+  // &__tab.tab--active {
+  //   opacity: 1;
+  //   border-bottom: 2px solid $active;
+  //   @extend %sf-bold;
+  // }
+
+  // &__btn button {
+  //   font-size: $fs-smaller;
+  //   line-height: $lh-extra-small;
+  //   letter-spacing: 0.12em;
+  //   padding: 16px 56px;
+  // }
+
+  // &__btn-mobile {
+  //   display: none;
+  // }
+}
+</style>

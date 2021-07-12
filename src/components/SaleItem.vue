@@ -30,7 +30,9 @@ export default {
 
   computed: {
     newPrice() {
-      return Math.floor((this.price / 100) * (100 - this.sale));
+      return Math.floor(
+        (this.price / 100) * (100 - this.sale)
+      ).toLocaleString();
     },
   },
 };
