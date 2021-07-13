@@ -8,7 +8,7 @@
 
 <script>
     export default {
-        name: "Policy",
+        name: "PolicyBox",
         data: function () {
             return {
                 items: [

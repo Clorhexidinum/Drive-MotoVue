@@ -8,7 +8,7 @@
             @click="menuActive = !menuActive"
           ></mobile-menu-btn>
           <main-menu></main-menu>
-          <logo></logo>
+          <main-logo></main-logo>
           <div class="header__box">
             <header-adress></header-adress>
             <user-list></user-list>
@@ -751,14 +751,16 @@
           </div>
         </div>
       </div>
-      <policy></policy>
+      <policy-box></policy-box>
     </div>
   </footer>
+
+  <tabs :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]" :contents="[ 'Доставка и самовывоз', 'Оплата', 'Возврат-обмен', 'Новости',]"></tabs>
 </template>
 
 <script>
 import MainMenu from "./components/MainMenu.vue";
-import Logo from "./components/Logo.vue";
+import MainLogo from "./components/MainLogo.vue";
 import HeaderAdress from "./components/HeaderAdress.vue";
 import UserList from "./components/UserList.vue";
 import MenuMobile from "./components/MenuMobile.vue";
@@ -781,13 +783,14 @@ import FooterForm from "./components/FooterForm.vue";
 import TopdropTitle from "./components/TopdropTitle.vue";
 import FooterMenu from "./components/FooterMenu.vue";
 import FooterSocial from "./components/FooterSocial.vue";
-import Policy from "./components/Policy.vue";
+import PolicyBox from "./components/PolicyBox.vue";
+import Tabs from "./components/Tabs.vue";
 
 export default {
   name: "App",
   components: {
     MainMenu,
-    Logo,
+    MainLogo,
     HeaderAdress,
     UserList,
     MenuMobile,
@@ -807,7 +810,8 @@ export default {
     FooterMenu,
     TopdropTitle,
     FooterSocial,
-    Policy,
+    PolicyBox,
+    Tabs,
   },
   data: function () {
     return {
