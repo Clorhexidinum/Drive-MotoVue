@@ -60,8 +60,8 @@
       <div class="container">
         <div class="products__inner">
           <h4 class="product-title">Популярные товары</h4>
-          <!--Тут был tabsCategories-->
-          <!--Тут был tabsContainer-->
+          <tabs :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]" 
+        :contents="[ 'Доставка и самовывоз', 'Оплата', 'Возврат-обмен', 'Новости',]"></tabs>
           <more-btn></more-btn>
         </div>
       </div>
@@ -77,8 +77,8 @@
       <div class="container">
         <div class="products__inner">
           <h4 class="product-title">С этим товаром покупают</h4>
-          <!--Тут был tabsCategories-->
-          <!--Тут был tabsContainer-->
+          <tabs :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]" 
+        :contents="[ 'Доставка и самовывоз', 'Оплата', 'Возврат-обмен', 'Новости',]"></tabs>
         </div>
       </div>
     </section>
@@ -94,38 +94,6 @@
     <section class="product-card">
       <div class="container">
         <div class="product-card__inner">
-            <!-- тут юыл productCard -->
-          <!-- <div class="product-card__img-box product-item--sale">
-            <img
-              class="product-card__img"
-              src="images/content/gidrotsikl-large.png"
-              alt=""
-            />
-            <p class="product-card__price-old">1 200 475 ₽</p>
-            <p class="product-card__price-new">1 100 475 ₽</p>
-            <a class="product-card__link" href="#"
-              >Нашли дешевле? Снизим цену!</a
-            >
-            <div class="product-card__btn product-card__btn-mobile">
-              <button>купить</button>
-            </div>
-          </div>
-          <div class="product-card__content">
-            <h1 class="product-card__title">
-              Гидроцикл BRP SeaDoo GTI 155hp SE Long Blue Metallic
-            </h1>
-            <p class="product-card__code">Код товара: 366666-2</p>
-            <div class="product-card__buttons">
-              <a href="#" class="product-card__icon-favorite">
-                <img src="images/favorite.svg" alt="" />
-              </a>
-              <a href="#" class="product-card__icon-comparison">
-                <img src="images/comparison.svg" alt="" />
-              </a>
-              <a class="rate" href="#">
-                <div class="rate-yo" data-rateyo-rating="4"></div>
-              </a>
-            </div>
             <div class="tabs__wrapper product-card__tabs">
               <div class="tabs">
                 <a
@@ -159,10 +127,9 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
         <product-card></product-card>
         <characteristics-list></characteristics-list>
-        </div>
       </div>
     </section>
 
@@ -754,8 +721,6 @@
       <policy-box></policy-box>
     </div>
   </footer>
-
-  <tabs :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]" :contents="[ 'Доставка и самовывоз', 'Оплата', 'Возврат-обмен', 'Новости',]"></tabs>
 </template>
 
 <script>
