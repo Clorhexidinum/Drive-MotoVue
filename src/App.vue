@@ -60,8 +60,7 @@
       <div class="container">
         <div class="products__inner">
           <h4 class="product-title">Популярные товары</h4>
-          <tabs :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]" 
-        :contents="[ 'Доставка и самовывоз', 'Оплата', 'Возврат-обмен', 'Новости',]"></tabs>
+          <tabs :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]"></tabs>
           <more-btn></more-btn>
         </div>
       </div>
@@ -77,8 +76,7 @@
       <div class="container">
         <div class="products__inner">
           <h4 class="product-title">С этим товаром покупают</h4>
-          <tabs :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]" 
-        :contents="[ 'Доставка и самовывоз', 'Оплата', 'Возврат-обмен', 'Новости',]"></tabs>
+          <tabs :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]"></tabs>
         </div>
       </div>
     </section>
@@ -114,7 +112,6 @@
                   "
                   id="prc-tab-1"
                 >
-                  <characteristics-list></characteristics-list>
                   <div>
                     <button class="product-card__btn btn">купить</button>
                   </div>
@@ -188,8 +185,8 @@
       <div class="container">
         <div class="products__inner">
           <!--Тут был title-->
-          <!--Тут был tabsCategories-->
-          <!--Тут был tabsContainer-->
+          <tabs :tabs="[ 'О товаре', 'Характеристики', 'Отзывы', 'Самовывоз', 'Доставка', 'Сервис', 'Гарантия',]" 
+           :contents="[characteristics-list]"></tabs>
         </div>
       </div>
     </section>

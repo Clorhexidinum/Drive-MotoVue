@@ -16,7 +16,7 @@
       v-show="selectedTab === index"
       :key="index"
     >
-      {{ content }}
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -33,7 +33,6 @@ export default {
 
   props: {
     tabs: Array,
-    contents: Array,
   },
 };
 </script>
@@ -53,6 +52,7 @@ export default {
   &__item {
     padding-bottom: 10px;
     cursor: pointer;
+    white-space: nowrap;
   }
 }
 

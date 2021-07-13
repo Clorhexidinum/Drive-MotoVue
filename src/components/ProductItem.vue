@@ -238,7 +238,7 @@ export default {
     line-height: $lh-extra-smaller;
     letter-spacing: 0.07em;
     top: 0;
-    left: 1px;
+    left: 0;
   }
 
   &:hover {
