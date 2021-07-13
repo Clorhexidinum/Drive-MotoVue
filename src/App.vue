@@ -42,8 +42,7 @@
     <div class="search page-section">
       <div class="container">
         <div class="search__inner">
-          <!--Тут был searchTabs-->
-          <!--Тут был searchTabsContent-->
+          <search-tabs></search-tabs>
         </div>
       </div>
     </div>
@@ -184,7 +183,6 @@
     <section class="products page-section">
       <div class="container">
         <div class="products__inner">
-          <!--Тут был title-->
           <tabs :tabs="[ 'О товаре', 'Характеристики', 'Отзывы', 'Самовывоз', 'Доставка', 'Сервис', 'Гарантия',]" 
            :contents="[characteristics-list]"></tabs>
         </div>
@@ -731,6 +729,7 @@ import MenuCategories from "./components/MenuCategories.vue";
 import MobileMenuBtn from "./components/MobileMenuBtn.vue";
 // BannerSlider
 import SaleItem from "./components/SaleItem.vue";
+import SearchTabs from "./components/SearchTabs.vue";
 // SearchTabs
 // SearchTabsContent
 import CategoriesWithImage from "./components/CategoriesWithImage.vue";
@@ -760,6 +759,7 @@ export default {
     MenuCategories,
     MobileMenuBtn,
     SaleItem,
+    SearchTabs,
     CategoriesWithImage,
     MoreBtn,
     MainBanner,
