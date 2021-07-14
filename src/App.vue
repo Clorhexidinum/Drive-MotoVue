@@ -780,6 +780,23 @@ export default {
       menuActive: false,
     };
   },
+
+  created() {
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
+  },
+
+  unmounted() {
+    window.removeEventListener('resize', this.onResize)
+  },
+
+  methods: {
+    onResize() {
+      if (window.innerWidth > 968) {
+        this.menuActive = false;
+      }
+    },
+  },
 };
 </script>
 

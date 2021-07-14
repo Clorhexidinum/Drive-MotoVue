@@ -129,6 +129,7 @@
         .categories {
             &__item {
                 padding: 20px 10px 16px;
+                width: 100%;
             }
         }
     }
