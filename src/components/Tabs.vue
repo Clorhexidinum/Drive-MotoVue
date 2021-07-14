@@ -16,7 +16,7 @@
       v-show="selectedTab === index"
       :key="index"
     >
-    <slot></slot>
+    <slot>{{index}}</slot>
     </div>
   </div>
 </template>
