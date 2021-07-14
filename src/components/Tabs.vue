@@ -12,11 +12,11 @@
     </div>
     <div
       class="tabs__content"
-      v-for="(content, index) in contents"
+      v-for="(content, index) in tabs"
       v-show="selectedTab === index"
       :key="index"
     >
-      <slot></slot>
+    <slot></slot>
     </div>
   </div>
 </template>
