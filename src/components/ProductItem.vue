@@ -196,7 +196,7 @@ export default {
     background: $active;
     border-radius: 10px 0px 0px 0px;
     border: none;
-    bottom: 1px;
+    bottom: 0;
     right: 1px;
     outline: none;
     padding-top: 7px;

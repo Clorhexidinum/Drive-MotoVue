@@ -1,21 +1,21 @@
 <template>
     <tabs :tabs="tabs" @clicked="onTabChange">
         <div :style="{ display: 'flex' }">
-            <product-item v-bind="good" v-for="(good, idx) in goods.slice(0, 5)" :key="idx" />
+            <slot></slot>
         </div>
     </tabs>
 </template>
 
 <script>
 import Tabs from './Tabs';
-import ProductItem from './ProductItem';
-import goods from '../goods.json';
+// import ProductItem from './ProductItem';
+// import goods from '../goods.json';
 
 export default {
     name: 'TabsWithSLider',
     components: {
         Tabs,
-        ProductItem,
+        // ProductItem,
     },
     props: {
         tabs: {
@@ -26,7 +26,7 @@ export default {
     data() {
         return {
             count: 0,
-            goods,
+            // goods,
         };
     },
 
@@ -35,8 +35,8 @@ export default {
             this.count = index;
         },
     },
-    created() {
-        console.log(goods);
+    sortGoods(arr, category) {
+        return arr.filter(item => item.category == category);
     }
 };
 </script>

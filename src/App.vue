@@ -76,7 +76,7 @@
         <div class="products__inner">
           <h4 class="product-title">С этим товаром покупают</h4>
           <!-- <tabs :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]"></tabs> -->
-          <tabs-with-slider :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]"></tabs-with-slider>
+          <tabs-with-slider :tabs="[ 'скидка > 5', 'количество > 2', 'шины', 'электроника', 'инструменты', 'аксесуары',]"><product-item v-bind="good" v-for="(good, idx) in sortGoods('two')" :key="idx"></product-item></tabs-with-slider>
         </div>
       </div>
     </section>
@@ -184,8 +184,7 @@
     <section class="products page-section">
       <div class="container">
         <div class="products__inner">
-          <tabs :tabs="[ 'О товаре', 'Характеристики', 'Отзывы', 'Самовывоз', 'Доставка', 'Сервис', 'Гарантия',]" 
-           :contents="[characteristics-list]"></tabs>
+          <tabs :tabs="[ 'О товаре', 'Характеристики', 'Отзывы', 'Самовывоз', 'Доставка', 'Сервис', 'Гарантия',]"></tabs>
         </div>
       </div>
     </section>
@@ -748,6 +747,7 @@ import FooterSocial from "./components/FooterSocial.vue";
 import PolicyBox from "./components/PolicyBox.vue";
 import Tabs from "./components/Tabs.vue";
 import TabsWithSlider from "./components/TabsWithSlider.vue";
+import goods from './goods.json';
 
 export default {
   name: "App",
@@ -781,6 +781,7 @@ export default {
   data: function () {
     return {
       menuActive: false,
+      goods,
     };
   },
 
@@ -799,6 +800,10 @@ export default {
         this.menuActive = false;
       }
     },
+
+    sortGoods(cat) {
+        return goods.filter(item => item.category == cat);
+    }
   },
 };
 </script>

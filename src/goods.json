@@ -1,5 +1,6 @@
 [
         {
+            "category" : "one",
             "name": "BRP SeaDoo GTI 155hp SE Long Blue Metallic",
             "image": "gidrotsikl-1.png",
             "price": 1100475,
@@ -17,6 +18,7 @@
             "fuelTank": 30
         },
         {
+            "category" : "one",
             "name": "BRP SeaDoo GTR 230hp X California blue",
             "image": "gidrotsikl-2.png",
             "price": 1323700,
@@ -34,6 +36,7 @@
             "fuelTank": 30
         },
         {
+            "category" : "one",
             "name": "BRP SeaDoo GTR 230hp X California green",
             "image": "gidrotsikl-3.png",
             "price": 1323700,
@@ -51,6 +54,7 @@
             "fuelTank": 30
         },
         {
+            "category" : "two",
             "name": "BRP SeaDoo GTR 230hp STD Black / Gulfstream",
             "image": "gidrotsikl-4.png",
             "price": 1443000,
@@ -68,6 +72,7 @@
             "fuelTank": 30
         },
         {
+            "category" : "two",
             "name": "BRP SeaDoo GTX 300hp LTD Liquid Metal",
             "image": "gidrotsikl-5.png",
             "price": 1543000,
@@ -85,6 +90,7 @@
             "fuelTank": 30
         },
         {
+            "category" : "two",
             "name": "BRP SeaDoo Spark 60hp 2 up",
             "image": "gidrotsikl-6.png",
             "price": 732345,
@@ -102,6 +108,7 @@
             "fuelTank": 30
         },
         {
+            "category" : "two",
             "name": "BRP SeaDoo Spark GTS 90hp Rental",
             "image": "gidrotsikl-7.png",
             "price": 857666,
@@ -119,6 +126,7 @@
             "fuelTank": 30
         },
         {
+            "category" : "two",
             "name": "BRP SeaDoo WAKE 230hp PRO Teal blue",
             "image": "gidrotsikl-8.png",
             "price": 1229711,
@@ -136,6 +144,7 @@
             "fuelTank": 30
         },
         {
+            "category" : "two",
             "name": "Spark 2-UP 900 Ho Ace Chili Pepper",
             "image": "gidrotsikl-9.png",
             "price": 587440,
@@ -153,6 +162,7 @@
             "fuelTank": 30
         },
         {
+            "category" : "two",
             "name": "Spark 2-UP 900 Ho Ace Pineapple",
             "image": "gidrotsikl-10.png",
             "price": 587440,
@@ -170,6 +180,7 @@
             "fuelTank": 30
         },
         {
+            "category" : "two",
             "name": "BRP Sea-doo Spark 2-UP 900 Ace Vanilla",
             "image": "gidrotsikl-11.png",
             "price": 750000,
@@ -187,6 +198,7 @@
             "fuelTank": 30
         },
         {
+            "category" : "two",
             "name": "Spark 3-UP 900 HO Ace IBR Blueberry",
             "image": "gidrotsikl-12.png",
             "price": 690000,
