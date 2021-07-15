@@ -93,16 +93,7 @@
       <div class="container">
         <div class="product-card__inner">
             <div class="tabs__wrapper product-card__tabs">
-              <div class="tabs">
-                <a
-                  class="tabs__item tab tab--active product-card__tab"
-                  href="#prc-tab-1"
-                  >Характеристики</a
-                >
-                <a class="tabs__item tab product-card__tab" href="#prc-tab-2"
-                  >Наличие в магазине</a
-                >
-              </div>
+              <tabs :tabs="['характеристики', 'наличие']"></tabs>
               <div class="tabs__container">
                 <div
                   class="
