@@ -76,7 +76,7 @@
         <div class="products__inner">
           <h4 class="product-title">С этим товаром покупают</h4>
           <!-- <tabs :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]"></tabs> -->
-          <tabs-with-slider :tabs="[ 'скидка > 5', 'количество > 2', 'шины', 'электроника', 'инструменты', 'аксесуары',]"><product-item v-bind="good" v-for="(good, idx) in sortGoods('two')" :key="idx"></product-item></tabs-with-slider>
+          <tabs-with-slider :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]"><product-item v-bind="good" v-for="(good, idx) in sortGoods('запчасти')" :key="idx"></product-item></tabs-with-slider>
         </div>
       </div>
     </section>
