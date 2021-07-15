@@ -75,7 +75,8 @@
       <div class="container">
         <div class="products__inner">
           <h4 class="product-title">С этим товаром покупают</h4>
-          <tabs :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]"></tabs>
+          <!-- <tabs :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]"></tabs> -->
+          <tabs-with-slider :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]"></tabs-with-slider>
         </div>
       </div>
     </section>
@@ -746,6 +747,7 @@ import FooterMenu from "./components/FooterMenu.vue";
 import FooterSocial from "./components/FooterSocial.vue";
 import PolicyBox from "./components/PolicyBox.vue";
 import Tabs from "./components/Tabs.vue";
+import TabsWithSlider from "./components/TabsWithSlider.vue";
 
 export default {
   name: "App",
@@ -774,6 +776,7 @@ export default {
     FooterSocial,
     PolicyBox,
     Tabs,
+    TabsWithSlider,
   },
   data: function () {
     return {

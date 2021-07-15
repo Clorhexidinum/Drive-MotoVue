@@ -40,11 +40,11 @@
         <rect y="9.90796" width="4" height="17.5883" rx="2" />
       </svg>
     </button>
-    <button v-if="item.availability > 0" class="product-item__basket">
+    <button v-if="availability > 0" class="product-item__basket">
       <img src="/images/basket-white.svg" alt="" />
     </button>
     <span
-      v-if="item.availability > 0 && item.sale > 0"
+      v-if="availability > 0 && sale > 0"
       class="product-item__sale"
       >sale</span
     >
@@ -52,24 +52,24 @@
       <p class="product-item__hover-text">посмотреть товар</p>
       <img
         class="product-item__img"
-        :src="`images/content/${item.img}`"
-        :class="{ notAvalible: item.availability == 0 }"
+        :src="`images/content/${image}`"
+        :class="{ notAvalible: availability == 0 }"
         alt=""
       />
-      <h4 class="product-item__title">{{ item.title }}</h4>
+      <h4 class="product-item__title">{{ name }}</h4>
       <p
-        v-if="item.availability > 0 && item.sale > 0"
+        v-if="availability > 0 && sale > 0"
         class="product-item__price-old"
       >
-        {{ item.price.toLocaleString() }} ₽
+        {{ price.toLocaleString() }} ₽
       </p>
-      <p v-if="item.availability > 0" class="product-item__price">
-        {{ item.sale > 0 ? newPrice : item.price.toLocaleString() }} ₽
+      <p v-if="availability > 0" class="product-item__price">
+        {{ sale > 0 ? newPrice : price.toLocaleString() }} ₽
       </p>
-      <p v-if="item.availability == 0" class="product-item__notify-text">
+      <p v-if="availability == 0" class="product-item__notify-text">
         нет в наличии
       </p>
-      <a v-if="item.availability == 0" class="product-item__notify-link"
+      <a v-if="availability == 0" class="product-item__notify-link"
         >Сообщить о поступлении</a
       >
     </a>
@@ -79,16 +79,30 @@
 <script>
 export default {
   name: "ProductItem",
-
+  props: {
+        name: {
+          type: String,
+          default: "BRP SeaDoo GTI 155hp SE Long Blue Metallic",
+        },
+        image: {
+          type: String,
+          default: "gidrotsikl-1.png",
+        },
+        price:{
+          type: Number,
+          default:  1100475,
+        },
+        sale: {
+          type: Number,
+          default: 10,
+        },
+        availability: {
+          type: Number,
+          default: 1,
+        },
+      },
   data: function () {
     return {
-      item: {
-        title: "BRP SeaDoo GTI 155hp SE Long Blue Metallic",
-        img: "gidrotsikl-1.png",
-        price: 1100475,
-        sale: 10,
-        availability: 1,
-      },
       isFavotite: false,
       isСompare: false,
     };
@@ -97,7 +111,7 @@ export default {
   computed: {
     newPrice() {
       return Math.floor(
-        (this.item.price / 100) * (100 - this.item.sale)
+        (this.price / 100) * (100 - this.sale)
       ).toLocaleString();
     },
   },

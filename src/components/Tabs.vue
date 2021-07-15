@@ -6,18 +6,11 @@
         v-for="(tab, index) in tabs"
         :key="index"
         :class="{ activeTab: selectedTab === index }"
-        @click.prevent="selectedTab = index"
+        @click.prevent="click(index)"
         >{{ tab }}</a
       >
     </div>
-    <div
-      class="tabs__content"
-      v-for="(content, index) in tabs"
-      v-show="selectedTab === index"
-      :key="index"
-    >
-    <slot>{{index}}</slot>
-    </div>
+    <slot />
   </div>
 </template>
 
@@ -34,6 +27,13 @@ export default {
   props: {
     tabs: Array,
   },
+
+  methods: {
+    click(index) {
+      this.selectedTab = index;
+      this.$emit('clicked', index);
+    },
+  }
 };
 </script>
 
