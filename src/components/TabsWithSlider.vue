@@ -1,7 +1,7 @@
 <template>
     <tabs :tabs="tabs" @clicked="onTabChange">
         <div :style="{ display: 'flex' }">
-   
+            <slot ></slot>
         </div>
     </tabs>
 </template>
@@ -31,12 +31,13 @@ export default {
     },
 
     methods: {
-        onTabChange(index, tab) {
+        onTabChange(index) {
             this.count = index;
-            this.$emit("clicked", index, tab);
-            console.log(tab);
         },
     },
+    sortGoods(arr, category) {
+        return arr.filter(item => item.category == category);
+    }
 };
 </script>
 
