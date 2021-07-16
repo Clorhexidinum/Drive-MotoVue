@@ -6,15 +6,18 @@
         v-for="(tab, index) in tabs"
         :key="index"
         :class="{ activeTab: selectedTab === index }"
-        @click.prevent="click(index)"
+        @click.prevent="click(index, tab)"
         >{{ tab }}</a
       >
+      <slot></slot>
     </div>
-    <slot />
+    
   </div>
 </template>
 
 <script>
+import goods from "../goods.json";
+
 export default {
   name: "Tabs",
 
@@ -29,11 +32,15 @@ export default {
   },
 
   methods: {
-    click(index) {
+    click(index, tab) {
       this.selectedTab = index;
-      this.$emit('clicked', index);
+      this.$emit("clicked", index, tab);
     },
-  }
+  },
+
+  sortGoods() {
+    return goods.filter((item) => item.category == this.selectedCategory);
+  },
 };
 </script>
 
