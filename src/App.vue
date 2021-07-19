@@ -82,105 +82,7 @@
     </section>
   </main>
 
-  <main>
-    <div class="breadcrumbs">
-      <div class="container">
-        <breadcrumbs></breadcrumbs>
-      </div>
-    </div>
-
-    <section class="product-card">
-      <div class="container">
-        <div class="product-card__inner">
-            <div class="tabs__wrapper product-card__tabs">
-              
-              <!-- <div class="tabs__container">
-                <div
-                  class="
-                    tabs__content
-                    product-card__tab-content
-                    tabs__content--active
-                  "
-                  id="prc-tab-1"
-                >
-                  <div>
-                    <button class="product-card__btn btn">купить</button>
-                  </div>
-                </div>
-                <div
-                  class="tabs__content product-card__tab-content"
-                  id="prc-tab-2"
-                >
-                  content-2
-                </div>
-              </div> -->
-            </div>
-          </div>
-        <product-card></product-card>
-      </div>
-    </section>
-
-    <section class="card">
-      <div class="container">
-        <div class="tabs__wrapper">
-          <!--Тут был productTabs-->
-        </div>
-        <div class="tabs__container">
-          <div class="tabs__content card__content" id="prod-tab-1">
-            О товаре
-          </div>
-          <div class="tabs__content card__content" id="prod-tab-2">
-            Характеристики
-          </div>
-          <div class="tabs__content card__content" id="prod-tab-3">Отзывы</div>
-          <div
-            class="tabs__content tabs__content--active card__content"
-            id="prod-tab-4"
-          >
-            <form action="#">
-              <div class="card__top-line">
-                <label class="card__label-search"
-                  >Магазин
-                  <input class="card__input-search" type="text" />
-                </label>
-                <label class="card__label-pickup">
-                  <input class="filter-style" type="radio" name="pickup" />
-                  Забрать сегодня
-                </label>
-                <label class="card__label-pickup">
-                  <input
-                    class="filter-style"
-                    type="radio"
-                    name="pickup"
-                    checked
-                  />
-                  Забрать в течение недели
-                </label>
-              </div>
-            </form>
-            <pickup-box></pickup-box>
-          </div>
-          <div class="tabs__content card__content" id="prod-tab-5">
-            Доставка
-          </div>
-          <div class="tabs__content card__content" id="prod-tab-6">Cервис</div>
-          <div class="tabs__content card__content" id="prod-tab-7">
-            Гарантия
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="products page-section">
-      <div class="container">
-        <div class="products__inner">
-          <tabs :tabs="[ 'О товаре', 'Характеристики', 'Отзывы', 'Самовывоз', 'Доставка', 'Сервис', 'Гарантия',]"></tabs>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <main>
+   <main>
     <div class="breadcrumbs">
       <div class="container">
         <breadcrumbs></breadcrumbs>
@@ -667,6 +569,104 @@
             </div>
             <pagination></pagination>
           </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <main>
+    <div class="breadcrumbs">
+      <div class="container">
+        <breadcrumbs></breadcrumbs>
+      </div>
+    </div>
+
+    <section class="product-card">
+      <div class="container">
+        <div class="product-card__inner">
+            <div class="tabs__wrapper product-card__tabs">
+              
+              <!-- <div class="tabs__container">
+                <div
+                  class="
+                    tabs__content
+                    product-card__tab-content
+                    tabs__content--active
+                  "
+                  id="prc-tab-1"
+                >
+                  <div>
+                    <button class="product-card__btn btn">купить</button>
+                  </div>
+                </div>
+                <div
+                  class="tabs__content product-card__tab-content"
+                  id="prc-tab-2"
+                >
+                  content-2
+                </div>
+              </div> -->
+            </div>
+          </div>
+        <product-card></product-card>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="container">
+        <div class="tabs__wrapper">
+          <!--Тут был productTabs-->
+        </div>
+        <div class="tabs__container">
+          <div class="tabs__content card__content" id="prod-tab-1">
+            О товаре
+          </div>
+          <div class="tabs__content card__content" id="prod-tab-2">
+            Характеристики
+          </div>
+          <div class="tabs__content card__content" id="prod-tab-3">Отзывы</div>
+          <div
+            class="tabs__content tabs__content--active card__content"
+            id="prod-tab-4"
+          >
+            <form action="#">
+              <div class="card__top-line">
+                <label class="card__label-search"
+                  >Магазин
+                  <input class="card__input-search" type="text" />
+                </label>
+                <label class="card__label-pickup">
+                  <input class="filter-style" type="radio" name="pickup" />
+                  Забрать сегодня
+                </label>
+                <label class="card__label-pickup">
+                  <input
+                    class="filter-style"
+                    type="radio"
+                    name="pickup"
+                    checked
+                  />
+                  Забрать в течение недели
+                </label>
+              </div>
+            </form>
+            <pickup-box></pickup-box>
+          </div>
+          <div class="tabs__content card__content" id="prod-tab-5">
+            Доставка
+          </div>
+          <div class="tabs__content card__content" id="prod-tab-6">Cервис</div>
+          <div class="tabs__content card__content" id="prod-tab-7">
+            Гарантия
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products page-section">
+      <div class="container">
+        <div class="products__inner">
+          <tabs :tabs="[ 'О товаре', 'Характеристики', 'Отзывы', 'Самовывоз', 'Доставка', 'Сервис', 'Гарантия',]"></tabs>
         </div>
       </div>
     </section>
