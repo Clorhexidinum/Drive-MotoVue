@@ -1,11 +1,11 @@
 <template>
   <ul class="characteristics-list">
-    <li v-for="item in items" :key="item" class="characteristics-list__item">
+    <li v-for="item in openedList()" :key="item" class="characteristics-list__item">
       <div class="characteristics-list__item-left">{{ item.key }}</div>
       <div class="characteristics-list__item-right">{{ item.value }}</div>
     </li>
   </ul>
-  <a class="characteristics-list__more" href="#">Показать еще</a>
+  <a @click.prevent="listOpened = !listOpened" class="characteristics-list__more" href="#">{{ listOpened ? 'Скрыть' : 'Показать все'}}</a>
 </template>
 
 <script>
@@ -47,7 +47,18 @@ export default {
               value: "30",
           },
         ],
+        listOpened: false,
     };
+  },
+
+   methods: {
+    openedList() {
+      if (this.listOpened) {
+          return this.items;
+      } else {
+        return this.items.slice(0, 5);
+      }
+    },
   },
 };
 </script>

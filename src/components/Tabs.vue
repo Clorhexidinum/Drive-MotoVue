@@ -6,11 +6,13 @@
         v-for="(tab, index) in tabs"
         :key="index"
         :class="{ activeTab: selectedTab === index }"
-        @click.prevent="click(index)"
+        @click.prevent="click({ index, tab })"
         >{{ tab }}</a
       >
     </div>
-    <slot />
+    <div class="tabs__content">
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -29,11 +31,11 @@ export default {
   },
 
   methods: {
-    click(index) {
+    click({ index, tab }) {
       this.selectedTab = index;
-      this.$emit('clicked', index);
+      this.$emit("clicked", { index, tab });
     },
-  }
+  },
 };
 </script>
 
@@ -53,6 +55,10 @@ export default {
     padding-bottom: 10px;
     cursor: pointer;
     white-space: nowrap;
+  }
+
+  &__content {
+    min-height: 445px;
   }
 }
 

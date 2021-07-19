@@ -8,14 +8,11 @@
 
 <script>
 import Tabs from './Tabs';
-// import ProductItem from './ProductItem';
-// import goods from '../goods.json';
 
 export default {
     name: 'TabsWithSLider',
     components: {
         Tabs,
-        // ProductItem,
     },
     props: {
         tabs: {

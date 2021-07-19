@@ -79,9 +79,14 @@
           <div class="rate-yo" data-rateyo-rating="4"></div>
         </a>
       </div>
-      <tabs :tabs="['характеристики', 'наличие']"
-        ><characteristics-list></characteristics-list
-      ></tabs>
+      <tabs :tabs="['характеристики', 'наличие']" @clicked="click">
+        <characteristics-list
+          v-if="activeContent === 'характеристики'"
+        ></characteristics-list>
+        <characteristics-list
+          v-if="activeContent === 'наличие'"
+        ></characteristics-list>
+      </tabs>
       <div class="product-card__btn product-card__btn-mobile">
         <button class="btn">купить</button>
       </div>
@@ -112,7 +117,16 @@ export default {
       },
       isFavotite: false,
       isСompare: false,
+      activeTab: 0,
+      activeContent: "характеристики",
     };
+  },
+
+  methods: {
+    click({ index, tab }) {
+      this.activeTab = index;
+      this.activeContent = tab;
+    },
   },
 
   computed: {
