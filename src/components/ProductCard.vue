@@ -1,14 +1,25 @@
 <template>
   <div class="product-card__inner">
     <div class="product-card__img-box">
-      <span v-if="item.availability > 0 && item.sale > 0" class="product-item__sale">sale</span>
+      <span
+        v-if="item.availability > 0 && item.sale > 0"
+        class="product-item__sale"
+        >sale</span
+      >
       <img
         class="product-card__img"
         :src="`images/content/${item.img}`"
         alt=""
       />
-      <p v-if="item.availability > 0 && item.sale > 0" class="product-card__price-old">{{ item.price.toLocaleString() }} ₽</p>
-      <p v-if="item.availability > 0" class="product-card__price-new">{{ item.sale > 0 ? newPrice : item.price.toLocaleString() }} ₽</p>
+      <p
+        v-if="item.availability > 0 && item.sale > 0"
+        class="product-card__price-old"
+      >
+        {{ item.price.toLocaleString() }} ₽
+      </p>
+      <p v-if="item.availability > 0" class="product-card__price-new">
+        {{ item.sale > 0 ? newPrice : item.price.toLocaleString() }} ₽
+      </p>
       <p v-if="item.availability == 0" class="product-card__notify-text">
         нет в наличии
       </p>
@@ -16,14 +27,9 @@
         >Сообщить о поступлении</a
       >
       <a class="product-card__link" href="#">Нашли дешевле? Снизим цену!</a>
-      <div class="product-card__btn product-card__btn-mobile">
-        <button>купить</button>
-      </div>
     </div>
     <div class="product-card__content">
-      <h1 class="product-card__title">
-        Гидроцикл {{ item.title}}
-      </h1>
+      <h1 class="product-card__title">Гидроцикл {{ item.title }}</h1>
       <p class="product-card__code">Код товара: {{ item.article }}</p>
       <div class="product-card__buttons">
         <button
@@ -73,13 +79,27 @@
           <div class="rate-yo" data-rateyo-rating="4"></div>
         </a>
       </div>
+      <tabs :tabs="['характеристики', 'наличие']"
+        ><characteristics-list></characteristics-list
+      ></tabs>
+      <div class="product-card__btn product-card__btn-mobile">
+        <button class="btn">купить</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import CharacteristicsList from "./CharacteristicsList.vue";
+import Tabs from "./Tabs.vue";
+
 export default {
   name: "ProductCard",
+  components: {
+    CharacteristicsList,
+    Tabs,
+  },
+
   data: function () {
     return {
       item: {
@@ -196,6 +216,10 @@ export default {
     margin-bottom: 22px;
   }
 
+  &__buttons {
+    margin-bottom: 15px;
+  }
+
   &__favorite,
   &__compare {
     background-color: transparent;
@@ -205,10 +229,10 @@ export default {
     cursor: pointer;
     padding: 0;
 
-    &:hover svg{
+    &:hover svg {
       fill: $active;
     }
-    
+
     & svg {
       fill: $main-text;
     }
@@ -233,32 +257,12 @@ export default {
     cursor: pointer;
   }
 
-  // &__tab {
-  //   font-size: $fs-bigger;
-  //   line-height: $lh-medium;
-  //   color: $main-text;
-  //   opacity: 0.6;
-  //   padding-bottom: 7px;
-  //   padding-right: 17px;
-  //   margin-bottom: 5px;
-  // }
-
-  // &__tab + &__tab {
-  //   padding-left: 17px;
-  // }
-
-  // &__tab.tab--active {
-  //   opacity: 1;
-  //   border-bottom: 2px solid $active;
-  //   @extend %sf-bold;
-  // }
-
-  // &__btn button {
-  //   font-size: $fs-smaller;
-  //   line-height: $lh-extra-small;
-  //   letter-spacing: 0.12em;
-  //   padding: 16px 56px;
-  // }
+  &__btn button {
+    font-size: $fs-smaller;
+    line-height: $lh-extra-small;
+    letter-spacing: 0.12em;
+    padding: 16px 56px;
+  }
 
   // &__btn-mobile {
   //   display: none;

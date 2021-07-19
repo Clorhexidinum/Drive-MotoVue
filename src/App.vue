@@ -93,8 +93,8 @@
       <div class="container">
         <div class="product-card__inner">
             <div class="tabs__wrapper product-card__tabs">
-              <tabs :tabs="['характеристики', 'наличие']"></tabs>
-              <div class="tabs__container">
+              
+              <!-- <div class="tabs__container">
                 <div
                   class="
                     tabs__content
@@ -113,11 +113,10 @@
                 >
                   content-2
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         <product-card></product-card>
-        <characteristics-list></characteristics-list>
       </div>
     </section>
 
@@ -729,7 +728,6 @@ import MainBanner from "./components/MainBanner.vue";
 import Breadcrumbs from "./components/Breadcrumbs.vue";
 import ProductItem from "./components/ProductItem.vue";
 import ProductCard from "./components/ProductCard.vue";
-import CharacteristicsList from "./components/CharacteristicsList.vue";
 import Pagination from "./components/Pagination.vue";
 import FooterForm from "./components/FooterForm.vue";
 import TopdropTitle from "./components/TopdropTitle.vue";
@@ -759,7 +757,6 @@ export default {
     Breadcrumbs,
     ProductItem,
     ProductCard,
-    CharacteristicsList,
     Pagination,
     FooterForm,
     FooterMenu,
