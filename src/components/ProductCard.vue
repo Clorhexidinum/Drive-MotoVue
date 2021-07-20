@@ -83,9 +83,9 @@
         <characteristics-list
           v-if="activeContent === 'характеристики'"
         ></characteristics-list>
-        <characteristics-list
+        <availability-box
           v-if="activeContent === 'наличие'"
-        ></characteristics-list>
+        ></availability-box>
       </tabs>
       <div class="product-card__btn product-card__btn-mobile">
         <button class="product-card__btn btn" :class="{ disable: item.availability < 1 }">купить</button>
@@ -96,12 +96,14 @@
 
 <script>
 import CharacteristicsList from "./CharacteristicsList.vue";
+import AvailabilityBox from "./components/AvailabilityBox.vue";
 import Tabs from "./Tabs.vue";
 
 export default {
   name: "ProductCard",
   components: {
     CharacteristicsList,
+    AvailabilityBox,
     Tabs,
   },
 
