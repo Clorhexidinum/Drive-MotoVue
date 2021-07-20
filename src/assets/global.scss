@@ -75,10 +75,16 @@ body {
   text-transform: uppercase;
 }
 
+.disable {
+  background-color: $additional;
+  cursor: default;
+}
+
 .product-title {
   @extend %barlow-bold;
   font-size: $fs-big;
   line-height: $lh-big;
   margin-bottom: 25px;
 }
+
 

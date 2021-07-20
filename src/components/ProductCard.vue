@@ -88,7 +88,7 @@
         ></characteristics-list>
       </tabs>
       <div class="product-card__btn product-card__btn-mobile">
-        <button class="btn">купить</button>
+        <button class="product-card__btn btn" :class="{ disable: item.availability < 1 }">купить</button>
       </div>
     </div>
   </div>
@@ -113,7 +113,7 @@ export default {
         img: "gidrotsikl-1.png",
         price: 1100475,
         sale: 10,
-        availability: 1,
+        availability: 0,
       },
       isFavotite: false,
       isСompare: false,
@@ -271,7 +271,7 @@ export default {
     cursor: pointer;
   }
 
-  &__btn button {
+  &__btn {
     font-size: $fs-smaller;
     line-height: $lh-extra-small;
     letter-spacing: 0.12em;

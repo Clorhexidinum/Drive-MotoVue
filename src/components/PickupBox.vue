@@ -7,8 +7,8 @@
       <div class="pickup__num">Количество</div>
       <div class="pickup__btn btn"></div>
     </li>
-    <li class="pickup__item">
-      <div class="pickup__address">{{ address }}</div>
+    <li v-for="item in items" class="pickup__item" :key="item">
+      <div class="pickup__address" v-html="item.address"></div>
       <div class="pickup__workhours">
         <div class="pickup__workhours-columns">
           <span>пн-сб: </span><span>08:00-19:00</span>
@@ -17,10 +17,10 @@
           <span>вс: </span><span>09:00-17:00</span>
         </div>
       </div>
-      <div class="pickup__avialable">{{ avialable ? 'В наличии' : 'Нет в наличии' }}</div>
-      <div class="pickup__num">{{ avialable }}</div>
+      <div class="pickup__avialable">{{ item.avialable ? 'В наличии' : 'Нет в наличии' }}</div>
+      <div class="pickup__num">{{ item.avialable }}</div>
       <div class="pickup__btn btn">
-        <button class="pickup__button btn" type="submit">купить</button>
+        <button :class="item.avialable ? 'btn' : 'disable'" class="pickup__button btn" type="submit">купить</button>
       </div>
     </li>
   </ul>

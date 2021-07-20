@@ -42,7 +42,6 @@ export default {
 <style lang="scss">
 .tabs {
   &__list {
-    margin-bottom: 25px;
     display: flex;
     overflow-x: auto;
   }
@@ -55,10 +54,6 @@ export default {
     padding-bottom: 10px;
     cursor: pointer;
     white-space: nowrap;
-  }
-
-  &__content {
-    min-height: 445px;
   }
 }
 

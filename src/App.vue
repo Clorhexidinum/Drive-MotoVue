@@ -615,50 +615,19 @@
     <section class="card">
       <div class="container">
         <div class="tabs__wrapper">
-          <!--Тут был productTabs-->
+          <div class="tabs__box">
+            <tabs :tabs="[ 'О товаре', 'Характеристики', 'Отзывы', 'Самовывоз', 'Доставка', 'Сервис', 'Гарантия',]"></tabs>
+          </div>
+          
         </div>
         <div class="tabs__container">
-          <div class="tabs__content card__content" id="prod-tab-1">
-            О товаре
-          </div>
-          <div class="tabs__content card__content" id="prod-tab-2">
-            Характеристики
-          </div>
-          <div class="tabs__content card__content" id="prod-tab-3">Отзывы</div>
-          <div
-            class="tabs__content tabs__content--active card__content"
-            id="prod-tab-4"
-          >
-            <form action="#">
-              <div class="card__top-line">
-                <label class="card__label-search"
-                  >Магазин
-                  <input class="card__input-search" type="text" />
-                </label>
-                <label class="card__label-pickup">
-                  <input class="filter-style" type="radio" name="pickup" />
-                  Забрать сегодня
-                </label>
-                <label class="card__label-pickup">
-                  <input
-                    class="filter-style"
-                    type="radio"
-                    name="pickup"
-                    checked
-                  />
-                  Забрать в течение недели
-                </label>
-              </div>
-            </form>
-            <pickup-box></pickup-box>
-          </div>
-          <div class="tabs__content card__content" id="prod-tab-5">
-            Доставка
-          </div>
-          <div class="tabs__content card__content" id="prod-tab-6">Cервис</div>
-          <div class="tabs__content card__content" id="prod-tab-7">
-            Гарантия
-          </div>
+          
+          
+            <div>
+              <pickup-form></pickup-form>
+              <pickup-box></pickup-box>
+            </div>
+            
         </div>
       </div>
     </section>
@@ -666,7 +635,7 @@
     <section class="products page-section">
       <div class="container">
         <div class="products__inner">
-          <tabs :tabs="[ 'О товаре', 'Характеристики', 'Отзывы', 'Самовывоз', 'Доставка', 'Сервис', 'Гарантия',]"></tabs>
+          <tabs-with-slider :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]"><product-item v-bind="good" v-for="(good, idx) in sortGoods('инструменты')" :key="idx"></product-item></tabs-with-slider>
         </div>
       </div>
     </section>
@@ -723,9 +692,11 @@ import SearchTabs from "./components/SearchTabs.vue";
 // SearchTabs
 // SearchTabsContent
 import CategoriesWithImage from "./components/CategoriesWithImage.vue";
+import PickupForm from "./components/PickupForm.vue";
 import MoreBtn from "./components/MoreBtn.vue";
 import MainBanner from "./components/MainBanner.vue";
 import Breadcrumbs from "./components/Breadcrumbs.vue";
+import PickupBox from "./components/PickupBox.vue";
 import ProductItem from "./components/ProductItem.vue";
 import ProductCard from "./components/ProductCard.vue";
 import Pagination from "./components/Pagination.vue";
@@ -765,6 +736,8 @@ export default {
     PolicyBox,
     Tabs,
     TabsWithSlider,
+    PickupBox,
+    PickupForm,
   },
   data: function () {
     return {
@@ -821,6 +794,18 @@ export default {
     display: flex;
     justify-content: space-between;
   }
+}
+
+.tabs__wrapper {
+    margin-bottom: 50px;
+}
+
+.tabs__box {
+    background: #F0F0F4;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 22px 0 17px;
 }
 
 .footer {
