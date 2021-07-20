@@ -635,7 +635,7 @@
     <section class="products page-section">
       <div class="container">
         <div class="products__inner">
-          <tabs-with-slider :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]"><product-item v-bind="good" v-for="(good, idx) in sortGoods('инструменты')" :key="idx"></product-item></tabs-with-slider>
+            <tabs-with-slider :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]"><product-item v-bind="good" v-for="(good, idx) in sortGoods('инструменты')" :key="idx"></product-item></tabs-with-slider>
         </div>
       </div>
     </section>
