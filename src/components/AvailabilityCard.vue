@@ -52,7 +52,7 @@ export default {
     align-items: baseline;
     font-size: $fs-small;
     line-height: $lh-small;
-    color: rgba(47, 48, 53, 0.7);
+    color: rgba(47, 48, 53, 1);
   }
 
   &__item-title {
