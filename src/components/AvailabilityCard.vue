@@ -46,7 +46,7 @@ export default {
 .availability-card
  {
   &__item {
-    padding: 20px 0;
+    padding: 15px 0 6px;;
     border-bottom: 1px solid rgba(47, 48, 51, 0.1);
     display: flex;
     align-items: baseline;

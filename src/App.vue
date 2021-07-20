@@ -616,14 +616,14 @@
       <div class="container">
         <div class="tabs__wrapper">
           <div class="tabs__box">
-            <tabs :tabs="[ 'О товаре', 'Характеристики', 'Отзывы', 'Самовывоз', 'Доставка', 'Сервис', 'Гарантия',]"></tabs>
+            <tabs :tabs="[ 'О товаре', 'Характеристики', 'Отзывы', 'Самовывоз', 'Доставка', 'Сервис', 'Гарантия',]" @clicked="click"></tabs>
           </div>
           
         </div>
         <div class="tabs__container">
           
           
-            <div>
+            <div v-if="activeProductTab === 'Самовывоз'">
               <pickup-form></pickup-form>
               <pickup-box></pickup-box>
             </div>
@@ -744,6 +744,7 @@ export default {
     return {
       menuActive: false,
       goods,
+      activeProductTab: 'Самовывоз',
     };
   },
 
@@ -765,7 +766,11 @@ export default {
 
     sortGoods(cat) {
         return goods.filter(item => item.category == cat);
-    }
+    },
+
+    click({ tab }) {
+      this.activeProductTab = tab;
+    },
   },
 };
 </script>
