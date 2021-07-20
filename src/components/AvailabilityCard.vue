@@ -1,13 +1,13 @@
 <template>
-  <ul class="availability-box__list">
-    <li class="availability-box__item availability-box__item-title">
-      <div class="availability-box__address">Адрес</div>
-      <div class="availability-box__avialable">Доступно</div>
-      <div class="availability-box__btn btn"></div>
+  <ul class="availability-card__list">
+    <li class="availability-card__item availability-card__item-title">
+      <div class="availability-card__address">Адрес</div>
+      <div class="availability-card__avialable">Доступно</div>
+      <div class="availability-card__btn btn"></div>
     </li>
-    <li v-for="item in items" class="availability-box__item" :key="item">
-      <div class="availability-box__address" v-html="item.address"></div>
-      <div class="availability-box__avialable">
+    <li v-for="item in items" class="availability-card__item" :key="item">
+      <div class="availability-card__address" v-html="item.address"></div>
+      <div class="availability-card__avialable">
         {{ item.avialable ? "В наличии" : "Нет в наличии" }}
       </div>
     </li>
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: "AvailabilityBox",
+  name: "AvailabilityCard",
   data: function () {
     return {
       items: [
@@ -43,7 +43,8 @@ export default {
 </script>
 
 <style lang="scss">
-.availability-box {
+.availability-card
+ {
   &__item {
     padding: 20px 0;
     border-bottom: 1px solid rgba(47, 48, 51, 0.1);

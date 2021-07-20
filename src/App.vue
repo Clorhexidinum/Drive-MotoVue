@@ -692,11 +692,12 @@ import SearchTabs from "./components/SearchTabs.vue";
 // SearchTabs
 // SearchTabsContent
 import CategoriesWithImage from "./components/CategoriesWithImage.vue";
-import PickupForm from "./components/PickupForm.vue";
+
 import MoreBtn from "./components/MoreBtn.vue";
 import MainBanner from "./components/MainBanner.vue";
 import Breadcrumbs from "./components/Breadcrumbs.vue";
 import PickupBox from "./components/PickupBox.vue";
+import PickupForm from "./components/PickupForm.vue";
 import ProductItem from "./components/ProductItem.vue";
 import ProductCard from "./components/ProductCard.vue";
 import Pagination from "./components/Pagination.vue";
