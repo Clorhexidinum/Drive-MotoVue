@@ -173,9 +173,7 @@
                         >
                           Наличие
                         </p>
-                        <div class="aside-filter__content">
-                          
-                        </div>
+                        <filter-input :type="'checkbox'" :name="'availability'" :labels="['В наличии','Под заказ']"></filter-input>
                       </li>
 
                       <li class="aside-filter__item-drop">
@@ -188,43 +186,7 @@
                         >
                           Новинки
                         </p>
-                        <div
-                          class="
-                            aside-filter__content aside-filter__content-radio
-                          "
-                        >
-                          <div class="aside-filter__content-box">
-                            <label class="aside-filter__content-label">
-                              <input
-                                class="filter__radio visually-hidden"
-                                name="radio"
-                                type="radio"
-                                checked
-                              />
-                              <span>Все</span>
-                            </label>
-                          </div>
-                          <div class="aside-filter__content-box">
-                            <label class="aside-filter__content-label">
-                              <input
-                                class="filter__radio visually-hidden"
-                                name="radio"
-                                type="radio"
-                              />
-                              <span>Новинки</span>
-                            </label>
-                          </div>
-                          <div class="aside-filter__content-box">
-                            <label class="aside-filter__content-label">
-                              <input
-                                class="filter__radio visually-hidden"
-                                name="radio"
-                                type="radio"
-                              />
-                              <span>Акции</span>
-                            </label>
-                          </div>
-                        </div>
+                        <filter-input :type="'radio'" :name="'radio'" :labels="['Все','Новинки', 'Акции']"></filter-input>
                       </li>
 
                       <li class="aside-filter__item-drop">
@@ -316,45 +278,7 @@
                         >
                           Бренд
                         </p>
-                        <div class="aside-filter__content">
-                          <div class="aside-filter__content-box">
-                            <label class="aside-filter__content-label">
-                              <input
-                                class="filter__checkbox visually-hidden"
-                                name="brand"
-                                type="checkbox"
-                                checked
-                              />
-                              <span>BRP</span>
-                            </label>
-                          </div>
-                          <div class="aside-filter__content-box">
-                            <label class="aside-filter__content-label">
-                              <input
-                                class="filter__checkbox visually-hidden"
-                                name="brand"
-                                type="checkbox"
-                                checked
-                              />
-                              <span>Spark 2</span>
-                            </label>
-                          </div>
-                          <div class="aside-filter__content-box">
-                            <label class="aside-filter__content-label">
-                              <input
-                                class="filter__checkbox visually-hidden"
-                                name="brand"
-                                type="checkbox"
-                              />
-                              <span>Spark 3 </span>
-                            </label>
-                          </div>
-                          <div class="aside-filter__more">
-                            <button class="aside-filter__more-btn" href="#">
-                              Показать еще
-                            </button>
-                          </div>
-                        </div>
+                        <filter-input :type="'checkbox'" :name="'model'" :labels="['Sea-doo Spark 2','SeaDoo Spark 90', 'SeaDoo GTI 155', 'SeaDoo GTR 230']"></filter-input>
                       </li>
 
                       <li class="aside-filter__item-drop">
@@ -365,7 +289,7 @@
                             aside-filter__item-title-drop--active
                           "
                         >
-                          Бренд
+                          Модель
                         </p>
                         <div class="aside-filter__content">
                           <input
@@ -373,48 +297,7 @@
                             type="text"
                             placeholder="Введите модель"
                           />
-                          <div class="aside-filter__content-box">
-                            <label class="aside-filter__content-label">
-                              <input
-                                class="filter__checkbox visually-hidden"
-                                name="model"
-                                type="checkbox"
-                                checked
-                              />
-                              <span>Sea-doo Spark 2</span>
-                            </label>
-                          </div>
-                          <div class="aside-filter__content-box">
-                            <label class="aside-filter__content-label">
-                              <input
-                                class="filter__checkbox visually-hidden"
-                                name="model"
-                                type="checkbox"
-                                checked
-                              />
-                              <span>SeaDoo Spark 90</span>
-                            </label>
-                          </div>
-                          <div class="aside-filter__content-box">
-                            <label class="aside-filter__content-label">
-                              <input
-                                class="filter__checkbox visually-hidden"
-                                name="model"
-                                type="checkbox"
-                              />
-                              <span>SeaDoo GTI 155</span>
-                            </label>
-                          </div>
-                          <div class="aside-filter__content-box">
-                            <label class="aside-filter__content-label">
-                              <input
-                                class="filter__checkbox visually-hidden"
-                                name="model"
-                                type="checkbox"
-                              />
-                              <span>SeaDoo GTR 230</span>
-                            </label>
-                          </div>
+                          <filter-input :type="'checkbox'" :name="'model'" :labels="['Sea-doo Spark 2','SeaDoo Spark 90', 'SeaDoo GTI 155', 'SeaDoo GTR 230']"></filter-input>
                           <div class="aside-filter__more">
                             <button class="aside-filter__more-btn" href="#">
                               Показать еще
@@ -489,55 +372,7 @@
                         >
                           Страны
                         </p>
-                        <div class="aside-filter__content">
-                          <div class="aside-filter__content-box">
-                            <label class="aside-filter__content-label">
-                              <input
-                                class="filter__checkbox visually-hidden"
-                                name="country"
-                                type="checkbox"
-                                checked
-                              />
-                              <span>Россия</span>
-                            </label>
-                          </div>
-                          <div class="aside-filter__content-box">
-                            <label class="aside-filter__content-label">
-                              <input
-                                class="filter__checkbox visually-hidden"
-                                name="country"
-                                type="checkbox"
-                                checked
-                              />
-                              <span>Германия</span>
-                            </label>
-                          </div>
-                          <div class="aside-filter__content-box">
-                            <label class="aside-filter__content-label">
-                              <input
-                                class="filter__checkbox visually-hidden"
-                                name="country"
-                                type="checkbox"
-                              />
-                              <span>Китай</span>
-                            </label>
-                          </div>
-                          <div class="aside-filter__content-box">
-                            <label class="aside-filter__content-label">
-                              <input
-                                class="filter__checkbox visually-hidden"
-                                name="country"
-                                type="checkbox"
-                              />
-                              <span>CША</span>
-                            </label>
-                          </div>
-                          <div class="aside-filter__more">
-                            <button class="aside-filter__more-btn" href="#">
-                              Показать еще
-                            </button>
-                          </div>
-                        </div>
+                        <filter-input :type="'checkbox'" :name="'model'" :labels="['Россия','Германия', 'Китай', 'CША']"></filter-input>
                       </li>
 
                       <li
@@ -639,7 +474,6 @@
       </div>
     </section>
   </main>
-  <filter-input :type="'checkbox'" :name="'availability'" :labels="['В наличии','Под заказ']"></filter-input>
 
   <footer class="footer">
     <div class="container">
