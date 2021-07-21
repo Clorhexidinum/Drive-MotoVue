@@ -79,7 +79,7 @@
           <div class="rate-yo" data-rateyo-rating="4"></div>
         </a>
       </div>
-      <tabs :tabs="['характеристики', 'наличие']" @clicked="click">
+      <tabs :tabs="['характеристики', 'наличие']" @clickFilterTab="click">
         <characteristics-list
           v-if="activeContent === 'характеристики'"
         ></characteristics-list>

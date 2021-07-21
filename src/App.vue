@@ -127,12 +127,7 @@
           <asside class="catalog__inner-asside aside-filter">
             <div class="tabs__wrapper tabs__wrapper-noscroll">
               <div class="tabs aside-filter__tabs">
-                <a class="aside-filter__tab tab tab--active" href="#as-tab-1"
-                  ><span>Параметры</span></a
-                >
-                <a class="aside-filter__tab tab" href="#as-tab-2"
-                  ><span>по марке</span></a
-                >
+                <tabs :tabs="[ 'параметры', 'по марке']"><!--пихаем слайдер--></tabs>
               </div>
             </div>
             <div class="tabs__container">
@@ -724,6 +719,7 @@ export default {
       menuActive: false,
       goods,
       activeProductTab: 'Самовывоз',
+      activeFilterTab: 'параметры',
       activeFilters: ['запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',],
     };
   },
@@ -750,6 +746,10 @@ export default {
 
     click({ tab }) {
       this.activeProductTab = tab;
+    },
+
+    clickFilterTab({ tab }) {
+      this.activeFilterTab = tab;
     },
 
     clickedActiveFilter(idx) {
