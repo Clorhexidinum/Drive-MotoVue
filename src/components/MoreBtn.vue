@@ -1,17 +1,12 @@
 <template>
     <div class="more-btn">
-        <a class="more-btn__link" href="">Показать еще</a>
+        <a class="more-btn__link btn" href="">Показать еще</a>
     </div>
 </template>
 
 <script>
     export default {
         name: "MoreBtn",
-        data: function() {
-return {
-            сategories: ["Популярные товары", "С этим товаром покупают"],
-        };
-},
     };
 </script>
 

@@ -92,7 +92,8 @@
     <section class="catalog">
       <div class="container">
         <h2 class="catalog__title">Гидроциклы</h2>
-        <div class="catalog__filter">
+        <active-filter :activeFilter="activeFilters" @removeActiveFilter="clickedActiveFilter"></active-filter>
+        <!-- <div class="catalog__filter">
           <div class="catalog__filter-inner">
             <div class="catalog__filter-items mobile-overflow">
               <button>Полноприводные</button>
@@ -120,7 +121,7 @@
               <img src="images/line-btn.svg" alt="" />
             </button>
           </div>
-        </div>
+        </div> -->
         <div class="catalog__inner">
           <div class="aside-filter__btn">Фильтр</div>
           <asside class="catalog__inner-asside aside-filter">
@@ -585,27 +586,6 @@
       <div class="container">
         <div class="product-card__inner">
             <div class="tabs__wrapper product-card__tabs">
-              
-              <!-- <div class="tabs__container">
-                <div
-                  class="
-                    tabs__content
-                    product-card__tab-content
-                    tabs__content--active
-                  "
-                  id="prc-tab-1"
-                >
-                  <div>
-                    <button class="product-card__btn btn">купить</button>
-                  </div>
-                </div>
-                <div
-                  class="tabs__content product-card__tab-content"
-                  id="prc-tab-2"
-                >
-                  content-2
-                </div>
-              </div> -->
             </div>
           </div>
         <product-card></product-card>
@@ -689,10 +669,7 @@ import MobileMenuBtn from "./components/MobileMenuBtn.vue";
 // BannerSlider
 import SaleItem from "./components/SaleItem.vue";
 import SearchTabs from "./components/SearchTabs.vue";
-// SearchTabs
-// SearchTabsContent
 import CategoriesWithImage from "./components/CategoriesWithImage.vue";
-
 import MoreBtn from "./components/MoreBtn.vue";
 import MainBanner from "./components/MainBanner.vue";
 import Breadcrumbs from "./components/Breadcrumbs.vue";
@@ -708,6 +685,7 @@ import FooterSocial from "./components/FooterSocial.vue";
 import PolicyBox from "./components/PolicyBox.vue";
 import Tabs from "./components/Tabs.vue";
 import TabsWithSlider from "./components/TabsWithSlider.vue";
+import ActiveFilter from "./components/ActiveFilter.vue";
 import goods from './goods.json';
 
 export default {
@@ -739,12 +717,14 @@ export default {
     TabsWithSlider,
     PickupBox,
     PickupForm,
+    ActiveFilter,
   },
   data: function () {
     return {
       menuActive: false,
       goods,
       activeProductTab: 'Самовывоз',
+      activeFilters: ['запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',],
     };
   },
 
@@ -771,6 +751,10 @@ export default {
     click({ tab }) {
       this.activeProductTab = tab;
     },
+
+    clickedActiveFilter(idx) {
+      this.activeFilters.splice(idx, 1);
+    }
   },
 };
 </script>
@@ -807,11 +791,13 @@ export default {
 }
 
 .tabs__box {
+    padding: 17px 0;
     background: #F0F0F4;
-    display: flex;
+
+  & > .tabs > .tabs__list{
+    margin: 0;
     justify-content: space-around;
-    align-items: center;
-    padding: 22px 0 17px;
+  }
 }
 
 .footer {

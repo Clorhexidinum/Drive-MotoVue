@@ -283,5 +283,9 @@ export default {
   // &__btn-mobile {
   //   display: none;
   // }
+
+  & > .tabs {
+    min-height: 375px;
+  }
 }
 </style>

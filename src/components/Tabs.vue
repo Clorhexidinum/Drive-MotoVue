@@ -44,6 +44,7 @@ export default {
   &__list {
     display: flex;
     overflow-x: auto;
+    margin-bottom: 25px;
   }
 
   &__item + &__item {
