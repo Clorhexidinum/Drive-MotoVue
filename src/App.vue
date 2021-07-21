@@ -127,18 +127,8 @@
           <asside class="catalog__inner-asside aside-filter">
             <div class="tabs__wrapper tabs__wrapper-noscroll">
               <div class="tabs aside-filter__tabs">
-                <tabs :tabs="[ 'параметры', 'по марке']"><!--пихаем слайдер--></tabs>
-              </div>
-            </div>
-            <div class="tabs__container">
-              <div
-                class="
-                  tabs__content tabs__content--active
-                  aside-filter__tabs-content
-                "
-                id="as-tab-1"
-              >
-                <form class="aside-filter__form">
+                <tabs :tabs="[ 'параметры', 'по марке']" @clicked="clickFilterTab">
+                  <form v-if="activeFilterTab === 'параметры'" class="aside-filter__form">
                   <ul class="aside-filter__list">
                     <li class="aside-filter__item-drop">
                       <p
@@ -550,12 +540,7 @@
                     </li>
                   </ul>
                 </form>
-              </div>
-              <div
-                class="tabs__content aside-filter__tabs-content"
-                id="as-tab-2"
-              >
-                по марке
+                </tabs>
               </div>
             </div>
           </asside>
