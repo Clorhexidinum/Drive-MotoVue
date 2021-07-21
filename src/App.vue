@@ -639,6 +639,7 @@
       </div>
     </section>
   </main>
+  <filter-input :type="'checkbox'" :name="'availability'" :labels="['В наличии','Под заказ']"></filter-input>
 
   <footer class="footer">
     <div class="container">
@@ -705,6 +706,7 @@ import PolicyBox from "./components/PolicyBox.vue";
 import Tabs from "./components/Tabs.vue";
 import TabsWithSlider from "./components/TabsWithSlider.vue";
 import ActiveFilter from "./components/ActiveFilter.vue";
+import FilterInput from "./components/FilterInput.vue";
 import goods from "./goods.json";
 
 export default {
@@ -737,6 +739,7 @@ export default {
     PickupBox,
     PickupForm,
     ActiveFilter,
+    FilterInput,
   },
   data: function () {
     return {
