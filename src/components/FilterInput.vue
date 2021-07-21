@@ -1,15 +1,18 @@
 <template>
   <div class="filter-input">
-    <div v-for="label in labels" :key="label" class="filter-input__item">
+    <div v-for="label in showMore()" :key="label" class="filter-input__item">
       <label class="filter-input__label">
         <input
           class="filter-input__input visually-hidden"
-          :class="type === 'checkbox' ? 'filter-input__checkbox' : '' "
+          :class="type === 'checkbox' ? 'filter-input__checkbox' : ''"
           :name="name"
           :type="type"
         />
         <span>{{ label }}</span>
       </label>
+    </div>
+    <div v-if="labels.length > 4" class="filter-input__more">
+      <button @click.prevent="listOpened = !listOpened" class="filter-input__more-btn" href="#">{{ listOpened ? 'Показать все' : 'Скрыть' }}</button>
     </div>
   </div>
 </template>
@@ -18,12 +21,24 @@
 export default {
   name: "Filterinput",
   data: function () {
-    return {};
+    return {
+      listOpened: false,
+    };
   },
   props: {
     labels: Array,
     name: String,
     type: String,
+  },
+
+  methods: {
+    showMore() {
+      if (this.listOpened) {
+          return this.labels;
+      } else {
+        return this.labels.slice(1, 5);
+      }
+    },
   },
 };
 </script>
@@ -104,6 +119,21 @@ export default {
 
   &__label > input:disabled + span::before {
     background-color: $base;
+  }
+
+  &__more {
+    width: 100%;
+  }
+
+  &__more-btn {
+    font-size: $fs-smaller;
+    line-height: $lh-extra-small;
+    color: $active;
+    border: none;
+    border-bottom: 1px solid $active;
+    background-color: $transparent;
+    cursor: pointer;
+    padding: 0;
   }
 }
 </style>

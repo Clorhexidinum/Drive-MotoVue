@@ -33,81 +33,7 @@
     margin: 40px 0;
   }
 
-  &__content-label > span::before {
-    content: "";
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    flex-shrink: 0;
-    flex-grow: 0;
-    border: 1px solid $additional;
-    border-radius: 0.25em;
-    margin-right: 0.5em;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 50% 50%;
-  }
-
-  &__content-label > .btn-checked__txt::before {
-    width: 4em;
-    height: 1.5em;
-    position: absolute;
-    z-index: -1;
-    top: -3px;
-    left: -4px;
-  }
-
-  &__content-label > input:not(:disabled):not(:checked) + span:hover::before {
-    border-color: $active;
-  }
-
-  &__content-label > input:not(:disabled):active + span::before {
-    background-color: $active;
-    border-color: $active;
-  }
-
-  &__content-label > input:not(:disabled):active + span::before {
-    background-color: $active;
-    border-color: $active;
-  }
-
-  &__content-label > input:focus:not(:checked) + span::before {
-    border-color: $active;
-  }
-
-  &__content-label > input:checked + span::before {
-    border-color: $active;
-    background-color: $active;
-  }
-
-  &__content-label > input:checked + .btn-checked__txt {
-    color: $base;
-  }
-
-  &__content-label > .filter__checkbox:checked + span::before {
-    background-image: url("../images/checked-icon.svg");
-    background-size: contain;
-  }
-
-  &__content-label > input:disabled + span::before {
-    background-color: $base;
-  }
-
-  &__content.aside-filter__content-radio {
-    flex-wrap: nowrap;
-  }
-
-  &__content-box {
-    width: 50%;
-    margin-bottom: 10px;
-  }
-
-  &__content-label {
-    font-size: $fs-smaller;
-    line-height: $lh-extra-small;
-    cursor: pointer;
-    position: relative;
-  }
+  
 
   &__item-list {
     margin: 46px 0 40px;
@@ -126,21 +52,6 @@
     line-height: $lh-small;
     padding-bottom: 14px;
     padding-left: 26px;
-  }
-
-  &__more {
-    width: 100%;
-  }
-
-  &__more-btn {
-    font-size: $fs-smaller;
-    line-height: $lh-extra-small;
-    color: $active;
-    border: none;
-    border-bottom: 1px solid $active;
-    background-color: $transparent;
-    cursor: pointer;
-    padding: 0;
   }
 
   &__search {

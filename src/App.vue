@@ -278,7 +278,7 @@
                         >
                           Бренд
                         </p>
-                        <filter-input :type="'checkbox'" :name="'model'" :labels="['Sea-doo Spark 2','SeaDoo Spark 90', 'SeaDoo GTI 155', 'SeaDoo GTR 230']"></filter-input>
+                        <filter-input :type="'checkbox'" :name="'model'" :labels="['BRP','Spark 2', 'Spark 3']"></filter-input>
                       </li>
 
                       <li class="aside-filter__item-drop">
@@ -297,7 +297,7 @@
                             type="text"
                             placeholder="Введите модель"
                           />
-                          <filter-input :type="'checkbox'" :name="'model'" :labels="['Sea-doo Spark 2','SeaDoo Spark 90', 'SeaDoo GTI 155', 'SeaDoo GTR 230']"></filter-input>
+                          <filter-input :type="'checkbox'" :name="'model'" :labels="['Sea-doo Spark 2','SeaDoo Spark 90', 'SeaDoo GTI 155', 'SeaDoo GTR 230', 'SeaDoo GTI 155', 'SeaDoo GTR 230']"></filter-input>
                           <div class="aside-filter__more">
                             <button class="aside-filter__more-btn" href="#">
                               Показать еще
