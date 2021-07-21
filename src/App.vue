@@ -59,7 +59,17 @@
       <div class="container">
         <div class="products__inner">
           <h4 class="product-title">Популярные товары</h4>
-          <tabs :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]"><!--пихаем слайдер--></tabs>
+          <tabs
+            :tabs="[
+              'запчасти',
+              'моторы',
+              'шины',
+              'электроника',
+              'инструменты',
+              'аксесуары',
+            ]"
+            ><!--пихаем слайдер--></tabs
+          >
           <more-btn></more-btn>
         </div>
       </div>
@@ -76,13 +86,27 @@
         <div class="products__inner">
           <h4 class="product-title">С этим товаром покупают</h4>
           <!-- <tabs :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]"></tabs> -->
-          <tabs-with-slider :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]"><product-item v-bind="good" v-for="(good, idx) in sortGoods('инструменты')" :key="idx"></product-item></tabs-with-slider>
+          <tabs-with-slider
+            :tabs="[
+              'запчасти',
+              'моторы',
+              'шины',
+              'электроника',
+              'инструменты',
+              'аксесуары',
+            ]"
+            ><product-item
+              v-bind="good"
+              v-for="(good, idx) in sortGoods('инструменты')"
+              :key="idx"
+            ></product-item
+          ></tabs-with-slider>
         </div>
       </div>
     </section>
   </main>
 
-   <main>
+  <main>
     <div class="breadcrumbs">
       <div class="container">
         <breadcrumbs></breadcrumbs>
@@ -92,7 +116,10 @@
     <section class="catalog">
       <div class="container">
         <h2 class="catalog__title">Гидроциклы</h2>
-        <active-filter :activeFilter="activeFilters" @removeActiveFilter="clickedActiveFilter"></active-filter>
+        <active-filter
+          :activeFilter="activeFilters"
+          @removeActiveFilter="clickedActiveFilter"
+        ></active-filter>
         <!-- <div class="catalog__filter">
           <div class="catalog__filter-inner">
             <div class="catalog__filter-items mobile-overflow">
@@ -123,423 +150,415 @@
           </div>
         </div> -->
         <div class="catalog__inner">
-          <div class="aside-filter__btn">Фильтр</div>
+          <div class="filter-btn">Фильтр</div>
           <asside class="catalog__inner-asside aside-filter">
             <div class="tabs__wrapper tabs__wrapper-noscroll">
               <div class="tabs aside-filter__tabs">
-                <tabs :tabs="[ 'параметры', 'по марке']" @clicked="clickFilterTab">
-                  <form v-if="activeFilterTab === 'параметры'" class="aside-filter__form">
-                  <ul class="aside-filter__list">
-                    <li class="aside-filter__item-drop">
-                      <p
-                        class="
-                          aside-filter__item-title
-                          aside-filter__item-title-drop
-                          aside-filter__item-title-drop--active
-                        "
-                      >
-                        Наличие
-                      </p>
-                      <div class="aside-filter__content">
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__checkbox visually-hidden"
-                              name="availability"
-                              type="checkbox"
-                            />
-                            <span>В наличии</span>
-                          </label>
-                        </div>
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__checkbox visually-hidden"
-                              name="availability"
-                              type="checkbox"
-                            />
-                            <span>Под заказ</span>
-                          </label>
-                        </div>
-                      </div>
-                    </li>
-
-                    <li class="aside-filter__item-drop">
-                      <p
-                        class="
-                          aside-filter__item-title
-                          aside-filter__item-title-drop
-                          aside-filter__item-title-drop--active
-                        "
-                      >
-                        Новинки
-                      </p>
-                      <div
-                        class="
-                          aside-filter__content aside-filter__content-radio
-                        "
-                      >
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__radio visually-hidden"
-                              name="radio"
-                              type="radio"
-                              checked
-                            />
-                            <span>Все</span>
-                          </label>
-                        </div>
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__radio visually-hidden"
-                              name="radio"
-                              type="radio"
-                            />
-                            <span>Новинки</span>
-                          </label>
-                        </div>
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__radio visually-hidden"
-                              name="radio"
-                              type="radio"
-                            />
-                            <span>Акции</span>
-                          </label>
-                        </div>
-                      </div>
-                    </li>
-
-                    <li class="aside-filter__item-drop">
-                      <p
-                        class="
-                          aside-filter__item-title
-                          aside-filter__item-title-drop
-                          aside-filter__item-title-drop--active
-                        "
-                      >
-                        Цена
-                      </p>
-                      <div class="aside-filter__content">
-                        <div id="id66" class="range">
-                          <input
-                            id="id66i1"
-                            class="range__inpt range__inpt--left"
-                            name="price"
-                            type="number"
-                            min="0"
-                            max="500000"
-                            value="100000"
-                          />
-                          <input
-                            id="id66i2"
-                            class="range__inpt range__inpt--right"
-                            name="price"
-                            type="number"
-                            min="0"
-                            max="500000"
-                            value="400000"
-                          />
-                          <div id="id66b" class="range__between"></div>
-                          <a id="id661" class="range__button"></a>
-                          <a id="id662" class="range__button"></a>
-                        </div>
-                      </div>
-                    </li>
-
-                    <li class="aside-filter__item-list">
-                      <div class="aside-filter__item-box">
-                        <p class="aside-filter__item-list-title">
-                          Мощность, л.с.
-                        </p>
-                        <select class="aside-filter__select" name="power">
-                          <option value="90">90</option>
-                          <option value="130">130</option>
-                          <option value="154">154</option>
-                          <option value="230">230</option>
-                          <option value="300">300</option>
-                        </select>
-                      </div>
-                      <div class="aside-filter__item-box">
-                        <p class="aside-filter__item-list-title">
-                          Мощность двигателя, л.с.
-                        </p>
-                        <select
-                          class="aside-filter__select"
-                          name="engine_power"
+                <tabs
+                  :tabs="['параметры', 'по марке']"
+                  @clicked="clickFilterTab"
+                >
+                  <form
+                    v-if="activeFilterTab === 'параметры'"
+                    class="aside-filter__form"
+                  >
+                    <ul class="aside-filter__list">
+                      <li class="aside-filter__item-drop">
+                        <p
+                          class="
+                            aside-filter__item-title
+                            aside-filter__item-title-drop
+                            aside-filter__item-title-drop--active
+                          "
                         >
-                          <option value="90">90</option>
-                          <option value="130">130</option>
-                          <option value="154">154</option>
-                          <option value="230">230</option>
-                          <option value="300">300</option>
-                        </select>
-                      </div>
-                      <div class="aside-filter__item-box">
-                        <p class="aside-filter__item-list-title">
-                          Макс. скорость
+                          Наличие
                         </p>
-                        <select class="aside-filter__select" name="max_speed">
-                          <option value="90">90</option>
-                          <option value="130">130</option>
-                          <option value="154">154</option>
-                          <option value="230">230</option>
-                          <option value="300">300</option>
-                        </select>
-                      </div>
-                    </li>
+                        <div class="aside-filter__content">
+                          
+                        </div>
+                      </li>
 
-                    <li class="aside-filter__item-drop">
-                      <p
-                        class="
-                          aside-filter__item-title
-                          aside-filter__item-title-drop
-                          aside-filter__item-title-drop--active
-                        "
+                      <li class="aside-filter__item-drop">
+                        <p
+                          class="
+                            aside-filter__item-title
+                            aside-filter__item-title-drop
+                            aside-filter__item-title-drop--active
+                          "
+                        >
+                          Новинки
+                        </p>
+                        <div
+                          class="
+                            aside-filter__content aside-filter__content-radio
+                          "
+                        >
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__radio visually-hidden"
+                                name="radio"
+                                type="radio"
+                                checked
+                              />
+                              <span>Все</span>
+                            </label>
+                          </div>
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__radio visually-hidden"
+                                name="radio"
+                                type="radio"
+                              />
+                              <span>Новинки</span>
+                            </label>
+                          </div>
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__radio visually-hidden"
+                                name="radio"
+                                type="radio"
+                              />
+                              <span>Акции</span>
+                            </label>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="aside-filter__item-drop">
+                        <p
+                          class="
+                            aside-filter__item-title
+                            aside-filter__item-title-drop
+                            aside-filter__item-title-drop--active
+                          "
+                        >
+                          Цена
+                        </p>
+                        <div class="aside-filter__content">
+                          <div id="id66" class="range">
+                            <input
+                              id="id66i1"
+                              class="range__inpt range__inpt--left"
+                              name="price"
+                              type="number"
+                              min="0"
+                              max="500000"
+                              value="100000"
+                            />
+                            <input
+                              id="id66i2"
+                              class="range__inpt range__inpt--right"
+                              name="price"
+                              type="number"
+                              min="0"
+                              max="500000"
+                              value="400000"
+                            />
+                            <div id="id66b" class="range__between"></div>
+                            <a id="id661" class="range__button"></a>
+                            <a id="id662" class="range__button"></a>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="aside-filter__item-list">
+                        <div class="aside-filter__item-box">
+                          <p class="aside-filter__item-list-title">
+                            Мощность, л.с.
+                          </p>
+                          <select class="aside-filter__select" name="power">
+                            <option value="90">90</option>
+                            <option value="130">130</option>
+                            <option value="154">154</option>
+                            <option value="230">230</option>
+                            <option value="300">300</option>
+                          </select>
+                        </div>
+                        <div class="aside-filter__item-box">
+                          <p class="aside-filter__item-list-title">
+                            Мощность двигателя, л.с.
+                          </p>
+                          <select
+                            class="aside-filter__select"
+                            name="engine_power"
+                          >
+                            <option value="90">90</option>
+                            <option value="130">130</option>
+                            <option value="154">154</option>
+                            <option value="230">230</option>
+                            <option value="300">300</option>
+                          </select>
+                        </div>
+                        <div class="aside-filter__item-box">
+                          <p class="aside-filter__item-list-title">
+                            Макс. скорость
+                          </p>
+                          <select class="aside-filter__select" name="max_speed">
+                            <option value="90">90</option>
+                            <option value="130">130</option>
+                            <option value="154">154</option>
+                            <option value="230">230</option>
+                            <option value="300">300</option>
+                          </select>
+                        </div>
+                      </li>
+
+                      <li class="aside-filter__item-drop">
+                        <p
+                          class="
+                            aside-filter__item-title
+                            aside-filter__item-title-drop
+                            aside-filter__item-title-drop--active
+                          "
+                        >
+                          Бренд
+                        </p>
+                        <div class="aside-filter__content">
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__checkbox visually-hidden"
+                                name="brand"
+                                type="checkbox"
+                                checked
+                              />
+                              <span>BRP</span>
+                            </label>
+                          </div>
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__checkbox visually-hidden"
+                                name="brand"
+                                type="checkbox"
+                                checked
+                              />
+                              <span>Spark 2</span>
+                            </label>
+                          </div>
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__checkbox visually-hidden"
+                                name="brand"
+                                type="checkbox"
+                              />
+                              <span>Spark 3 </span>
+                            </label>
+                          </div>
+                          <div class="aside-filter__more">
+                            <button class="aside-filter__more-btn" href="#">
+                              Показать еще
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="aside-filter__item-drop">
+                        <p
+                          class="
+                            aside-filter__item-title
+                            aside-filter__item-title-drop
+                            aside-filter__item-title-drop--active
+                          "
+                        >
+                          Бренд
+                        </p>
+                        <div class="aside-filter__content">
+                          <input
+                            class="aside-filter__search"
+                            type="text"
+                            placeholder="Введите модель"
+                          />
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__checkbox visually-hidden"
+                                name="model"
+                                type="checkbox"
+                                checked
+                              />
+                              <span>Sea-doo Spark 2</span>
+                            </label>
+                          </div>
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__checkbox visually-hidden"
+                                name="model"
+                                type="checkbox"
+                                checked
+                              />
+                              <span>SeaDoo Spark 90</span>
+                            </label>
+                          </div>
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__checkbox visually-hidden"
+                                name="model"
+                                type="checkbox"
+                              />
+                              <span>SeaDoo GTI 155</span>
+                            </label>
+                          </div>
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__checkbox visually-hidden"
+                                name="model"
+                                type="checkbox"
+                              />
+                              <span>SeaDoo GTR 230</span>
+                            </label>
+                          </div>
+                          <div class="aside-filter__more">
+                            <button class="aside-filter__more-btn" href="#">
+                              Показать еще
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="aside-filter__item-drop btn-checked">
+                        <p
+                          class="
+                            aside-filter__item-title
+                            aside-filter__item-title-drop
+                            aside-filter__item-title-drop--active
+                          "
+                        >
+                          Акции
+                        </p>
+                        <div class="aside-filter__content action">
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__checkbox-txt visually-hidden"
+                                name="promo"
+                                type="checkbox"
+                                checked
+                              />
+                              <span class="btn-checked__txt">SALE</span>
+                            </label>
+                          </div>
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__checkbox-txt visually-hidden"
+                                name="promo"
+                                type="checkbox"
+                                checked
+                              />
+                              <span class="btn-checked__txt">NEW</span>
+                            </label>
+                          </div>
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__checkbox-txt visually-hidden"
+                                name="promo"
+                                type="checkbox"
+                              />
+                              <span class="btn-checked__txt">HIT</span>
+                            </label>
+                          </div>
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__checkbox-txt visually-hidden"
+                                name="promo"
+                                type="checkbox"
+                              />
+                              <span class="btn-checked__txt">ДИЛЕР</span>
+                            </label>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="aside-filter__item-drop">
+                        <p
+                          class="
+                            aside-filter__item-title
+                            aside-filter__item-title-drop
+                            aside-filter__item-title-drop--active
+                          "
+                        >
+                          Страны
+                        </p>
+                        <div class="aside-filter__content">
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__checkbox visually-hidden"
+                                name="country"
+                                type="checkbox"
+                                checked
+                              />
+                              <span>Россия</span>
+                            </label>
+                          </div>
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__checkbox visually-hidden"
+                                name="country"
+                                type="checkbox"
+                                checked
+                              />
+                              <span>Германия</span>
+                            </label>
+                          </div>
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__checkbox visually-hidden"
+                                name="country"
+                                type="checkbox"
+                              />
+                              <span>Китай</span>
+                            </label>
+                          </div>
+                          <div class="aside-filter__content-box">
+                            <label class="aside-filter__content-label">
+                              <input
+                                class="filter__checkbox visually-hidden"
+                                name="country"
+                                type="checkbox"
+                              />
+                              <span>CША</span>
+                            </label>
+                          </div>
+                          <div class="aside-filter__more">
+                            <button class="aside-filter__more-btn" href="#">
+                              Показать еще
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li
+                        class="aside-filter__item-drop aside-filter__item-btn"
                       >
-                        Бренд
-                      </p>
-                      <div class="aside-filter__content">
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__checkbox visually-hidden"
-                              name="brand"
-                              type="checkbox"
-                              checked
-                            />
-                            <span>BRP</span>
-                          </label>
-                        </div>
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__checkbox visually-hidden"
-                              name="brand"
-                              type="checkbox"
-                              checked
-                            />
-                            <span>Spark 2</span>
-                          </label>
-                        </div>
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__checkbox visually-hidden"
-                              name="brand"
-                              type="checkbox"
-                            />
-                            <span>Spark 3 </span>
-                          </label>
-                        </div>
-                        <div class="aside-filter__more">
-                          <button class="aside-filter__more-btn" href="#">
-                            Показать еще
-                          </button>
-                        </div>
-                      </div>
-                    </li>
-
-                    <li class="aside-filter__item-drop">
-                      <p
-                        class="
-                          aside-filter__item-title
-                          aside-filter__item-title-drop
-                          aside-filter__item-title-drop--active
-                        "
-                      >
-                        Бренд
-                      </p>
-                      <div class="aside-filter__content">
-                        <input
-                          class="aside-filter__search"
-                          type="text"
-                          placeholder="Введите модель"
-                        />
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__checkbox visually-hidden"
-                              name="model"
-                              type="checkbox"
-                              checked
-                            />
-                            <span>Sea-doo Spark 2</span>
-                          </label>
-                        </div>
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__checkbox visually-hidden"
-                              name="model"
-                              type="checkbox"
-                              checked
-                            />
-                            <span>SeaDoo Spark 90</span>
-                          </label>
-                        </div>
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__checkbox visually-hidden"
-                              name="model"
-                              type="checkbox"
-                            />
-                            <span>SeaDoo GTI 155</span>
-                          </label>
-                        </div>
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__checkbox visually-hidden"
-                              name="model"
-                              type="checkbox"
-                            />
-                            <span>SeaDoo GTR 230</span>
-                          </label>
-                        </div>
-                        <div class="aside-filter__more">
-                          <button class="aside-filter__more-btn" href="#">
-                            Показать еще
-                          </button>
-                        </div>
-                      </div>
-                    </li>
-
-                    <li class="aside-filter__item-drop btn-checked">
-                      <p
-                        class="
-                          aside-filter__item-title
-                          aside-filter__item-title-drop
-                          aside-filter__item-title-drop--active
-                        "
-                      >
-                        Акции
-                      </p>
-                      <div class="aside-filter__content action">
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__checkbox-txt visually-hidden"
-                              name="promo"
-                              type="checkbox"
-                              checked
-                            />
-                            <span class="btn-checked__txt">SALE</span>
-                          </label>
-                        </div>
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__checkbox-txt visually-hidden"
-                              name="promo"
-                              type="checkbox"
-                              checked
-                            />
-                            <span class="btn-checked__txt">NEW</span>
-                          </label>
-                        </div>
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__checkbox-txt visually-hidden"
-                              name="promo"
-                              type="checkbox"
-                            />
-                            <span class="btn-checked__txt">HIT</span>
-                          </label>
-                        </div>
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__checkbox-txt visually-hidden"
-                              name="promo"
-                              type="checkbox"
-                            />
-                            <span class="btn-checked__txt">ДИЛЕР</span>
-                          </label>
-                        </div>
-                      </div>
-                    </li>
-
-                    <li class="aside-filter__item-drop">
-                      <p
-                        class="
-                          aside-filter__item-title
-                          aside-filter__item-title-drop
-                          aside-filter__item-title-drop--active
-                        "
-                      >
-                        Страны
-                      </p>
-                      <div class="aside-filter__content">
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__checkbox visually-hidden"
-                              name="country"
-                              type="checkbox"
-                              checked
-                            />
-                            <span>Россия</span>
-                          </label>
-                        </div>
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__checkbox visually-hidden"
-                              name="country"
-                              type="checkbox"
-                              checked
-                            />
-                            <span>Германия</span>
-                          </label>
-                        </div>
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__checkbox visually-hidden"
-                              name="country"
-                              type="checkbox"
-                            />
-                            <span>Китай</span>
-                          </label>
-                        </div>
-                        <div class="aside-filter__content-box">
-                          <label class="aside-filter__content-label">
-                            <input
-                              class="filter__checkbox visually-hidden"
-                              name="country"
-                              type="checkbox"
-                            />
-                            <span>CША</span>
-                          </label>
-                        </div>
-                        <div class="aside-filter__more">
-                          <button class="aside-filter__more-btn" href="#">
-                            Показать еще
-                          </button>
-                        </div>
-                      </div>
-                    </li>
-
-                    <li class="aside-filter__item-drop aside-filter__item-btn">
-                      <button class="aside-filter__btn-send btn" type="submit">
-                        ВЫБРАТЬ
-                      </button>
-                      <p class="aside-filter__extra">
-                        Дополнительные параметры
-                      </p>
-                      <div class="aside-filter__extra-content">more</div>
-                      <button class="aside-filter__btn-reset" type="reset">
-                        Сбросить фильтр
-                      </button>
-                    </li>
-                  </ul>
-                </form>
+                        <button
+                          class="aside-filter__btn-send btn"
+                          type="submit"
+                        >
+                          ВЫБРАТЬ
+                        </button>
+                        <p class="aside-filter__extra">
+                          Дополнительные параметры
+                        </p>
+                        <div class="aside-filter__extra-content">more</div>
+                        <button class="aside-filter__btn-reset" type="reset">
+                          Сбросить фильтр
+                        </button>
+                      </li>
+                    </ul>
+                  </form>
                 </tabs>
               </div>
             </div>
@@ -565,9 +584,8 @@
     <section class="product-card">
       <div class="container">
         <div class="product-card__inner">
-            <div class="tabs__wrapper product-card__tabs">
-            </div>
-          </div>
+          <div class="tabs__wrapper product-card__tabs"></div>
+        </div>
         <product-card></product-card>
       </div>
     </section>
@@ -576,18 +594,25 @@
       <div class="container">
         <div class="tabs__wrapper">
           <div class="tabs__box">
-            <tabs :tabs="[ 'О товаре', 'Характеристики', 'Отзывы', 'Самовывоз', 'Доставка', 'Сервис', 'Гарантия',]" @clicked="click"></tabs>
+            <tabs
+              :tabs="[
+                'О товаре',
+                'Характеристики',
+                'Отзывы',
+                'Самовывоз',
+                'Доставка',
+                'Сервис',
+                'Гарантия',
+              ]"
+              @clicked="click"
+            ></tabs>
           </div>
-          
         </div>
         <div class="tabs__container">
-          
-          
-            <div v-if="activeProductTab === 'Самовывоз'">
-              <pickup-form></pickup-form>
-              <pickup-box></pickup-box>
-            </div>
-            
+          <div v-if="activeProductTab === 'Самовывоз'">
+            <pickup-form></pickup-form>
+            <pickup-box></pickup-box>
+          </div>
         </div>
       </div>
     </section>
@@ -595,7 +620,21 @@
     <section class="products page-section">
       <div class="container">
         <div class="products__inner">
-            <tabs-with-slider :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]"><product-item v-bind="good" v-for="(good, idx) in sortGoods('инструменты')" :key="idx"></product-item></tabs-with-slider>
+          <tabs-with-slider
+            :tabs="[
+              'запчасти',
+              'моторы',
+              'шины',
+              'электроника',
+              'инструменты',
+              'аксесуары',
+            ]"
+            ><product-item
+              v-bind="good"
+              v-for="(good, idx) in sortGoods('инструменты')"
+              :key="idx"
+            ></product-item
+          ></tabs-with-slider>
         </div>
       </div>
     </section>
@@ -666,7 +705,7 @@ import PolicyBox from "./components/PolicyBox.vue";
 import Tabs from "./components/Tabs.vue";
 import TabsWithSlider from "./components/TabsWithSlider.vue";
 import ActiveFilter from "./components/ActiveFilter.vue";
-import goods from './goods.json';
+import goods from "./goods.json";
 
 export default {
   name: "App",
@@ -703,19 +742,26 @@ export default {
     return {
       menuActive: false,
       goods,
-      activeProductTab: 'Самовывоз',
-      activeFilterTab: 'параметры',
-      activeFilters: ['запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',],
+      activeProductTab: "Самовывоз",
+      activeFilterTab: "параметры",
+      activeFilters: [
+        "запчасти",
+        "моторы",
+        "шины",
+        "электроника",
+        "инструменты",
+        "аксесуары",
+      ],
     };
   },
 
   created() {
-    window.addEventListener('resize', this.onResize);
+    window.addEventListener("resize", this.onResize);
     this.onResize();
   },
 
   unmounted() {
-    window.removeEventListener('resize', this.onResize)
+    window.removeEventListener("resize", this.onResize);
   },
 
   methods: {
@@ -726,7 +772,7 @@ export default {
     },
 
     sortGoods(cat) {
-        return goods.filter(item => item.category == cat);
+      return goods.filter((item) => item.category == cat);
     },
 
     click({ tab }) {
@@ -739,7 +785,7 @@ export default {
 
     clickedActiveFilter(idx) {
       this.activeFilters.splice(idx, 1);
-    }
+    },
   },
 };
 </script>
@@ -772,17 +818,23 @@ export default {
 }
 
 .tabs__wrapper {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
+  overflow-x: hidden;
 }
 
 .tabs__box {
-    padding: 17px 0;
-    background: #F0F0F4;
+  padding: 17px 0;
+  background: #f0f0f4;
+  
 
-  & > .tabs > .tabs__list{
+  & > .tabs > .tabs__list {
     margin: 0;
     justify-content: space-around;
   }
+}
+
+.filter-btn {
+  display: none;
 }
 
 .footer {

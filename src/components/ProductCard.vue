@@ -79,7 +79,7 @@
           <div class="rate-yo" data-rateyo-rating="4"></div>
         </a>
       </div>
-      <tabs :tabs="['характеристики', 'наличие']" @clickFilterTab="click">
+      <tabs :tabs="['характеристики', 'наличие']" @clicked="activeProductTab">
         <characteristics-list
           v-if="activeContent === 'характеристики'"
         ></characteristics-list>
@@ -125,7 +125,7 @@ export default {
   },
 
   methods: {
-    click({ index, tab }) {
+    activeProductTab({ index, tab }) {
       this.activeTab = index;
       this.activeContent = tab;
     },

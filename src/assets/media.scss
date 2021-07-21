@@ -35,6 +35,17 @@
     display: none;
   }
 
+  .filter-btn {
+    display: block !important;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    color: #ffffff;
+    background-color: #1C62CD;
+    margin-bottom: 30px;
+  }
 
 
   .banner {
@@ -100,6 +111,7 @@
   .tabs__wrapper.tabs__wrapper-noscroll {
     overflow: hidden;
   }
+
   .aside-filter {
     display: none;
 
@@ -248,7 +260,7 @@
       width: 100%;
     }
 
-    &__button a + a {
+    &__button a+a {
       margin-left: 0;
     }
   }

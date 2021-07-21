@@ -1,6 +1,13 @@
 <template>
   <div class="active-filter mobile-overflow">
-    <button v-for="(item, idx) in activeFilter" :key="item" @click.prevent="removeItem(idx)" class="active-filter__btn">{{ item }}</button>
+    <button
+      v-for="(item, idx) in activeFilter"
+      :key="item"
+      @click.prevent="removeItem(idx)"
+      class="active-filter__btn"
+    >
+      {{ item }}
+    </button>
   </div>
 </template>
 
@@ -18,13 +25,16 @@ export default {
   methods: {
     removeItem(idx) {
       this.$emit("removeActiveFilter", idx);
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-  .active-filter__btn {
+.active-filter {
+  margin-bottom: 15px;
+
+  &__btn {
     font-size: $fs-smaller;
     line-height: $lh-extra-small;
     opacity: 0.7;
@@ -44,4 +54,5 @@ export default {
       opacity: 1;
     }
   }
+}
 </style>

@@ -17,51 +17,61 @@
           <span>вс: </span><span>09:00-17:00</span>
         </div>
       </div>
-      <div class="pickup__avialable">{{ item.avialable ? 'В наличии' : 'Нет в наличии' }}</div>
+      <div class="pickup__avialable">
+        {{ item.avialable ? "В наличии" : "Нет в наличии" }}
+      </div>
       <div class="pickup__num">{{ item.avialable }}</div>
       <div class="pickup__btn btn">
-        <button :class="item.avialable ? 'btn' : 'disable'" class="pickup__button btn" type="submit">купить</button>
+        <button
+          :class="item.avialable ? 'btn' : 'disable'"
+          class="pickup__button btn"
+          type="submit"
+        >
+          купить
+        </button>
       </div>
     </li>
   </ul>
 </template>
 
 <script>
-    export default {
-        name: "PickupBox",
-        data: function() {
-return {
-            items: [{
-              address: "Москва, ул. Науки 25",
-              avialable: 1,
-            },
-            {
-              address: "Москва, ул. Южная 134",
-              avialable: 2,
-            },
-            {
-              address: "Санкт-Петербург,<br>ул. Красная 19",
-              avialable: 0,
-            },
-            {
-              address: "Киев, ул Шевченко 167",
-              avialable: 0,
-            }],
-        };
-},
+export default {
+  name: "PickupBox",
+  data: function () {
+    return {
+      items: [
+        {
+          address: "Москва, ул. Науки 25",
+          avialable: 1,
+        },
+        {
+          address: "Москва, ул. Южная 134",
+          avialable: 2,
+        },
+        {
+          address: "Санкт-Петербург,<br>ул. Красная 19",
+          avialable: 0,
+        },
+        {
+          address: "Киев, ул Шевченко 167",
+          avialable: 0,
+        },
+      ],
     };
+  },
+};
 </script>
 
 <style lang="scss">
 .pickup {
   &__item {
     padding: 20px 0;
-    border-bottom: 1px solid rgba(47,48,51,0.1);
+    border-bottom: 1px solid rgba(47, 48, 51, 0.1);
     display: flex;
     align-items: baseline;
     font-size: $fs-small;
     line-height: $lh-small;
-    color: rgba(47, 48, 53, .7);
+    color: rgba(47, 48, 53, 0.7);
   }
 
   &__item-title {
@@ -96,6 +106,7 @@ return {
 
   &__btn {
     margin-left: auto;
+    width: 145px;
   }
 
   &__button {
@@ -107,7 +118,7 @@ return {
 }
 
 @media (max-width: 940px) {
-.pickup {
+  .pickup {
     display: flex;
     overflow-x: scroll;
 
