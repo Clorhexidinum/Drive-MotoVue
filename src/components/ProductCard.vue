@@ -143,8 +143,6 @@ export default {
 
 <style lang="scss">
 .product-card {
-  margin-bottom: 80px;
-
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -154,6 +152,7 @@ export default {
   &__img-box {
     width: 500px;
     padding-top: 64px;
+    margin-right: 20px;
     text-align: center;
     @extend %barlow-regular;
     display: flex;

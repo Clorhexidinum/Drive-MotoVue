@@ -80,8 +80,20 @@ export default {
 }
 
 @media (max-width: 968px) {
-  .pickup-form {
-    
+  .pickup-form__label-search {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .pickup-form__label-search {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .pickup-form__input-search {
+    margin: 0;
+    margin-top: 10px;
   }
 }
 </style>

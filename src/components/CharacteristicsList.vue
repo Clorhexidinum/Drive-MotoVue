@@ -94,6 +94,8 @@ export default {
 
 @media (max-width: 940px) {
   .characteristics-list {
+    max-width: 100%;
+    
     &__item-right {
       text-align: right;
     }

@@ -1,7 +1,7 @@
 <template>
-  <header class="header">
-    <div class="header__top">
-      <div class="container">
+  <header>
+    <div class="container">
+      <div class="header__top">
         <div class="header__top-inner">
           <menu-mobile></menu-mobile>
           <main-menu></main-menu>
@@ -12,121 +12,75 @@
           </div>
         </div>
       </div>
+
+      <div class="header__bottom">
+        <menu-categories></menu-categories>
+      </div>
     </div>
     <div class="menu-mobile-box">
       <menu-mobile-line>
         <main-menu></main-menu>
       </menu-mobile-line>
     </div>
-    <div class="header__bottom">
-      <div class="container">
-        <menu-categories></menu-categories>
-      </div>
-    </div>
   </header>
 
   <main>
-    <section class="banner page-section">
-      <div class="container">
+    <div class="container">
+      <section class="page-section">
         <div class="banner__inner">
           <!--Тут был BannerSlider-->
           <sale-item></sale-item>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <div class="search page-section">
-      <div class="container">
-        <div class="search__inner">
-          <search-tabs></search-tabs>
-        </div>
-      </div>
-    </div>
+      <section class="page-section">
+        <search-tabs></search-tabs>
+      </section>
 
-    <section class="categories page-section">
-      <div class="container">
+      <section class="page-section">
         <div class="categories__inner">
           <categories-with-image></categories-with-image>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="products page-section">
-      <div class="container">
-        <div class="products__inner">
-          <h4 class="product-title">Популярные товары</h4>
-          <tabs
-            :tabs="[
-              'запчасти',
-              'моторы',
-              'шины',
-              'электроника',
-              'инструменты',
-              'аксесуары',
-            ]"
-            ><!--пихаем слайдер--></tabs
-          >
-          <more-btn></more-btn>
-        </div>
-      </div>
-    </section>
+      <section class="page-section">
+        <h4 class="product-title">Популярные товары</h4>
+        <tabs
+          :tabs="[
+            'запчасти',
+            'моторы',
+            'шины',
+            'электроника',
+            'инструменты',
+            'аксесуары',
+          ]"
+          >Распихать разные категории товаров</tabs
+        >
+        <more-btn></more-btn>
+      </section>
 
-    <div class="banner-promo">
-      <div class="container">
+      <section class="page-section">
         <main-banner></main-banner>
-      </div>
-    </div>
+      </section>
 
-    <section class="products page-section">
-      <div class="container">
+      <section class="page-section">
         <div class="products__inner">
-          <h4 class="product-title">С этим товаром покупают</h4>
-          <!-- <tabs :tabs="[ 'запчасти', 'моторы', 'шины', 'электроника', 'инструменты', 'аксесуары',]"></tabs> -->
-          <tabs-with-slider
-            :tabs="[
-              'запчасти',
-              'моторы',
-              'шины',
-              'электроника',
-              'инструменты',
-              'аксесуары',
-            ]"
-          >
-            <!-- <product-item
-              v-bind="good"
-              v-for="(good, idx) in sortGoods('инструменты')"
-              :key="idx"
-            ></product-item> -->
-          </tabs-with-slider>
+          <h4 class="product-title">Чо нибудь написать</h4>
+          пихнуть слайдер
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <main>
-    <div class="breadcrumbs">
-      <div class="container">
-        <breadcrumbs></breadcrumbs>
-      </div>
-    </div>
+      <breadcrumbs></breadcrumbs>
 
-    <section class="catalog">
-      <div class="container">
+      <section class="page-section">
         <h2 class="catalog__title">Гидроциклы</h2>
 
-        <active-filter
-            :activeFilter="activeFilters"
-            @removeActiveFilter="clickedActiveFilter"
-          ></active-filter>
-
-        <!-- <div class="catalog__filter">
+        <div class="catalog__filter">
           <div class="catalog__filter-inner">
-            <div class="catalog__filter-items mobile-overflow">
-              <button>Полноприводные</button>
-              <button>от 5000</button>
-              <button>BRP</button>
-              <button>еще</button>
-            </div>
+            <active-filter
+              :activeFilter="activeFilters"
+              @removeActiveFilter="clickedActiveFilter"
+            ></active-filter>
           </div>
           <div class="catalog__filter-btn">
             <select class="catalog__select-item">
@@ -147,7 +101,7 @@
               <img src="images/line-btn.svg" alt="" />
             </button>
           </div>
-        </div> -->
+        </div>
         <div class="catalog__inner">
           <div class="filter-btn" @click="openFilter = !openFilter">Фильтр</div>
           <asside class="catalog__inner-asside aside-filter">
@@ -295,9 +249,7 @@
                         </topdrop-title>
                       </li>
 
-                      <li
-                        class="aside-filter__item aside-filter__item-btn"
-                      >
+                      <li class="aside-filter__item aside-filter__item-btn">
                         <button
                           class="aside-filter__btn-send btn"
                           type="submit"
@@ -321,75 +273,41 @@
             <pagination></pagination>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <main>
-    <div class="breadcrumbs">
-      <div class="container">
-        <breadcrumbs></breadcrumbs>
-      </div>
-    </div>
-
-    <section class="product-card">
-      <div class="container">
-        <div class="product-card__inner">
-          <div class="tabs__wrapper product-card__tabs"></div>
-        </div>
+      <section class="page-section">
         <product-card></product-card>
-      </div>
-    </section>
+      </section>
 
-    <section class="card">
-      <div class="container">
-        <div class="tabs__wrapper">
-          <div class="tabs__box">
-            <tabs
-              :tabs="[
-                'О товаре',
-                'Характеристики',
-                'Отзывы',
-                'Самовывоз',
-                'Доставка',
-                'Сервис',
-                'Гарантия',
-              ]"
-              @clicked="click"
-            ></tabs>
+      <section class="card">
+        <div class="container">
+          <div class="tabs__wrapper">
+            <div class="tabs__box">
+              <tabs
+                :tabs="[
+                  'О товаре',
+                  'Характеристики',
+                  'Отзывы',
+                  'Самовывоз',
+                  'Доставка',
+                  'Сервис',
+                  'Гарантия',
+                ]"
+                @clicked="click"
+              ></tabs>
+            </div>
+          </div>
+          <div class="tabs__container">
+            <div v-if="activeProductTab === 'Самовывоз'">
+              <pickup-form></pickup-form>
+              <pickup-box></pickup-box>
+            </div>
           </div>
         </div>
-        <div class="tabs__container">
-          <div v-if="activeProductTab === 'Самовывоз'">
-            <pickup-form></pickup-form>
-            <pickup-box></pickup-box>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="products page-section">
-      <div class="container">
-        <div class="products__inner">
-          <tabs-with-slider
-            :tabs="[
-              'запчасти',
-              'моторы',
-              'шины',
-              'электроника',
-              'инструменты',
-              'аксесуары',
-            ]"
-          >
-            <!-- <product-item
-              v-bind="good"
-              v-for="(good, idx) in sortGoods('инструменты')"
-              :key="idx"
-            ></product-item> -->
-          </tabs-with-slider>
-        </div>
-      </div>
-    </section>
+      <section class="page-section">пихнуть слайдер</section>
+    </div>
   </main>
 
   <footer class="footer">
@@ -454,7 +372,7 @@ import FooterMenu from "./components/FooterMenu.vue";
 import FooterSocial from "./components/FooterSocial.vue";
 import PolicyBox from "./components/PolicyBox.vue";
 import Tabs from "./components/Tabs.vue";
-import TabsWithSlider from "./components/TabsWithSlider.vue";
+// import TabsWithSlider from "./components/TabsWithSlider.vue";
 import ActiveFilter from "./components/ActiveFilter.vue";
 import FilterInput from "./components/FilterInput.vue";
 import FilterSelect from "./components/FilterSelect.vue";
@@ -485,7 +403,7 @@ export default {
     FooterSocial,
     PolicyBox,
     Tabs,
-    TabsWithSlider,
+    // TabsWithSlider,
     PickupBox,
     PickupForm,
     ActiveFilter,
@@ -590,8 +508,6 @@ export default {
   display: none;
   cursor: pointer;
 }
-
-
 
 .footer {
   background: $base;

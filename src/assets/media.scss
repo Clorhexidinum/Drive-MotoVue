@@ -28,6 +28,13 @@
       margin-right: 0;
     }
   }
+
+  .tabs__box {
+    & > .tabs > .tabs__list {
+      justify-content: normal !important;
+      padding: 0 15px;
+    }
+  }
 }
 
 @media (max-width: 968px) {

@@ -23,6 +23,7 @@ export default {
 .filter-select {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     border-bottom: 2px solid $additional;
     padding-top: 25px;
 
