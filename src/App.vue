@@ -3,10 +3,7 @@
     <div class="header__top">
       <div class="container">
         <div class="header__top-inner">
-          <mobile-menu-btn
-            :class="{ active: menuActive }"
-            @click="menuActive = !menuActive"
-          ></mobile-menu-btn>
+          <menu-mobile></menu-mobile>
           <main-menu></main-menu>
           <main-logo></main-logo>
           <div class="header__box">
@@ -17,7 +14,6 @@
       </div>
     </div>
     <div class="menu-mobile-box">
-      <menu-mobile :class="{ active: menuActive }"></menu-mobile>
       <menu-mobile-line>
         <main-menu></main-menu>
       </menu-mobile-line>
@@ -117,12 +113,11 @@
     <section class="catalog">
       <div class="container">
         <h2 class="catalog__title">Гидроциклы</h2>
-        <div class="mobile-overflow">
-          <active-filter
+
+        <active-filter
             :activeFilter="activeFilters"
             @removeActiveFilter="clickedActiveFilter"
           ></active-filter>
-        </div>
 
         <!-- <div class="catalog__filter">
           <div class="catalog__filter-inner">
@@ -154,7 +149,7 @@
           </div>
         </div> -->
         <div class="catalog__inner">
-          <div class="filter-btn">Фильтр</div>
+          <div class="filter-btn" @click="openFilter = !openFilter">Фильтр</div>
           <asside class="catalog__inner-asside aside-filter">
             <div class="tabs__wrapper tabs__wrapper-noscroll">
               <div class="tabs aside-filter__tabs">
@@ -168,7 +163,7 @@
                     class="aside-filter__form"
                   >
                     <ul class="aside-filter__list">
-                      <li class="aside-filter__item-drop">
+                      <li class="aside-filter__item">
                         <topdrop-title
                           title="Наличие"
                           titleClass="filter-title"
@@ -181,7 +176,7 @@
                         </topdrop-title>
                       </li>
 
-                      <li class="aside-filter__item-drop">
+                      <li class="aside-filter__item">
                         <topdrop-title
                           title="Новинки"
                           titleClass="filter-title"
@@ -194,7 +189,7 @@
                         </topdrop-title>
                       </li>
 
-                      <li class="aside-filter__item-drop">
+                      <li class="aside-filter__item">
                         <topdrop-title title="Цена" titleClass="filter-title">
                           <div class="aside-filter__content">
                             <div id="id66" class="range">
@@ -224,7 +219,7 @@
                         </topdrop-title>
                       </li>
 
-                      <li class="aside-filter__item-drop">
+                      <li class="aside-filter__item">
                         <filter-select
                           :name="'power'"
                           :title="'Мощность, л.с.'"
@@ -242,7 +237,7 @@
                         ></filter-select>
                       </li>
 
-                      <li class="aside-filter__item-drop">
+                      <li class="aside-filter__item">
                         <topdrop-title title="Бренд" titleClass="filter-title">
                           <filter-input
                             :type="'checkbox'"
@@ -252,7 +247,7 @@
                         </topdrop-title>
                       </li>
 
-                      <li class="aside-filter__item-drop">
+                      <li class="aside-filter__item">
                         <topdrop-title title="Бренд" titleClass="filter-title">
                           <input
                             class="aside-filter__search"
@@ -274,7 +269,7 @@
                         </topdrop-title>
                       </li>
 
-                      <li class="aside-filter__item-drop btn-checked">
+                      <li class="aside-filter__item btn-checked">
                         <topdrop-title title="Акции" titleClass="filter-title">
                           <div class="aside-filter__content-box">
                             <label class="aside-filter__content-label">
@@ -290,7 +285,7 @@
                         </topdrop-title>
                       </li>
 
-                      <li class="aside-filter__item-drop">
+                      <li class="aside-filter__item">
                         <topdrop-title title="Страны" titleClass="filter-title">
                           <filter-input
                             :type="'checkbox'"
@@ -301,18 +296,14 @@
                       </li>
 
                       <li
-                        class="aside-filter__item-drop aside-filter__item-btn"
-                      ><p class="aside-filter__extra">
-                          Дополнительные параметры
-                        </p>
+                        class="aside-filter__item aside-filter__item-btn"
+                      >
                         <button
                           class="aside-filter__btn-send btn"
                           type="submit"
                         >
                           ВЫБРАТЬ
                         </button>
-                        
-                        <div class="aside-filter__extra-content">more</div>
                         <button class="aside-filter__btn-reset" type="reset">
                           Сбросить фильтр
                         </button>
@@ -445,7 +436,6 @@ import UserList from "./components/UserList.vue";
 import MenuMobile from "./components/MenuMobile.vue";
 import MenuMobileLine from "./components/MenuMobileLine.vue";
 import MenuCategories from "./components/MenuCategories.vue";
-import MobileMenuBtn from "./components/MobileMenuBtn.vue";
 // BannerSlider
 import SaleItem from "./components/SaleItem.vue";
 import SearchTabs from "./components/SearchTabs.vue";
@@ -480,7 +470,6 @@ export default {
     MenuMobile,
     MenuMobileLine,
     MenuCategories,
-    MobileMenuBtn,
     SaleItem,
     SearchTabs,
     CategoriesWithImage,
@@ -505,10 +494,10 @@ export default {
   },
   data: function () {
     return {
-      menuActive: false,
       goods,
       activeProductTab: "Самовывоз",
       activeFilterTab: "параметры",
+      openFilter: false,
       activeFilters: [
         "запчасти",
         "моторы",
@@ -597,24 +586,12 @@ export default {
   }
 }
 
-.aside-filter__item-drop {
-  margin-bottom: 20px;
-}
-
 .filter-btn {
   display: none;
+  cursor: pointer;
 }
 
-.aside-filter__search {
-    width: 100%;
-    border: 1px solid #E0E0E0;
-    height: 30px;
-    padding: 0 20px;
-    font-size: 12px;
-    line-height: 14px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
+
 
 .footer {
   background: $base;
