@@ -24,14 +24,14 @@ export default {
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid $additional;
-    padding-top: 34px;
+    padding-top: 25px;
 
   &__title {
     @extend %sf-semibold;
     font-size: $fs-small;
     line-height: $lh-small;
     padding-bottom: 14px;
-    padding-left: 26px;
+    padding-left: 10px;
   }
 
     &__select {

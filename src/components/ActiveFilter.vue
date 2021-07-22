@@ -32,7 +32,7 @@ export default {
 
 <style lang="scss">
 .active-filter {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 
   &__btn {
     font-size: $fs-smaller;
