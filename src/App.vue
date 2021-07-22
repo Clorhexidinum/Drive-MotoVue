@@ -229,45 +229,9 @@
                       </li>
 
                       <li class="aside-filter__item-list">
-                        <div class="aside-filter__item-box">
-                          <p class="aside-filter__item-list-title">
-                            Мощность, л.с.
-                          </p>
-                          <select class="aside-filter__select" name="power">
-                            <option value="90">90</option>
-                            <option value="130">130</option>
-                            <option value="154">154</option>
-                            <option value="230">230</option>
-                            <option value="300">300</option>
-                          </select>
-                        </div>
-                        <div class="aside-filter__item-box">
-                          <p class="aside-filter__item-list-title">
-                            Мощность двигателя, л.с.
-                          </p>
-                          <select
-                            class="aside-filter__select"
-                            name="engine_power"
-                          >
-                            <option value="90">90</option>
-                            <option value="130">130</option>
-                            <option value="154">154</option>
-                            <option value="230">230</option>
-                            <option value="300">300</option>
-                          </select>
-                        </div>
-                        <div class="aside-filter__item-box">
-                          <p class="aside-filter__item-list-title">
-                            Макс. скорость
-                          </p>
-                          <select class="aside-filter__select" name="max_speed">
-                            <option value="90">90</option>
-                            <option value="130">130</option>
-                            <option value="154">154</option>
-                            <option value="230">230</option>
-                            <option value="300">300</option>
-                          </select>
-                        </div>
+                          <filter-select :name="'power'" :title="'Мощность, л.с.'" :options="[90, 134, 150, 230, 320]"></filter-select>
+                          <filter-select :name="'release'" :title="'Год выпуска'" :options="[90, 134, 150, 230, 320]"></filter-select>
+                          <filter-select :name="'maxSpeed'" :title="'Макс. скорость'" :options="[90, 134, 150, 230, 320]"></filter-select>
                       </li>
 
                       <li class="aside-filter__item-drop">
@@ -538,6 +502,7 @@ import Tabs from "./components/Tabs.vue";
 import TabsWithSlider from "./components/TabsWithSlider.vue";
 import ActiveFilter from "./components/ActiveFilter.vue";
 import FilterInput from "./components/FilterInput.vue";
+import FilterSelect from "./components/FilterSelect.vue";
 import goods from "./goods.json";
 
 export default {
@@ -571,6 +536,7 @@ export default {
     PickupForm,
     ActiveFilter,
     FilterInput,
+    FilterSelect,
   },
   data: function () {
     return {
