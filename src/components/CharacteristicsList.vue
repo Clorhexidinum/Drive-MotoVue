@@ -91,4 +91,12 @@ export default {
     margin-bottom: 40px;
   }
 }
+
+@media (max-width: 940px) {
+  .characteristics-list {
+    &__item-right {
+      text-align: right;
+    }
+  }
+}
 </style>

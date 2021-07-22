@@ -116,10 +116,12 @@
     <section class="catalog">
       <div class="container">
         <h2 class="catalog__title">Гидроциклы</h2>
-        <active-filter
+        <div class="mobile-overflow"><active-filter
           :activeFilter="activeFilters"
           @removeActiveFilter="clickedActiveFilter"
-        ></active-filter>
+        ></active-filter></div>
+      
+        
         <!-- <div class="catalog__filter">
           <div class="catalog__filter-inner">
             <div class="catalog__filter-items mobile-overflow">
@@ -186,7 +188,7 @@
                         >
                           Новинки
                         </p>
-                        <filter-input :type="'radio'" :name="'radio'" :labels="['Все','Новинки', 'Акции']"></filter-input>
+                        <filter-input :type="'radio'" :name="'radio'" :labels="['Все', 'Новинки', 'Акции']"></filter-input>
                       </li>
 
                       <li class="aside-filter__item-drop">
@@ -298,11 +300,6 @@
                             placeholder="Введите модель"
                           />
                           <filter-input :type="'checkbox'" :name="'model'" :labels="['Sea-doo Spark 2','SeaDoo Spark 90', 'SeaDoo GTI 155', 'SeaDoo GTR 230', 'SeaDoo GTI 155', 'SeaDoo GTR 230']"></filter-input>
-                          <div class="aside-filter__more">
-                            <button class="aside-filter__more-btn" href="#">
-                              Показать еще
-                            </button>
-                          </div>
                         </div>
                       </li>
 

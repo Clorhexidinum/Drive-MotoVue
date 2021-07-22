@@ -42,6 +42,7 @@ export default {
   line-height: $lh-extra-small;
   color: $main-text;
   position: relative;
+  cursor: pointer;
 }
 
 .filter-title {

@@ -204,6 +204,10 @@ export default {
     z-index: 10;
   }
 
+  &__basket:active {
+    background-color: $activePress;
+  }
+
   &__price {
     font-weight: $bold;
     font-size: $fs-extra-big;

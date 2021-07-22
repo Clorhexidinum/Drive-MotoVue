@@ -1,5 +1,5 @@
 <template>
-  <div class="active-filter mobile-overflow">
+  <div class="active-filter">
     <button
       v-for="(item, idx) in activeFilter"
       :key="item"

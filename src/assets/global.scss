@@ -75,6 +75,10 @@ body {
   text-transform: uppercase;
 }
 
+.btn:active {
+  background-color: $activePress;
+}
+
 .disable {
   background-color: $additional;
   cursor: default;

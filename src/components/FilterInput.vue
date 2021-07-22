@@ -12,7 +12,7 @@
       </label>
     </div>
     <div v-if="labels.length > 4" class="filter-input__more">
-      <button @click.prevent="listOpened = !listOpened" class="filter-input__more-btn" href="#">{{ listOpened ? 'Показать все' : 'Скрыть' }}</button>
+      <button @click.prevent="listOpened = !listOpened" class="filter-input__more-btn" href="#">{{ listOpened ? 'Скрыть' : 'Показать все' }}</button>
     </div>
   </div>
 </template>
@@ -33,10 +33,10 @@ export default {
 
   methods: {
     showMore() {
-      if (this.listOpened) {
-          return this.labels;
+      if (this.listOpened === false) {
+          return this.labels.slice(0, 4);
       } else {
-        return this.labels.slice(1, 5);
+        return this.labels;
       }
     },
   },
