@@ -75,6 +75,10 @@ body {
   text-transform: uppercase;
 }
 
+.btn:hover {
+  background-color: $activeHover;
+}
+
 .btn:active {
   background-color: $activePress;
 }

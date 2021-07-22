@@ -65,6 +65,10 @@ export default {
   }
 }
 
+.footer-title:hover {
+  color: $main-text-hover;
+}
+
 .topdrop-title__content {
   flex-wrap: wrap;
   margin-top: 10px;

@@ -56,6 +56,10 @@ export default {
     cursor: pointer;
     white-space: nowrap;
   }
+
+  &__item:hover {
+    color: $main-text-hover;
+  }
 }
 
 .activeTab {

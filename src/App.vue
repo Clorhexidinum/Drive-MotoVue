@@ -302,16 +302,16 @@
 
                       <li
                         class="aside-filter__item-drop aside-filter__item-btn"
-                      >
+                      ><p class="aside-filter__extra">
+                          Дополнительные параметры
+                        </p>
                         <button
                           class="aside-filter__btn-send btn"
                           type="submit"
                         >
                           ВЫБРАТЬ
                         </button>
-                        <p class="aside-filter__extra">
-                          Дополнительные параметры
-                        </p>
+                        
                         <div class="aside-filter__extra-content">more</div>
                         <button class="aside-filter__btn-reset" type="reset">
                           Сбросить фильтр
