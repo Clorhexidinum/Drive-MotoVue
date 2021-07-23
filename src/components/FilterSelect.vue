@@ -40,4 +40,10 @@ export default {
     outline: none;
   }
 }
+
+@media (max-width: 1065px) {
+  .filter-select {
+    padding-top: 10px;
+  }
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <!-- <header class="page-section">
+  <header class="page-section">
     <div class="container">
       <div class="header__top">
         <div class="header__top-inner">
@@ -68,7 +68,7 @@
         </div>
       </section>
 
-      <breadcrumbs></breadcrumbs> -->
+      <breadcrumbs></breadcrumbs>
 
   <section class="page-section">
     <h2 class="title">Гидроциклы</h2>
@@ -87,20 +87,23 @@
         <button
           @click.prevent="gridCatalog = true"
           class="catalog-sort__btn-grid catalog-sort__btn"
+          :class="gridCatalog ? 'catalog-sort__btn--active' : ''"
         >
           <img src="/images/grid-btn.svg" alt="" />
         </button>
         <button
           @click.prevent="gridCatalog = false"
           class="catalog-sort__btn-line catalog-sort__btn"
+          :class="gridCatalog ? '' : 'catalog-sort__btn--active'"
         >
           <img src="/images/line-btn.svg" alt="" />
         </button>
       </div>
     </div>
+    <div class="filter-btn" @click="openFilter = !openFilter">Фильтр</div>
     <div class="inner">
-      <!-- <div class="filter-btn" @click="openFilter = !openFilter">Фильтр</div> -->
-      <asside class="aside-filter">
+      
+      <asside class="aside-filter" v-if="openFilter">
         <tabs :tabs="['параметры', 'по марке']" @clicked="clickFilterTab">
           <form
             v-if="activeFilterTab === 'параметры'"
@@ -246,16 +249,17 @@
         </tabs>
       </asside>
       <div class="catalog-inner">
-          <product-item></product-item>
-          <product-item></product-item>
-          <product-item></product-item>
-          <product-item></product-item>
+          <product-item :class="gridCatalog ? '' : 'product-item__wrapper--line'"></product-item>
+          <product-item :class="gridCatalog ? '' : 'product-item__wrapper--line'"></product-item>
+          <product-item :class="gridCatalog ? '' : 'product-item__wrapper--line'"></product-item>
+          <product-item :class="gridCatalog ? '' : 'product-item__wrapper--line'"></product-item>
+          <product-item :class="gridCatalog ? '' : 'product-item__wrapper--line'"></product-item>
       </div>
     </div>
     <pagination></pagination>
   </section>
 
-  <!-- <section class="page-section">
+  <section class="page-section">
         <product-card></product-card>
       </section>
 
@@ -273,15 +277,15 @@
                 'Гарантия',
               ]"
               @clicked="click"
-            ></tabs>
-          </div>
-        </div>
-        <div class="tabs__container">
-          <div v-if="activeProductTab === 'Самовывоз'">
+            >
+            <div v-if="activeProductTab === 'Самовывоз'">
             <pickup-form></pickup-form>
             <pickup-box></pickup-box>
           </div>
+            </tabs>
+          </div>
         </div>
+        
       </section>
 
       <section class="page-section">пихнуть слайдер</section>
@@ -321,34 +325,34 @@
       </div>
       <policy-box></policy-box>
     </div>
-  </footer> -->
+  </footer>
 </template>
 
 <script>
-// import MainMenu from "./components/MainMenu.vue";
-// import MainLogo from "./components/MainLogo.vue";
-// import HeaderAdress from "./components/HeaderAdress.vue";
-// import UserList from "./components/UserList.vue";
-// import MenuMobile from "./components/MenuMobile.vue";
-// import MenuMobileLine from "./components/MenuMobileLine.vue";
-// import MenuCategories from "./components/MenuCategories.vue";
+import MainMenu from "./components/MainMenu.vue";
+import MainLogo from "./components/MainLogo.vue";
+import HeaderAdress from "./components/HeaderAdress.vue";
+import UserList from "./components/UserList.vue";
+import MenuMobile from "./components/MenuMobile.vue";
+import MenuMobileLine from "./components/MenuMobileLine.vue";
+import MenuCategories from "./components/MenuCategories.vue";
 
-// import SaleItem from "./components/SaleItem.vue";
-// import SearchTabs from "./components/SearchTabs.vue";
-// import CategoriesWithImage from "./components/CategoriesWithImage.vue";
-// import MoreBtn from "./components/MoreBtn.vue";
-// import MainBanner from "./components/MainBanner.vue";
-// import Breadcrumbs from "./components/Breadcrumbs.vue";
-// import PickupBox from "./components/PickupBox.vue";
-// import PickupForm from "./components/PickupForm.vue";
+import SaleItem from "./components/SaleItem.vue";
+import SearchTabs from "./components/SearchTabs.vue";
+import CategoriesWithImage from "./components/CategoriesWithImage.vue";
+import MoreBtn from "./components/MoreBtn.vue";
+import MainBanner from "./components/MainBanner.vue";
+import Breadcrumbs from "./components/Breadcrumbs.vue";
+import PickupBox from "./components/PickupBox.vue";
+import PickupForm from "./components/PickupForm.vue";
 import ProductItem from "./components/ProductItem.vue";
-// import ProductCard from "./components/ProductCard.vue";
+import ProductCard from "./components/ProductCard.vue";
 import Pagination from "./components/Pagination.vue";
-// import FooterForm from "./components/FooterForm.vue";
+import FooterForm from "./components/FooterForm.vue";
 import TopdropTitle from "./components/TopdropTitle.vue";
-// import FooterMenu from "./components/FooterMenu.vue";
-// import FooterSocial from "./components/FooterSocial.vue";
-// import PolicyBox from "./components/PolicyBox.vue";
+import FooterMenu from "./components/FooterMenu.vue";
+import FooterSocial from "./components/FooterSocial.vue";
+import PolicyBox from "./components/PolicyBox.vue";
 import Tabs from "./components/Tabs.vue";
 // import TabsWithSlider from "./components/TabsWithSlider.vue";
 import ActiveFilter from "./components/ActiveFilter.vue";
@@ -359,31 +363,31 @@ import goods from "./goods.json";
 export default {
   name: "App",
   components: {
-    // MainMenu,
-    // MainLogo,
-    // HeaderAdress,
-    // UserList,
-    // MenuMobile,
-    // MenuMobileLine,
-    // MenuCategories,
-    // SaleItem,
-    // SearchTabs,
-    // CategoriesWithImage,
-    // MoreBtn,
-    // MainBanner,
-    // Breadcrumbs,
+    MainMenu,
+    MainLogo,
+    HeaderAdress,
+    UserList,
+    MenuMobile,
+    MenuMobileLine,
+    MenuCategories,
+    SaleItem,
+    SearchTabs,
+    CategoriesWithImage,
+    MoreBtn,
+    MainBanner,
+    Breadcrumbs,
     ProductItem,
-    // ProductCard,
+    ProductCard,
     Pagination,
-    // FooterForm,
-    // FooterMenu,
+    FooterForm,
+    FooterMenu,
     TopdropTitle,
-    // FooterSocial,
-    // PolicyBox,
+    FooterSocial,
+    PolicyBox,
     Tabs,
     // TabsWithSlider,
-    // PickupBox,
-    // PickupForm,
+    PickupBox,
+    PickupForm,
     ActiveFilter,
     FilterInput,
     FilterSelect,
@@ -458,11 +462,13 @@ export default {
 }
 
 .tabs__box {
-  padding: 17px 0;
-  background: #f0f0f4;
+  background: $background;
+  margin-bottom: 25px;
 
   & > .tabs > .tabs__list {
-    margin: 0;
+    background: #f0f0f4;
+    margin-bottom: 20px;
+    padding: 17px 0;
     justify-content: space-around;
   }
 }

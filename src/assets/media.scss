@@ -101,13 +101,6 @@
     }
   }
 
-  .mobile-overflow {
-    width: 740px;
-  }
-
-  .mobile-overflow-slider {
-    width: 830px;
-  }
 
   .catalog__filter-inner,
   .tabs__wrapper {
@@ -115,13 +108,7 @@
     overflow-y: hidden;
   }
 
-  .tabs__wrapper.tabs__wrapper-noscroll {
-    overflow: hidden;
-  }
-
   .aside-filter {
-    display: none;
-
     &__btn {
       display: block;
       text-transform: uppercase;

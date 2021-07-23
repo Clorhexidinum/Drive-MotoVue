@@ -1,6 +1,9 @@
 .aside-filter {
-  width: 290px;
   margin-right: 10px;
+
+  &__form {
+    width: 290px;
+  }
   
   &__btn {
     display: none;
@@ -33,5 +36,16 @@
     color: $additional;
     cursor: pointer;
   }
+}
 
+@media (max-width: 1065px) {
+  .aside-filter {
+    &__form {
+      width: 100%;
+    }
+
+    &__item {
+      margin: 10px 0;
+    }
+  }
 }

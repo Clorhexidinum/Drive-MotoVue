@@ -19,6 +19,10 @@
     opacity: .5;
   }
 
+  &__btn--active {
+    opacity: 1;
+  }
+
   & button + button {
     margin-left: 10px;
   }

@@ -3,7 +3,7 @@
     <div v-for="label in showMore()" :key="label" class="filter-input__item">
       <label class="filter-input__label">
         <input
-          class="filter-input__input visually-hidden"
+          class="visually-hidden"
           :class="type === 'checkbox' ? 'filter-input__checkbox' : ''"
           :name="name"
           :type="type"
@@ -12,7 +12,13 @@
       </label>
     </div>
     <div v-if="labels.length > 4" class="filter-input__more">
-      <button @click.prevent="listOpened = !listOpened" class="filter-input__more-btn" href="#">{{ listOpened ? 'Скрыть' : 'Показать все' }}</button>
+      <button
+        @click.prevent="listOpened = !listOpened"
+        class="filter-input__more-btn"
+        href="#"
+      >
+        {{ listOpened ? "Скрыть" : "Показать все" }}
+      </button>
     </div>
   </div>
 </template>
@@ -34,7 +40,7 @@ export default {
   methods: {
     showMore() {
       if (this.listOpened === false) {
-          return this.labels.slice(0, 4);
+        return this.labels.slice(0, 4);
       } else {
         return this.labels;
       }
@@ -134,6 +140,17 @@ export default {
     background-color: $transparent;
     cursor: pointer;
     padding: 0;
+  }
+}
+
+@media (max-width: 1065px) {
+  .filter-input {
+    margin-top: 5px;
+
+    &__item {
+      width: 33%;
+      margin-bottom: 5px;
+    }
   }
 }
 </style>
