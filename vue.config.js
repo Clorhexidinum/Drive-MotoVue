@@ -7,6 +7,7 @@ module.exports = {
                   @import "@/assets/global.scss";
                   @import "@/assets/media.scss";
                   @import "@/assets/aside-filter.scss";
+                  @import "@/assets/catalog-sort.scss";
                 `,
             },
         },

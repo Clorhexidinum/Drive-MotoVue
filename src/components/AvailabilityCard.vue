@@ -2,7 +2,7 @@
   <ul class="availability-card__list">
     <li class="availability-card__item availability-card__item-title">
       <div class="availability-card__address">Адрес</div>
-      <div class="availability-card__avialable">Доступно</div>
+      <div class="availability-card__avialable">Доступность</div>
     </li>
     <li v-for="item in items" class="availability-card__item" :key="item">
       <div class="availability-card__address" v-html="item.address"></div>
@@ -89,6 +89,19 @@ export default {
 
     &__item div {
       margin-bottom: 15px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .availability-card {
+    &__item {
+      font-size: $fs-smaller;
+    }
+
+    &__item-title {
+      font-size: $fs-small;
+      font-weight: bold;
     }
   }
 }

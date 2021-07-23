@@ -79,6 +79,10 @@
                 color: #7f7f7f;
                 padding: 15px 0;
             }
+
+            &__input {
+            width: 80%;
+        }
         }
     }
 </style>

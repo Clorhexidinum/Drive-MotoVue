@@ -58,6 +58,18 @@ body {
   margin-bottom: 80px;
 }
 
+.inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.catalog-inner {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 1400px;
+}
+
+
 .visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -66,11 +78,22 @@ body {
   margin: -1px;
 }
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
+}
+
+.title {
+  @extend %barlow-bold;
+  font-size: $fs-big;
+  line-height: $lh-big;
+  margin-bottom: 25px;
 }
 
 .btn {
@@ -94,12 +117,3 @@ button, input, optgroup, select, textarea {
   background-color: $additional;
   cursor: default;
 }
-
-.product-title {
-  @extend %barlow-bold;
-  font-size: $fs-big;
-  line-height: $lh-big;
-  margin-bottom: 25px;
-}
-
-

@@ -1,5 +1,5 @@
 <template>
-    <div class="categories__inner">
+    <div class="categories">
         <a
             v-for="item in сategories"
             :key="item.title"
@@ -57,11 +57,9 @@
 
 <style lang="scss">
     .categories {
-        &__inner {
-            display: flex;
-            justify-content: space-between;
+        display: flex;
+            justify-content: space-around;
             flex-wrap: wrap;
-        }
 
         &__item {
             margin-bottom: 30px;

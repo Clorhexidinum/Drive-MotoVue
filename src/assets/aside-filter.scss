@@ -1,29 +1,13 @@
 .aside-filter {
+  width: 290px;
+  margin-right: 10px;
+  
   &__btn {
     display: none;
   }
 
-  &__item-list {
-    margin: 46px 0 40px;
-  }
-
   &__item {
-    margin-bottom: 20px;
-  }
-
-  &__search {
-    width: 100%;
-    border: 1px solid $additional_light;
-    height: 30px;
-    padding: 0 20px;
-    font-size: $fs-extra-small;
-    line-height: $lh-extra-smaller;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-
-  &__search::placeholder {
-    color: $placeholder;
+    margin: 25px 0;
   }
 
   &__item-btn {

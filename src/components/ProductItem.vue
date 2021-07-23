@@ -145,6 +145,8 @@ export default {
     width: 271px;
     transition: all 0.3s;
     margin: 0 auto;
+    height: 415px;
+    display: inline-block;
   }
 
   &__title {

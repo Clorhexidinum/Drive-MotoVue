@@ -1,6 +1,6 @@
 <template>
     <div class="breadcrumbs">
-        <ul class="breadcrumbs__list mobile-overflow">
+        <ul class="breadcrumbs__list">
             <li class="breadcrumbs__item" v-for="item in items" :key="item">
                 <a href="#">{{ item }}</a>
             </li>
@@ -26,6 +26,12 @@
 <style lang="scss">
     .breadcrumbs {
         margin-bottom: 40px;
+
+        &__list {
+            display: flex;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
 
         &__item {
             display: inline-block;

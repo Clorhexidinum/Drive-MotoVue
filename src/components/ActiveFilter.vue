@@ -32,7 +32,6 @@ export default {
 
 <style lang="scss">
 .active-filter {
-  margin-bottom: 30px;
   display: flex;
   overflow-x: auto;
 

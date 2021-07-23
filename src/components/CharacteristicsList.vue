@@ -1,11 +1,20 @@
 <template>
   <ul class="characteristics-list">
-    <li v-for="item in openedList()" :key="item" class="characteristics-list__item">
+    <li
+      v-for="item in openedList()"
+      :key="item"
+      class="characteristics-list__item"
+    >
       <div class="characteristics-list__item-left">{{ item.key }}</div>
       <div class="characteristics-list__item-right">{{ item.value }}</div>
     </li>
   </ul>
-  <a @click.prevent="listOpened = !listOpened" class="characteristics-list__more" href="#">{{ listOpened ? 'Скрыть' : 'Показать все'}}</a>
+  <a
+    @click.prevent="listOpened = !listOpened"
+    class="characteristics-list__more"
+    href="#"
+    >{{ listOpened ? "Скрыть" : "Показать все" }}</a
+  >
 </template>
 
 <script>
@@ -13,48 +22,48 @@ export default {
   name: "CharacteristicsList",
   data: function () {
     return {
-        items: [
-          {
-              key: "Производитель",
-              value: "Канада",
-          },
-          {
-              key: "Количество мест, шт",
-              value: "3",
-          },
-          {
-              key: "Мощность, л.с.",
-              value: "155",
-          },
-          {
-              key: "Тип двигателя",
-              value: "Бензиновый",
-          },
-          {
-              key: "Длина",
-              value: "2790",
-          },
-          {
-              key: "Щирина",
-              value: "1180",
-          },
-          {
-              key: "Вес",
-              value: "186",
-          },
-          {
-              key: "Объем бака",
-              value: "30",
-          },
-        ],
-        listOpened: false,
+      items: [
+        {
+          key: "Производитель",
+          value: "Канада",
+        },
+        {
+          key: "Количество мест, шт",
+          value: "3",
+        },
+        {
+          key: "Мощность, л.с.",
+          value: "155",
+        },
+        {
+          key: "Тип двигателя",
+          value: "Бензиновый",
+        },
+        {
+          key: "Длина",
+          value: "2790",
+        },
+        {
+          key: "Щирина",
+          value: "1180",
+        },
+        {
+          key: "Вес",
+          value: "186",
+        },
+        {
+          key: "Объем бака",
+          value: "30",
+        },
+      ],
+      listOpened: false,
     };
   },
 
-   methods: {
+  methods: {
     openedList() {
       if (this.listOpened) {
-          return this.items;
+        return this.items;
       } else {
         return this.items.slice(0, 5);
       }
@@ -95,10 +104,16 @@ export default {
 @media (max-width: 940px) {
   .characteristics-list {
     max-width: 100%;
-    
+
     &__item-right {
       text-align: right;
     }
+  }
+}
+
+@media (max-width: 640px) {
+  .characteristics-list__item {
+    font-size: $fs-small;
   }
 }
 </style>

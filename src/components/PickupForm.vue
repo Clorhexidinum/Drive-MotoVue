@@ -94,6 +94,7 @@ export default {
   .pickup-form__input-search {
     margin: 0;
     margin-top: 10px;
+    width: 100%;
   }
 }
 </style>

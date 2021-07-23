@@ -96,4 +96,10 @@ export default {
     margin-left: -3px;
   }
 }
+
+@media (max-width: 600px) {
+.search-tabs__content-btn {
+    padding: 17px 19px;
+  }
+}
 </style>

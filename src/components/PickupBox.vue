@@ -135,4 +135,22 @@ export default {
     }
   }
 }
+
+@media (max-width: 940px) {
+  .pickup {
+    &__item {
+      font-size: $fs-smaller;
+    }
+
+    &__item div {
+      margin-bottom: 12px;
+    }
+
+    &__avialable,
+    &__num {
+      width: auto;
+      display: inline-block;
+    }
+  }
+}
 </style>

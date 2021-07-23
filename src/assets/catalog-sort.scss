@@ -1,0 +1,35 @@
+.catalog-sort {
+  display: flex;
+  align-items: center;
+
+  &__select-item {
+    border: 2px solid $base;
+    outline: none;
+    margin-right: 5px;
+    padding: 3px;
+    font-size: $fs-extra-small;
+  }
+
+  &__btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    opacity: .5;
+  }
+
+  & button + button {
+    margin-left: 10px;
+  }
+
+  &__btn-grid {
+    width: 26px;
+    height: 21px;
+  }
+
+  &__btn-line {
+    width: 26px;
+    height: 19px;
+  }
+}
