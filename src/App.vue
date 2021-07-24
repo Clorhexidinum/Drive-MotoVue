@@ -73,8 +73,8 @@
   <section class="page-section">
     <h2 class="title">Гидроциклы</h2>
 
-    <div class="inner">
-      <active-filter
+    <div class="filter-box">
+        <active-filter
         :activeFilter="activeFilters"
         @removeActiveFilter="clickedActiveFilter"
       ></active-filter>
@@ -99,9 +99,9 @@
           <img src="/images/line-btn.svg" alt="" />
         </button>
       </div>
-    </div>
-    <div class="filter-btn" @click="openFilter = !openFilter">Фильтр</div>
-    <div class="inner">
+      </div>
+    <div class="filter-btn" @click="openFilter = !openFilter">{{ openFilter ? "Скрыть" : "Фильтр" }}</div>
+    <div class="catalog-inner">
       
       <asside class="aside-filter" v-if="openFilter">
         <tabs :tabs="['параметры', 'по марке']" @clicked="clickFilterTab">
@@ -248,7 +248,7 @@
           </form>
         </tabs>
       </asside>
-      <div class="catalog-inner">
+      <div class="products-inner">
           <product-item :class="gridCatalog ? '' : 'product-item__wrapper--line'"></product-item>
           <product-item :class="gridCatalog ? '' : 'product-item__wrapper--line'"></product-item>
           <product-item :class="gridCatalog ? '' : 'product-item__wrapper--line'"></product-item>
@@ -397,7 +397,7 @@ export default {
       goods,
       activeProductTab: "Самовывоз",
       activeFilterTab: "параметры",
-      openFilter: false,
+      openFilter: true,
       gridCatalog: true,
       activeFilters: [
         "запчасти",
@@ -423,6 +423,12 @@ export default {
     onResize() {
       if (window.innerWidth > 968) {
         this.menuActive = false;
+      }
+
+      if (window.innerWidth < 910) {
+        this.openFilter = false;
+      } else {
+        this.openFilter = true;
       }
     },
 

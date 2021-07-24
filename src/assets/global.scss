@@ -64,7 +64,13 @@ body {
   padding-bottom: 25px;
 }
 
-.catalog-inner {
+.filter-box {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+}
+
+.products-inner {
   display: flex;
   flex-wrap: wrap;
   min-height: 1400px;
@@ -118,4 +124,14 @@ textarea {
 .disable {
   background-color: $additional;
   cursor: default;
+}
+
+.filter-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.catalog-inner {
+  display: flex;
+  flex-wrap: wrap;
 }

@@ -34,6 +34,7 @@ export default {
 .active-filter {
   display: flex;
   overflow-x: auto;
+  margin-bottom: 15px;
 
   &__btn {
     font-size: $fs-smaller;

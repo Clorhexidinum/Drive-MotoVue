@@ -1,10 +1,7 @@
 .aside-filter {
   margin-right: 10px;
+  min-width: 280px;
 
-  &__form {
-    width: 290px;
-  }
-  
   &__btn {
     display: none;
   }
@@ -38,11 +35,9 @@
   }
 }
 
-@media (max-width: 1065px) {
+@media (max-width: 902px) {
   .aside-filter {
-    &__form {
-      width: 100%;
-    }
+    width: 100%;
 
     &__item {
       margin: 10px 0;
