@@ -144,17 +144,14 @@ export default {
     position: relative;
     width: 271px;
     transition: all 0.3s;
-    margin: 0 10px 20px;
     height: 415px;
-
-    // &:nth-child(3n) {
-    //   margin-right: 0;
-    // }
+    margin: 0 20px 20px 0;
   }
 
   &__wrapper--line {
     width: 100%;
     height: 250px;
+    margin-right: 0;
   }
 
   &__wrapper--line > a {
@@ -213,7 +210,7 @@ export default {
     border-radius: 10px 0px 0px 0px;
     border: none;
     bottom: 0;
-    right: 1px;
+    right: 0;
     outline: none;
     padding-top: 7px;
     cursor: pointer;

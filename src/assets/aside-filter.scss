@@ -1,6 +1,7 @@
 .aside-filter {
   margin-right: 10px;
-  width: 280px;
+  min-width: 280px;
+  max-width: 280px;
 
   &__btn {
     display: none;

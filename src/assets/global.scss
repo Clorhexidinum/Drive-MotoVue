@@ -73,8 +73,8 @@ body {
 .products-inner {
   display: flex;
   flex-wrap: wrap;
-  min-height: 1400px;
   align-content: flex-start;
+  justify-content: space-around;
 }
 
 
@@ -129,9 +129,10 @@ textarea {
 .filter-box {
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 15px;
 }
 
 .catalog-inner {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
