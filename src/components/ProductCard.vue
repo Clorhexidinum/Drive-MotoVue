@@ -87,9 +87,14 @@
           v-if="activeContent === 'наличие'"
         ></availability-card>
       </tabs>
-      <div class="product-card__btn product-card__btn-mobile">
-        <button class="product-card__btn btn" :class="{ disable: item.availability < 1 }">купить</button>
-      </div>
+    </div>
+    <div class="product-card__btn-box">
+      <button
+        class="product-card__btn btn"
+        :class="{ disable: item.availability < 1 }"
+      >
+        купить
+      </button>
     </div>
   </div>
 </template>
@@ -279,12 +284,26 @@ export default {
     padding: 16px 56px;
   }
 
-  // &__btn-mobile {
-  //   display: none;
-  // }
-
   & > .tabs {
     min-height: 375px;
+  }
+}
+
+@media (max-width: 970px) {
+  .product-card {
+    &__content > .tabs {
+      display: none;
+    }
+
+    &__btn-box {
+      display: flex;
+      margin-top: 40px;
+      width: 100%;
+    }
+
+    &__btn {
+      margin: 0 auto;
+    }
   }
 }
 </style>

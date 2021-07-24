@@ -143,7 +143,7 @@ export default {
   }
 }
 
-@media (max-width: 1065px) {
+@media (max-width: 902px) {
   .filter-input {
     margin-top: 5px;
 
