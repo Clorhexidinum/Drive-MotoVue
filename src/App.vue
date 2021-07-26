@@ -43,17 +43,18 @@
 
       <section class="page-section">
         <h4 class="title">Популярные товары</h4>
-        <tabs
+        <tabs-with-slider
           :tabs="[
             'запчасти',
             'моторы',
             'шины',
             'электроника',
             'инструменты',
-            'аксесуары',
-          ]"
-          >Распихать разные категории товаров</tabs
-        >
+            'аксессуары',
+          ]" @clicked="clickCategoryTab">
+          <product-item v-bind="item" v-for="item in sortGoods(activeCategoryTab).slice(0, 4)" :key="item"></product-item>
+        </tabs-with-slider>
+        
         <more-btn></more-btn>
       </section>
 
@@ -70,196 +71,210 @@
 
       <breadcrumbs></breadcrumbs>
 
-  <section class="page-section">
-    <h2 class="title">Гидроциклы</h2>
+      <section class="page-section">
+        <h2 class="title">Гидроциклы</h2>
 
-    <div class="filter-box">
-        <active-filter
-        :activeFilter="activeFilters"
-        @removeActiveFilter="clickedActiveFilter"
-      ></active-filter>
-      <div class="catalog-sort">
-        <select class="catalog-sort__select-item">
-          <option value="">По полулярности</option>
-          <option value="">По цене</option>
-          <option value="">По названию</option>
-        </select>
-        <button
-          @click.prevent="gridCatalog = true"
-          class="catalog-sort__btn-grid catalog-sort__btn"
-          :class="gridCatalog ? 'catalog-sort__btn--active' : ''"
-        >
-          <img src="/images/grid-btn.svg" alt="" />
-        </button>
-        <button
-          @click.prevent="gridCatalog = false"
-          class="catalog-sort__btn-line catalog-sort__btn"
-          :class="gridCatalog ? '' : 'catalog-sort__btn--active'"
-        >
-          <img src="/images/line-btn.svg" alt="" />
-        </button>
-      </div>
-      </div>
-    <div class="filter-btn" @click="openFilter = !openFilter">{{ openFilter ? "Скрыть" : "Фильтр" }}</div>
-    <div class="catalog-inner">
-      
-      <asside class="aside-filter" v-if="openFilter">
-        <tabs :tabs="['параметры', 'по марке']" @clicked="clickFilterTab">
-          <form
-            v-if="activeFilterTab === 'параметры'"
-            class="aside-filter__form"
-          >
-            <ul class="aside-filter__list">
-              <li class="aside-filter__item">
-                <topdrop-title title="Наличие" titleClass="filter-title">
-                  <filter-input
-                    :type="'checkbox'"
-                    :name="'availability'"
-                    :labels="['В наличии', 'Под заказ']"
-                  ></filter-input>
-                </topdrop-title>
-              </li>
+        <div class="filter-box">
+          <active-filter
+            :activeFilter="activeFilters"
+            @removeActiveFilter="clickedActiveFilter"
+          ></active-filter>
+          <div class="catalog-sort">
+            <select class="catalog-sort__select-item">
+              <option value="">По полулярности</option>
+              <option value="">По цене</option>
+              <option value="">По названию</option>
+            </select>
+            <button
+              @click.prevent="gridCatalog = true"
+              class="catalog-sort__btn-grid catalog-sort__btn"
+              :class="gridCatalog ? 'catalog-sort__btn--active' : ''"
+            >
+              <img src="/images/grid-btn.svg" alt="" />
+            </button>
+            <button
+              @click.prevent="gridCatalog = false"
+              class="catalog-sort__btn-line catalog-sort__btn"
+              :class="gridCatalog ? '' : 'catalog-sort__btn--active'"
+            >
+              <img src="/images/line-btn.svg" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="filter-btn" @click="openFilter = !openFilter">
+          {{ openFilter ? "Скрыть" : "Фильтр" }}
+        </div>
+        <div class="catalog-inner">
+          <asside class="aside-filter" v-if="openFilter">
+            <tabs :tabs="['параметры', 'по марке']" @clicked="clickFilterTab">
+              <form
+                v-if="activeFilterTab === 'параметры'"
+                class="aside-filter__form"
+              >
+                <ul class="aside-filter__list">
+                  <li class="aside-filter__item">
+                    <topdrop-title title="Наличие" titleClass="filter-title">
+                      <filter-input
+                        :type="'checkbox'"
+                        :name="'availability'"
+                        :labels="['В наличии', 'Под заказ']"
+                      ></filter-input>
+                    </topdrop-title>
+                  </li>
 
-              <li class="aside-filter__item">
-                <topdrop-title title="Новинки" titleClass="filter-title">
-                  <filter-input
-                    :type="'radio'"
-                    :name="'radio'"
-                    :labels="['Все', 'Новинки', 'Акции']"
-                  ></filter-input>
-                </topdrop-title>
-              </li>
+                  <li class="aside-filter__item">
+                    <topdrop-title title="Новинки" titleClass="filter-title">
+                      <filter-input
+                        :type="'radio'"
+                        :name="'radio'"
+                        :labels="['Все', 'Новинки', 'Акции']"
+                      ></filter-input>
+                    </topdrop-title>
+                  </li>
 
-              <li class="aside-filter__item">
-                <topdrop-title title="Цена" titleClass="filter-title">
-                  <div class="aside-filter__content">
-                    <div id="id66" class="range">
+                  <li class="aside-filter__item">
+                    <topdrop-title title="Цена" titleClass="filter-title">
+                      <div class="aside-filter__content">
+                        <div id="id66" class="range">
+                          <input
+                            id="id66i1"
+                            class="range__inpt range__inpt--left"
+                            name="price"
+                            type="number"
+                            min="0"
+                            max="500000"
+                            value="100000"
+                          />
+                          <input
+                            id="id66i2"
+                            class="range__inpt range__inpt--right"
+                            name="price"
+                            type="number"
+                            min="0"
+                            max="500000"
+                            value="400000"
+                          />
+                          <div id="id66b" class="range__between"></div>
+                          <a id="id661" class="range__button"></a>
+                          <a id="id662" class="range__button"></a>
+                        </div>
+                      </div>
+                    </topdrop-title>
+                  </li>
+
+                  <li class="aside-filter__item">
+                    <filter-select
+                      :name="'power'"
+                      :title="'Мощность, л.с.'"
+                      :options="[90, 134, 150, 230, 320]"
+                    ></filter-select>
+                    <filter-select
+                      :name="'release'"
+                      :title="'Год выпуска'"
+                      :options="[90, 134, 150, 230, 320]"
+                    ></filter-select>
+                    <filter-select
+                      :name="'maxSpeed'"
+                      :title="'Макс. скорость'"
+                      :options="[90, 134, 150, 230, 320]"
+                    ></filter-select>
+                  </li>
+
+                  <li class="aside-filter__item">
+                    <topdrop-title title="Бренд" titleClass="filter-title">
+                      <filter-input
+                        :type="'checkbox'"
+                        :name="'model'"
+                        :labels="['BRP', 'Spark 2', 'Spark 3']"
+                      ></filter-input>
+                    </topdrop-title>
+                  </li>
+
+                  <li class="aside-filter__item">
+                    <topdrop-title title="Бренд" titleClass="filter-title">
                       <input
-                        id="id66i1"
-                        class="range__inpt range__inpt--left"
-                        name="price"
-                        type="number"
-                        min="0"
-                        max="500000"
-                        value="100000"
+                        class="aside-filter__search"
+                        type="text"
+                        placeholder="Введите модель"
                       />
-                      <input
-                        id="id66i2"
-                        class="range__inpt range__inpt--right"
-                        name="price"
-                        type="number"
-                        min="0"
-                        max="500000"
-                        value="400000"
-                      />
-                      <div id="id66b" class="range__between"></div>
-                      <a id="id661" class="range__button"></a>
-                      <a id="id662" class="range__button"></a>
-                    </div>
-                  </div>
-                </topdrop-title>
-              </li>
+                      <filter-input
+                        :type="'checkbox'"
+                        :name="'model'"
+                        :labels="[
+                          'Sea-doo Spark 2',
+                          'SeaDoo Spark 90',
+                          'SeaDoo GTI 155',
+                          'SeaDoo GTR 230',
+                          'SeaDoo GTI 155',
+                          'SeaDoo GTR 230',
+                        ]"
+                      ></filter-input>
+                    </topdrop-title>
+                  </li>
 
-              <li class="aside-filter__item">
-                <filter-select
-                  :name="'power'"
-                  :title="'Мощность, л.с.'"
-                  :options="[90, 134, 150, 230, 320]"
-                ></filter-select>
-                <filter-select
-                  :name="'release'"
-                  :title="'Год выпуска'"
-                  :options="[90, 134, 150, 230, 320]"
-                ></filter-select>
-                <filter-select
-                  :name="'maxSpeed'"
-                  :title="'Макс. скорость'"
-                  :options="[90, 134, 150, 230, 320]"
-                ></filter-select>
-              </li>
+                  <li class="aside-filter__item">
+                    <topdrop-title title="Акции" titleClass="filter-title">
+                      <div class="aside-filter__content-box">
+                        <label class="aside-filter__content-label">
+                          <input
+                            class="filter__checkbox-txt visually-hidden"
+                            name="promo"
+                            type="checkbox"
+                            checked
+                          />
+                          <span class="btn-checked__txt">SALE</span>
+                        </label>
+                      </div>
+                    </topdrop-title>
+                  </li>
 
-              <li class="aside-filter__item">
-                <topdrop-title title="Бренд" titleClass="filter-title">
-                  <filter-input
-                    :type="'checkbox'"
-                    :name="'model'"
-                    :labels="['BRP', 'Spark 2', 'Spark 3']"
-                  ></filter-input>
-                </topdrop-title>
-              </li>
+                  <li class="aside-filter__item">
+                    <topdrop-title title="Страны" titleClass="filter-title">
+                      <filter-input
+                        :type="'checkbox'"
+                        :name="'model'"
+                        :labels="['Россия', 'Германия', 'Китай', 'CША']"
+                      ></filter-input>
+                    </topdrop-title>
+                  </li>
 
-              <li class="aside-filter__item">
-                <topdrop-title title="Бренд" titleClass="filter-title">
-                  <input
-                    class="aside-filter__search"
-                    type="text"
-                    placeholder="Введите модель"
-                  />
-                  <filter-input
-                    :type="'checkbox'"
-                    :name="'model'"
-                    :labels="[
-                      'Sea-doo Spark 2',
-                      'SeaDoo Spark 90',
-                      'SeaDoo GTI 155',
-                      'SeaDoo GTR 230',
-                      'SeaDoo GTI 155',
-                      'SeaDoo GTR 230',
-                    ]"
-                  ></filter-input>
-                </topdrop-title>
-              </li>
+                  <li class="aside-filter__item aside-filter__item-btn">
+                    <button class="aside-filter__btn-send btn" type="submit">
+                      ВЫБРАТЬ
+                    </button>
+                    <button class="aside-filter__btn-reset" type="reset">
+                      Сбросить фильтр
+                    </button>
+                  </li>
+                </ul>
+              </form>
+            </tabs>
+          </asside>
+          <div class="products-inner">
+            <product-item
+              :class="gridCatalog ? '' : 'product-item__wrapper--line'"
+            ></product-item>
+            <product-item
+              :class="gridCatalog ? '' : 'product-item__wrapper--line'"
+            ></product-item>
+            <product-item
+              :class="gridCatalog ? '' : 'product-item__wrapper--line'"
+            ></product-item>
+            <product-item
+              :class="gridCatalog ? '' : 'product-item__wrapper--line'"
+            ></product-item>
+            <product-item
+              :class="gridCatalog ? '' : 'product-item__wrapper--line'"
+            ></product-item>
+            <product-item
+              :class="gridCatalog ? '' : 'product-item__wrapper--line'"
+            ></product-item>
+          </div>
+        </div>
+        <pagination></pagination>
+      </section>
 
-              <li class="aside-filter__item">
-                <topdrop-title title="Акции" titleClass="filter-title">
-                  <div class="aside-filter__content-box">
-                    <label class="aside-filter__content-label">
-                      <input
-                        class="filter__checkbox-txt visually-hidden"
-                        name="promo"
-                        type="checkbox"
-                        checked
-                      />
-                      <span class="btn-checked__txt">SALE</span>
-                    </label>
-                  </div>
-                </topdrop-title>
-              </li>
-
-              <li class="aside-filter__item">
-                <topdrop-title title="Страны" titleClass="filter-title">
-                  <filter-input
-                    :type="'checkbox'"
-                    :name="'model'"
-                    :labels="['Россия', 'Германия', 'Китай', 'CША']"
-                  ></filter-input>
-                </topdrop-title>
-              </li>
-
-              <li class="aside-filter__item aside-filter__item-btn">
-                <button class="aside-filter__btn-send btn" type="submit">
-                  ВЫБРАТЬ
-                </button>
-                <button class="aside-filter__btn-reset" type="reset">
-                  Сбросить фильтр
-                </button>
-              </li>
-            </ul>
-          </form>
-        </tabs>
-      </asside>
-      <div class="products-inner">
-          <product-item :class="gridCatalog ? '' : 'product-item__wrapper--line'"></product-item>
-          <product-item :class="gridCatalog ? '' : 'product-item__wrapper--line'"></product-item>
-          <product-item :class="gridCatalog ? '' : 'product-item__wrapper--line'"></product-item>
-          <product-item :class="gridCatalog ? '' : 'product-item__wrapper--line'"></product-item>
-          <product-item :class="gridCatalog ? '' : 'product-item__wrapper--line'"></product-item>
-      </div>
-    </div>
-    <pagination></pagination>
-  </section>
-
-  <section class="page-section">
+      <section class="page-section">
         <product-card></product-card>
       </section>
 
@@ -278,14 +293,13 @@
               ]"
               @clicked="click"
             >
-            <div v-if="activeProductTab === 'Самовывоз'">
-            <pickup-form></pickup-form>
-            <pickup-box></pickup-box>
-          </div>
+              <div v-if="activeProductTab === 'Самовывоз'">
+                <pickup-form></pickup-form>
+                <pickup-box></pickup-box>
+              </div>
             </tabs>
           </div>
         </div>
-        
       </section>
 
       <section class="page-section">пихнуть слайдер</section>
@@ -354,7 +368,7 @@ import FooterMenu from "./components/FooterMenu.vue";
 import FooterSocial from "./components/FooterSocial.vue";
 import PolicyBox from "./components/PolicyBox.vue";
 import Tabs from "./components/Tabs.vue";
-// import TabsWithSlider from "./components/TabsWithSlider.vue";
+import TabsWithSlider from "./components/TabsWithSlider.vue";
 import ActiveFilter from "./components/ActiveFilter.vue";
 import FilterInput from "./components/FilterInput.vue";
 import FilterSelect from "./components/FilterSelect.vue";
@@ -385,7 +399,7 @@ export default {
     FooterSocial,
     PolicyBox,
     Tabs,
-    // TabsWithSlider,
+    TabsWithSlider,
     PickupBox,
     PickupForm,
     ActiveFilter,
@@ -397,6 +411,7 @@ export default {
       goods,
       activeProductTab: "Самовывоз",
       activeFilterTab: "параметры",
+      activeCategoryTab: "запчасти",
       openFilter: true,
       gridCatalog: true,
       activeFilters: [
@@ -405,7 +420,7 @@ export default {
         "шины",
         "электроника",
         "инструменты",
-        "аксесуары",
+        "аксессуары",
       ],
     };
   },
@@ -436,16 +451,20 @@ export default {
       return goods.filter((item) => item.category == cat);
     },
 
-    click({ tab }) {
+    click(tab) {
       this.activeProductTab = tab;
     },
 
-    clickFilterTab({ tab }) {
+    clickFilterTab(tab) {
       this.activeFilterTab = tab;
     },
 
     clickedActiveFilter(idx) {
       this.activeFilters.splice(idx, 1);
+    },
+
+    clickCategoryTab(tab) {
+      this.activeCategoryTab = tab.tab;
     },
   },
 };

@@ -60,6 +60,11 @@ export default {
   &__item:hover {
     color: $main-text-hover;
   }
+
+  &__content {
+    display: flex;
+    overflow-x: auto;
+  }
 }
 
 .activeTab {

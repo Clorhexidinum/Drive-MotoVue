@@ -1,43 +1,40 @@
 <template>
-    <tabs :tabs="tabs" @clicked="onTabChange">
-        <div :style="{ display: 'flex' }">
-            <slot ></slot>
-        </div>
-    </tabs>
+  <tabs :tabs="tabs" @clicked="onTabChange">
+    <slot></slot>
+  </tabs>
 </template>
 
 <script>
-import Tabs from './Tabs';
+import Tabs from "./Tabs";
 
 export default {
-    name: 'TabsWithSLider',
-    components: {
-        Tabs,
+  name: "TabsWithSLider",
+  components: {
+    Tabs,
+  },
+  props: {
+    tabs: {
+      type: Array,
+      default: () => [],
     },
-    props: {
-        tabs: {
-            type: Array,
-            default: () => [],
-        },
-    },
-    data() {
-        return {
-            count: 0,
-            // goods,
-        };
-    },
+  },
+  
+  data() {
+    return {
+      count: 0,
+    };
+  },
 
-    methods: {
-        onTabChange(index) {
-            this.count = index;
-        },
+  methods: {
+    onTabChange(index) {
+      this.count = index;
     },
-    sortGoods(arr, category) {
-        return arr.filter(item => item.category == category);
-    }
+  },
+  sortGoods(arr, category) {
+    return arr.filter((item) => item.category == category);
+  },
 };
 </script>
 
 <style lang="scss">
-    
 </style>

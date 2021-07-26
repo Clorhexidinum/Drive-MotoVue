@@ -143,6 +143,7 @@ export default {
     display: block;
     position: relative;
     width: 271px;
+    min-width: 271px;
     transition: all 0.3s;
     height: 415px;
     margin: 0 20px 20px 0;

@@ -152,6 +152,7 @@ export default {
     display: flex;
     justify-content: space-between;
     position: relative;
+    flex-wrap: wrap;
   }
 
   &__img-box {
@@ -277,11 +278,17 @@ export default {
     cursor: pointer;
   }
 
+  &__btn-box {
+    width: 100%;
+  }
+
   &__btn {
     font-size: $fs-smaller;
     line-height: $lh-extra-small;
     letter-spacing: 0.12em;
     padding: 16px 56px;
+    margin: 0 auto;
+    display: block;
   }
 
   & > .tabs {
