@@ -1,20 +1,22 @@
 <template>
-  <ul class="characteristics-list">
-    <li
-      v-for="item in openedList()"
-      :key="item"
-      class="characteristics-list__item"
+  <div>
+    <ul class="characteristics-list">
+      <li
+        v-for="item in openedList()"
+        :key="item"
+        class="characteristics-list__item"
+      >
+        <div class="characteristics-list__item-left">{{ item.key }}</div>
+        <div class="characteristics-list__item-right">{{ item.value }}</div>
+      </li>
+    </ul>
+    <a
+      @click.prevent="listOpened = !listOpened"
+      class="characteristics-list__more"
+      href="#"
+      >{{ listOpened ? "Скрыть" : "Показать все" }}</a
     >
-      <div class="characteristics-list__item-left">{{ item.key }}</div>
-      <div class="characteristics-list__item-right">{{ item.value }}</div>
-    </li>
-  </ul>
-  <a
-    @click.prevent="listOpened = !listOpened"
-    class="characteristics-list__more"
-    href="#"
-    >{{ listOpened ? "Скрыть" : "Показать все" }}</a
-  >
+  </div>
 </template>
 
 <script>

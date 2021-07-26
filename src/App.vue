@@ -290,9 +290,7 @@
                 'Доставка',
                 'Сервис',
                 'Гарантия',
-              ]"
-              @clicked="click"
-            >
+              ]" @clicked="clickProductTab">
               <div v-if="activeProductTab === 'Самовывоз'">
                 <pickup-form></pickup-form>
                 <pickup-box></pickup-box>
@@ -451,8 +449,8 @@ export default {
       return goods.filter((item) => item.category == cat);
     },
 
-    click(tab) {
-      this.activeProductTab = tab;
+    clickProductTab(tab) {
+      this.activeProductTab = tab.tab;
     },
 
     clickFilterTab(tab) {
