@@ -144,6 +144,7 @@ export default {
 @media (max-width: 968px) {
   .sale-item {
     max-height: 380px;
+    margin: 0 auto;
   }
 }
 </style>

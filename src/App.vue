@@ -27,8 +27,9 @@
   <main>
     <div class="container">
       <section class="page-section">
-        <div class="inner">
-          слайдер
+        <div class="inner banner-inner">
+          <banner-slider :slides="['banner-slider.jpg', 'banner-slider.jpg']"></banner-slider>
+          <!-- <banner-slider :slides="['banner-slider.jpg', 'banner-slider.jpg', 'banner-slider.jpg', 'banner-slider.jpg', 'banner-slider.jpg',]"></banner-slider> -->
           <sale-item></sale-item>
         </div>
       </section>
@@ -54,7 +55,6 @@
           ]" @clicked="clickCategoryTab">
           <product-item v-bind="item" v-for="item in sortGoods(activeCategoryTab).slice(0, 4)" :key="item"></product-item>
         </tabs-with-slider>
-        
         <more-btn></more-btn>
       </section>
 
@@ -370,6 +370,7 @@ import TabsWithSlider from "./components/TabsWithSlider.vue";
 import ActiveFilter from "./components/ActiveFilter.vue";
 import FilterInput from "./components/FilterInput.vue";
 import FilterSelect from "./components/FilterSelect.vue";
+import BannerSlider from "./components/BannerSlider.vue";
 import goods from "./goods.json";
 
 export default {
@@ -403,6 +404,7 @@ export default {
     ActiveFilter,
     FilterInput,
     FilterSelect,
+    BannerSlider,
   },
   data: function () {
     return {
@@ -454,7 +456,7 @@ export default {
     },
 
     clickFilterTab(tab) {
-      this.activeFilterTab = tab;
+      this.activeFilterTab = tab.tab;
     },
 
     clickedActiveFilter(idx) {

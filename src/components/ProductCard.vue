@@ -218,15 +218,12 @@ export default {
     margin: 0 auto;
   }
 
-  &__content {
-    width: 570px;
-  }
-
   &__title {
     @extend %sf-bold;
     font-size: $fs-extra-big;
     line-height: 36px;
     margin-bottom: 10px;
+    max-width: 420px;
   }
 
   &__code {
@@ -298,8 +295,16 @@ export default {
 
 @media (max-width: 970px) {
   .product-card {
+    &__content {
+      width: 100%;
+    }
+
     &__content > .tabs {
       display: none;
+    }
+
+    &__title {
+      max-width: 100%;
     }
 
     &__btn-box {
@@ -310,6 +315,49 @@ export default {
 
     &__btn {
       margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 968px) {
+  .product-card {
+    &__content {
+      order: -1;
+    }
+
+    &__btn-mobile {
+      display: block;
+      margin-top: 40px;
+    }
+
+    &__inner {
+      flex-wrap: wrap;
+    }
+
+    &__tabs {
+      display: none;
+    }
+
+    &__img-box {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .product-card {
+    &__title {
+      font-size: $fs-bigger;
+      line-height: $lh-medium;
+      margin-left: 0;
+    }
+
+    &__img {
+      width: 100%;
+    }
+
+    &__button a+a {
+      margin-left: 0;
     }
   }
 }
