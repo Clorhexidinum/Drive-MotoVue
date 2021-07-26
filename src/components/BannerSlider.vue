@@ -1,30 +1,25 @@
 <template>
   <div class="banner-slider">
-    <button class="banner-slider__btn banner-slider__btn--prev">
+    <button class="banner-slider__btn banner-slider__btn--prev" @click="prevSlide">
       <img src="images/arrow-left.svg" alt="" />
     </button>
-    <button class="banner-slider__btn banner-slider__btn--next">
+    <button class="banner-slider__btn banner-slider__btn--next" @click="nextSlide">
       <img src="images/arrow-right.svg" alt="" />
     </button>
-    <div class="banner-slider__wrapper">
-      <div class="banner-slider__inner">
-        <div
-          v-for="(slide, idx) in slides"
-          :key="idx"
-          class="banner-slider__slide"
-        >
-          <img
-            :src="`images/content/${slide}`"
-            class="banner-slider__img"
-            alt=""
-          />
-        </div>
-      </div>
+    <div class="banner-slider__inner">
+      <img
+        v-for="(slide, idx) in slides"
+        :key="idx"
+        v-show="slideIndex === idx"
+        :src="`images/content/${slide}`"
+        class="banner-slider__img"
+        alt=""
+      />
     </div>
 
     <ul class="banner-slider__dots">
       <li v-for="(slide, idx) in slides" :key="idx">
-        <button type="button"></button>
+        <button @click="btnSlide(idx)" :class="activeSlide === idx ?'active-dots': ''" type="button"></button>
       </li>
     </ul>
   </div>
@@ -36,13 +31,41 @@ export default {
 
   data: function () {
     return {
-      slideIndex: 1,
+      slideIndex: 0,
+      activeSlide: 0,
     };
   },
 
   props: {
     slides: Array,
   },
+
+  methods: {
+    nextSlide() {
+      if ( this.slideIndex === this.slides.length - 1 ) {
+        this.slideIndex = 0;
+        this.activeSlide = this.slideIndex;
+      } else {
+        this.slideIndex++;
+        this.activeSlide = this.slideIndex;
+      }
+    },
+
+    prevSlide() {
+      if ( this.slideIndex === 0 ) {
+        this.slideIndex = this.slides.length - 1;
+        this.activeSlide = this.slideIndex;
+      } else {
+        this.slideIndex--;
+        this.activeSlide = this.slideIndex;
+      }
+    },
+
+    btnSlide(idx) {
+      this.slideIndex = idx;
+      this.activeSlide = this.slideIndex;
+    }
+  }
 };
 </script>
 
@@ -52,12 +75,6 @@ export default {
   position: relative;
   margin-right: 15px;
   max-height: 400px;
-
-  &__inner {
-    display: flex;
-    transition: 0.5s, all;
-    overflow: hidden;
-  }
 
   &__img {
     object-fit: cover;
@@ -110,6 +127,15 @@ export default {
     cursor: pointer;
     outline: none;
     background-color: $transparent;
+  }
+
+  &__dots button:focus {
+  border: 1px solid $main-text;
+  background-color: $base;
+  }
+
+  &__dots .active-dots {
+    background-color: $base;
   }
 }
 

@@ -28,8 +28,7 @@
     <div class="container">
       <section class="page-section">
         <div class="inner banner-inner">
-          <banner-slider :slides="['banner-slider.jpg', 'banner-slider.jpg']"></banner-slider>
-          <!-- <banner-slider :slides="['banner-slider.jpg', 'banner-slider.jpg', 'banner-slider.jpg', 'banner-slider.jpg', 'banner-slider.jpg',]"></banner-slider> -->
+          <banner-slider :slides="['banner-slider.jpg', 'banner-slider1.jpg', 'banner-slider.jpg', 'banner-slider1.jpg',]"></banner-slider>
           <sale-item></sale-item>
         </div>
       </section>
