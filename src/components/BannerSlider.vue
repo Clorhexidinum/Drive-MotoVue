@@ -6,17 +6,19 @@
     <button class="banner-slider__btn banner-slider__btn--next">
       <img src="images/arrow-right.svg" alt="" />
     </button>
-    <div class="banner-slider__inner">
-      <div
-        v-for="(slide, idx) in slides"
-        :key="idx"
-        class="banner-slider__slide"
-      >
-        <img
-          :src="`images/content/${slide}`"
-          class="banner-slider__img"
-          alt=""
-        />
+    <div class="banner-slider__wrapper">
+      <div class="banner-slider__inner">
+        <div
+          v-for="(slide, idx) in slides"
+          :key="idx"
+          class="banner-slider__slide"
+        >
+          <img
+            :src="`images/content/${slide}`"
+            class="banner-slider__img"
+            alt=""
+          />
+        </div>
       </div>
     </div>
 
@@ -34,7 +36,6 @@ export default {
 
   data: function () {
     return {
-      offset: 0,
       slideIndex: 1,
     };
   },
@@ -42,13 +43,6 @@ export default {
   props: {
     slides: Array,
   },
-
-  computed: {
-    width() {
-      
-    }
-  },
-  methods: {},
 };
 </script>
 
