@@ -8,6 +8,7 @@ module.exports = {
                   @import "@/assets/media.scss";
                   @import "@/assets/aside-filter.scss";
                   @import "@/assets/catalog-sort.scss";
+                  @import "@/assets/slider.scss";
                 `,
             },
         },

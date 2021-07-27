@@ -28,15 +28,9 @@
     <div class="container">
       <section class="page-section">
         <div class="inner banner-inner">
-          <splide>
-            <splide-slide>
-              <img src="images/content/banner-slider1.jpg" />
-            </splide-slide>
-            <splide-slide>
-              <img src="images/content/banner-slider1.jpg" />
-            </splide-slide>
-            <splide-slide>
-              <img src="images/content/banner-slider1.jpg" />
+          <splide :options="options">
+            <splide-slide v-for="slide in slides" :key="slide">
+              <img :src="`images/content/${slide}`" />
             </splide-slide>
           </splide>
           <sale-item></sale-item>
@@ -319,17 +313,11 @@
 
       <section class="page-section">
         пихнуть слайдер
-        <splide>
-          <splide-slide>
-            <img src="images/content/banner-slider1.jpg" />
+        <!-- <splide>
+          <splide-slide v-for="slide in slides" :key="slide">
+            <img :src="`images/content/${slide}`" />
           </splide-slide>
-          <splide-slide>
-            <img src="images/content/banner-slider1.jpg" />
-          </splide-slide>
-          <splide-slide>
-            <img src="images/content/banner-slider1.jpg" />
-          </splide-slide>
-        </splide>
+        </splide> -->
       </section>
     </div>
   </main>
@@ -456,6 +444,20 @@ export default {
         "электроника",
         "инструменты",
         "аксессуары",
+      ],
+      options: {
+        rewind: true,
+        // width: 870,
+        perPage: 1,
+        gap: "1rem",
+        speed: 1000,
+        // autoplay: true,
+      },
+      slides: [
+        'banner-slider1.jpg',
+        'banner-slider.jpg',
+        'banner-slider1.jpg',
+        'banner-slider.jpg',
       ],
     };
   },

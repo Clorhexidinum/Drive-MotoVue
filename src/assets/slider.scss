@@ -1,0 +1,15 @@
+.splide {
+  max-width: 870px;
+  margin-right: 20px;
+
+  &__arrow {
+    background-color: $transparent;
+    
+  & svg {
+    fill: $base;
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
+}
+
