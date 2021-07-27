@@ -28,14 +28,17 @@
     <div class="container">
       <section class="page-section">
         <div class="inner banner-inner">
-          <banner-slider
-            :slides="[
-              'banner-slider.jpg',
-              'banner-slider1.jpg',
-              'banner-slider.jpg',
-              'banner-slider1.jpg',
-            ]"
-          ></banner-slider>
+          <splide>
+            <splide-slide>
+              <img src="images/content/banner-slider1.jpg" />
+            </splide-slide>
+            <splide-slide>
+              <img src="images/content/banner-slider1.jpg" />
+            </splide-slide>
+            <splide-slide>
+              <img src="images/content/banner-slider1.jpg" />
+            </splide-slide>
+          </splide>
           <sale-item></sale-item>
         </div>
       </section>
@@ -397,8 +400,9 @@ import TabsWithSlider from "./components/TabsWithSlider.vue";
 import ActiveFilter from "./components/ActiveFilter.vue";
 import FilterInput from "./components/FilterInput.vue";
 import FilterSelect from "./components/FilterSelect.vue";
-import BannerSlider from "./components/BannerSlider.vue";
+// import BannerSlider from "./components/BannerSlider.vue";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
+import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 
 import goods from "./goods.json";
 
@@ -433,7 +437,7 @@ export default {
     ActiveFilter,
     FilterInput,
     FilterSelect,
-    BannerSlider,
+    // BannerSlider,
     Splide,
     SplideSlide,
   },
