@@ -28,7 +28,14 @@
     <div class="container">
       <section class="page-section">
         <div class="inner banner-inner">
-          <banner-slider :slides="['banner-slider.jpg', 'banner-slider1.jpg', 'banner-slider.jpg', 'banner-slider1.jpg',]"></banner-slider>
+          <banner-slider
+            :slides="[
+              'banner-slider.jpg',
+              'banner-slider1.jpg',
+              'banner-slider.jpg',
+              'banner-slider1.jpg',
+            ]"
+          ></banner-slider>
           <sale-item></sale-item>
         </div>
       </section>
@@ -51,8 +58,14 @@
             'электроника',
             'инструменты',
             'аксессуары',
-          ]" @clicked="clickCategoryTab">
-          <product-item v-bind="item" v-for="item in sortGoods(activeCategoryTab).slice(0, 4)" :key="item"></product-item>
+          ]"
+          @clicked="clickCategoryTab"
+        >
+          <product-item
+            v-bind="item"
+            v-for="item in sortGoods(activeCategoryTab).slice(0, 4)"
+            :key="item"
+          ></product-item>
         </tabs-with-slider>
         <more-btn></more-btn>
       </section>
@@ -289,7 +302,9 @@
                 'Доставка',
                 'Сервис',
                 'Гарантия',
-              ]" @clicked="clickProductTab">
+              ]"
+              @clicked="clickProductTab"
+            >
               <div v-if="activeProductTab === 'Самовывоз'">
                 <pickup-form></pickup-form>
                 <pickup-box></pickup-box>
@@ -299,7 +314,20 @@
         </div>
       </section>
 
-      <section class="page-section">пихнуть слайдер</section>
+      <section class="page-section">
+        пихнуть слайдер
+        <splide>
+          <splide-slide>
+            <img src="images/content/banner-slider1.jpg" />
+          </splide-slide>
+          <splide-slide>
+            <img src="images/content/banner-slider1.jpg" />
+          </splide-slide>
+          <splide-slide>
+            <img src="images/content/banner-slider1.jpg" />
+          </splide-slide>
+        </splide>
+      </section>
     </div>
   </main>
 
@@ -370,6 +398,8 @@ import ActiveFilter from "./components/ActiveFilter.vue";
 import FilterInput from "./components/FilterInput.vue";
 import FilterSelect from "./components/FilterSelect.vue";
 import BannerSlider from "./components/BannerSlider.vue";
+import { Splide, SplideSlide } from "@splidejs/vue-splide";
+
 import goods from "./goods.json";
 
 export default {
@@ -404,6 +434,8 @@ export default {
     FilterInput,
     FilterSelect,
     BannerSlider,
+    Splide,
+    SplideSlide,
   },
   data: function () {
     return {

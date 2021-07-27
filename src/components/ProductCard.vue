@@ -75,7 +75,7 @@
             <rect y="9.90796" width="4" height="17.5883" rx="2" />
           </svg>
         </button>
-        <awesomeVueStarRating :star="this.star" :disabled="this.disabled" :maxstars="this.maxstars" :starsize="this.starsize" :hasresults="this.hasresults" :hasdescription="this.hasdescription" :ratingdescription="this.ratingdescription"/>
+        <!-- <awesomeVueStarRating :star="this.star" :disabled="this.disabled" :maxstars="this.maxstars" :starsize="this.starsize" :hasresults="this.hasresults" :hasdescription="this.hasdescription" :ratingdescription="this.ratingdescription"/> -->
       </div>
       <tabs :tabs="['характеристики', 'наличие']" @clicked="activeProductTab">
         <characteristics-list
@@ -100,7 +100,7 @@
 <script>
 import CharacteristicsList from "./CharacteristicsList.vue";
 import AvailabilityCard from "./AvailabilityCard.vue";
-import AwesomeVueStarRating from 'awesome-vue-star-rating';
+// import AwesomeVueStarRating from 'awesome-vue-star-rating';
 import Tabs from "./Tabs.vue";
 
 export default {
@@ -108,7 +108,7 @@ export default {
   components: {
     CharacteristicsList,
     AvailabilityCard,
-    AwesomeVueStarRating,
+    // AwesomeVueStarRating,
     Tabs,
   },
 
