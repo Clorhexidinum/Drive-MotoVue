@@ -10,7 +10,7 @@
       <img
         v-for="(slide, idx) in slides"
         :key="idx"
-        v-show="slideIndex === idx"
+        v-show="activeSlide === idx"
         :src="`images/content/${slide}`"
         class="banner-slider__img"
         alt=""
@@ -31,7 +31,7 @@ export default {
 
   data: function () {
     return {
-      slideIndex: 0,
+      // slideIndex: 0,
       activeSlide: 0,
     };
   },
@@ -39,31 +39,30 @@ export default {
   props: {
     slides: Array,
   },
+  
+  created() {
+    setInterval(this.nextSlide, 2000)
+  },
 
   methods: {
     nextSlide() {
-      if ( this.slideIndex === this.slides.length - 1 ) {
-        this.slideIndex = 0;
-        this.activeSlide = this.slideIndex;
+      if ( this.activeSlide === this.slides.length - 1 ) {
+        this.activeSlide = 0;
       } else {
-        this.slideIndex++;
-        this.activeSlide = this.slideIndex;
+        this.activeSlide++;
       }
     },
 
     prevSlide() {
-      if ( this.slideIndex === 0 ) {
-        this.slideIndex = this.slides.length - 1;
-        this.activeSlide = this.slideIndex;
+      if ( this.activeSlide === 0 ) {
+        this.activeSlide = this.slides.length - 1;
       } else {
-        this.slideIndex--;
-        this.activeSlide = this.slideIndex;
+        this.activeSlide--;
       }
     },
 
     btnSlide(idx) {
-      this.slideIndex = idx;
-      this.activeSlide = this.slideIndex;
+      this.activeSlide = idx;
     }
   }
 };
