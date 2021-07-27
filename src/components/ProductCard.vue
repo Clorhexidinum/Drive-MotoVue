@@ -75,9 +75,7 @@
             <rect y="9.90796" width="4" height="17.5883" rx="2" />
           </svg>
         </button>
-        <a class="rate" href="#">
-          <div class="rate-yo" data-rateyo-rating="4"></div>
-        </a>
+        <awesomeVueStarRating :star="this.star" :disabled="this.disabled" :maxstars="this.maxstars" :starsize="this.starsize" :hasresults="this.hasresults" :hasdescription="this.hasdescription" :ratingdescription="this.ratingdescription"/>
       </div>
       <tabs :tabs="['характеристики', 'наличие']" @clicked="activeProductTab">
         <characteristics-list
@@ -102,6 +100,7 @@
 <script>
 import CharacteristicsList from "./CharacteristicsList.vue";
 import AvailabilityCard from "./AvailabilityCard.vue";
+import AwesomeVueStarRating from 'awesome-vue-star-rating';
 import Tabs from "./Tabs.vue";
 
 export default {
@@ -109,6 +108,7 @@ export default {
   components: {
     CharacteristicsList,
     AvailabilityCard,
+    AwesomeVueStarRating,
     Tabs,
   },
 
@@ -126,8 +126,37 @@ export default {
       isСompare: false,
       activeTab: 0,
       activeContent: "характеристики",
+      star: 5, // default star
+      ratingdescription: [
+        {
+          text: 'Poor',
+          class: 'star-poor'
+        },
+        {
+          text: 'Below Average',
+          class: 'star-belowAverage'
+        },
+        {
+          text: 'Average',
+          class: 'star-average'
+        },
+        {
+          text: 'Good',
+          class: 'star-good'
+        },
+        {
+          text: 'Excellent',
+          class: 'star-excellent'
+        }
+      ],
+      hasresults: true,
+      hasdescription: true,
+      starsize: 'lg', //[xs,lg,1x,2x,3x,4x,5x,6x,7x,8x,9x,10x],
+      maxstars: 5,
+      disabled: false
     };
-  },
+    },
+
 
   methods: {
     activeProductTab({ index, tab }) {
