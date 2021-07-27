@@ -61,12 +61,10 @@ export default {
 
   &__address {
     width: 220px;
-    margin-right: 80px;
   }
 
   &__avialable {
     width: 140px;
-    margin-right: 60px;
   }
 }
 
