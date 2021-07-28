@@ -257,9 +257,6 @@
             <product-item
               :class="gridCatalog ? '' : 'product-item__wrapper--line'"
             ></product-item>
-            <product-item
-              :class="gridCatalog ? '' : 'product-item__wrapper--line'"
-            ></product-item>
           </div>
         </div>
         <pagination></pagination>
