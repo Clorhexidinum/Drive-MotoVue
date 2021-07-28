@@ -40,6 +40,7 @@ export default {
 
 <style lang="scss">
 .sale-item {
+  min-width: 265px;
   max-width: 265px;
   text-align: center;
   border: 1px solid $additional;

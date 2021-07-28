@@ -447,9 +447,8 @@ export default {
       ],
       options: {
         rewind: true,
-        // width: 870,
         perPage: 1,
-        gap: "1rem",
+        gap: "10rem",
         speed: 1000,
         // autoplay: true,
       },

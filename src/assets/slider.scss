@@ -1,15 +1,46 @@
 .splide {
+  width: calc(100% - 290px);
   max-width: 870px;
   margin-right: 20px;
+  height: 400px;
+
+  &__slide {
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 260px);
+  }
+
+  &__slide img {
+    height: auto;
+    width: 171%;
+    object-position: center;
+  }
 
   &__arrow {
     background-color: $transparent;
-    
-  & svg {
-    fill: $base;
-    width: 1.5em;
-    height: 1.5em;
+
+    & svg {
+      fill: $base;
+      width: 1.5em;
+      height: 1.5em;
+    }
   }
 }
+
+@media (max-width: 968px) {
+  .splide {
+    width: 100%;
+    height: 380px;
+    margin-bottom: 30px;
+  }
 }
 
+@media (max-width: 620px) {
+  .splide {
+    height: 220px;
+
+    &__list {
+      height: 220px;
+    }
+  }
+}
