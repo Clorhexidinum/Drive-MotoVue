@@ -52,6 +52,7 @@ export default {
       required: true,
     },
   },
+  
   data: function () {
     return {
       instance: undefined,

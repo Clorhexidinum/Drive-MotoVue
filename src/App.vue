@@ -149,29 +149,6 @@
                     <topdrop-title title="Цена" titleClass="filter-title">
                       <div class="aside-filter__content">
                          <range-slider :min="0" :max="1000000" @update:min="value => min = value" @update:max="value => max = value"></range-slider>
-                        <!-- <div id="id66" class="range">
-                          <input
-                            id="id66i1"
-                            class="range__inpt range__inpt--left"
-                            name="price"
-                            type="number"
-                            min="0"
-                            max="500000"
-                            value="100000"
-                          />
-                          <input
-                            id="id66i2"
-                            class="range__inpt range__inpt--right"
-                            name="price"
-                            type="number"
-                            min="0"
-                            max="500000"
-                            value="400000"
-                          />
-                          <div id="id66b" class="range__between"></div>
-                          <a id="id661" class="range__button"></a>
-                          <a id="id662" class="range__button"></a>
-                        </div> -->
                       </div>
                     </topdrop-title>
                   </li>
