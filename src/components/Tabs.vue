@@ -63,6 +63,7 @@ export default {
 
   &__content {
     display: flex;
+    justify-content: center;
     overflow-x: auto;
   }
 }

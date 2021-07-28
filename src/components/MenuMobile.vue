@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="menu-mobile__box">
     <button class="menu-mobile__btn" @click="menuActive = !menuActive">
       <span
         class="menu-mobile__btn-line"
@@ -152,15 +152,18 @@ export default {
     bottom: 10px;
   }
 
-  &__btn {
+  &__box {
     display: none;
   }
 }
 
 @media (max-width: 968px) {
   .menu-mobile {
-    &__btn {
+    &__box {
       display: block;
+    }
+    
+    &__btn {
       border: none;
       background-color: transparent;
       cursor: pointer;

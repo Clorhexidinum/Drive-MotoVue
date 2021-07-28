@@ -1,4 +1,4 @@
-.splide {
+.banner-inner > .splide {
   width: calc(100% - 290px);
   max-width: 870px;
   margin-right: 20px;
@@ -10,7 +10,7 @@
     width: calc(100% - 260px);
   }
 
-  &__slide img {
+  &__slide > img {
     height: auto;
     width: 171%;
     object-position: center;
@@ -27,8 +27,30 @@
   }
 }
 
+.page-section > .splide {
+  width: 100%;
+  &__list {
+    width: 100%;
+  }
+
+  &__slide {
+    display: flex;
+    width: 100%;
+  }
+
+  &__arrow {
+    background-color: $transparent;
+
+    & svg {
+      fill: $main-text;
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+}
+
 @media (max-width: 968px) {
-  .splide {
+  .banner-inner > .splide {
     width: 100%;
     height: 380px;
     margin-bottom: 30px;
@@ -36,11 +58,20 @@
 }
 
 @media (max-width: 620px) {
-  .splide {
+  .banner-inner > .splide {
     height: 220px;
 
-    &__list {
+    > .splide__track > .splide__list {
       height: 220px;
     }
+
+    > .splide__track > .splide__list > .splide__slide > img {
+      height: 220px;
+      width: 100%;
+    }
+  }
+
+  .page-section > .splide > .splide__track > .splide__list > .splide__slide > img{
+    width: 270px;
   }
 }

@@ -28,7 +28,7 @@
     <div class="container">
       <section class="page-section">
         <div class="inner banner-inner">
-          <splide :options="options">
+          <splide :options="optionsBanner">
             <splide-slide v-for="slide in slides" :key="slide">
               <img :src="`images/content/${slide}`" />
             </splide-slide>
@@ -47,7 +47,7 @@
 
       <section class="page-section">
         <h4 class="title">Популярные товары</h4>
-        <tabs-with-slider
+        <tabs
           :tabs="[
             'запчасти',
             'моторы',
@@ -63,7 +63,7 @@
             v-for="item in sortGoods(activeCategoryTab).slice(0, 4)"
             :key="item"
           ></product-item>
-        </tabs-with-slider>
+        </tabs>
         <more-btn></more-btn>
       </section>
 
@@ -74,7 +74,11 @@
       <section class="page-section">
         <div class="products__inner">
           <h4 class="title">Чо нибудь написать</h4>
-          пихнуть слайдер
+          <splide>
+            <splide-slide v-for="slide in slides" :key="slide">
+              <img :src="`images/content/${slide}`" />
+            </splide-slide>
+          </splide>
         </div>
       </section>
 
@@ -313,11 +317,11 @@
 
       <section class="page-section">
         пихнуть слайдер
-        <!-- <splide>
-          <splide-slide v-for="slide in slides" :key="slide">
-            <img :src="`images/content/${slide}`" />
+        <splide :options="options">
+          <splide-slide v-for="slide in 10" :key="slide">
+            <product-item></product-item>
           </splide-slide>
-        </splide> -->
+        </splide>
       </section>
     </div>
   </main>
@@ -384,7 +388,7 @@ import FooterMenu from "./components/FooterMenu.vue";
 import FooterSocial from "./components/FooterSocial.vue";
 import PolicyBox from "./components/PolicyBox.vue";
 import Tabs from "./components/Tabs.vue";
-import TabsWithSlider from "./components/TabsWithSlider.vue";
+// import TabsWithSlider from "./components/TabsWithSlider.vue";
 import ActiveFilter from "./components/ActiveFilter.vue";
 import FilterInput from "./components/FilterInput.vue";
 import FilterSelect from "./components/FilterSelect.vue";
@@ -419,7 +423,7 @@ export default {
     FooterSocial,
     PolicyBox,
     Tabs,
-    TabsWithSlider,
+    // TabsWithSlider,
     PickupBox,
     PickupForm,
     ActiveFilter,
@@ -445,18 +449,42 @@ export default {
         "инструменты",
         "аксессуары",
       ],
-      options: {
+      optionsBanner: {
         rewind: true,
         perPage: 1,
         gap: "10rem",
         speed: 1000,
-        // autoplay: true,
+        autoplay: true,
+      },
+      options: {
+        rewind: true,
+        perPage: 4,
+        gap: "3rem",
+        speed: 4000,
+        rewindSpeed: 1,
+        pagination: false,
+        width: "100%",
+        autoplay: true,
+        interval: 1,
+        strart: 3,
+        focus: "center",
+        breakpoints: {
+          1150: {
+            perPage: 3,
+          },
+          900: {
+            perPage: 2,
+          },
+          600: {
+            perPage: 1,
+          },
+        },
       },
       slides: [
-        'banner-slider1.jpg',
-        'banner-slider.jpg',
-        'banner-slider1.jpg',
-        'banner-slider.jpg',
+        "banner-slider1.jpg",
+        "banner-slider.jpg",
+        "banner-slider1.jpg",
+        "banner-slider.jpg",
       ],
     };
   },
@@ -501,6 +529,10 @@ export default {
 
     clickCategoryTab(tab) {
       this.activeCategoryTab = tab.tab;
+    },
+
+    randomInteger(min, max) {
+      return Math.floor(min + Math.random() * (max + 1 - min));
     },
   },
 };
