@@ -300,4 +300,10 @@ export default {
     filter: grayscale(1);
   }
 }
+
+@media (max-width: 640px) {
+  .page-section > .product-item__wrapper {
+    margin: 0 0 20px 0;
+  }
+}
 </style>

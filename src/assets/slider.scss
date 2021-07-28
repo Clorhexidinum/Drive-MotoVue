@@ -16,10 +16,10 @@
     object-position: center;
   }
 
-  &__arrow {
+  & > .splide__arrows > .splide__arrow {
     background-color: $transparent;
 
-    & svg {
+    & > svg {
       fill: $base;
       width: 1.5em;
       height: 1.5em;
@@ -38,7 +38,7 @@
     width: 100%;
   }
 
-  &__arrow {
+  &> .splide__arrows > .splide__arrow {
     background-color: $transparent;
 
     & svg {
@@ -48,6 +48,16 @@
     }
   }
 }
+
+.products__inner > .splide > .splide__arrows > .splide__arrow {
+  background-color: $transparent;
+
+    & svg {
+      fill: $main-text;
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
 
 @media (max-width: 968px) {
   .banner-inner > .splide {
@@ -71,7 +81,19 @@
     }
   }
 
-  .page-section > .splide > .splide__track > .splide__list > .splide__slide > img{
-    width: 270px;
-  }
+  .page-section > .splide {
+    width: 100%;
+    &__list {
+      width: 100%;
+    }
+  
+    &__slide {
+      display: flex;
+      width: 100%;
+    }
+}
+
+.splide > .splide__arrows {
+  display: none;
+}
 }

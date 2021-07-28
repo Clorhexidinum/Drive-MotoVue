@@ -46,7 +46,7 @@
       </section>
 
       <section class="page-section">
-        <h4 class="title">Популярные товары</h4>
+        <h4 class="title">Товары по категориям</h4>
         <tabs
           :tabs="[
             'запчасти',
@@ -73,12 +73,12 @@
 
       <section class="page-section">
         <div class="products__inner">
-          <h4 class="title">Чо нибудь написать</h4>
-          <splide>
-            <splide-slide v-for="slide in slides" :key="slide">
-              <img :src="`images/content/${slide}`" />
-            </splide-slide>
-          </splide>
+          <h4 class="title">Популярные товары</h4>
+        <splide :options="options">
+          <splide-slide v-for="slide in 10" :key="slide">
+            <product-item></product-item>
+          </splide-slide>
+        </splide>
         </div>
       </section>
 
@@ -316,7 +316,7 @@
       </section>
 
       <section class="page-section">
-        пихнуть слайдер
+        <h4 class="title">Вам может понравиться</h4>
         <splide :options="options">
           <splide-slide v-for="slide in 10" :key="slide">
             <product-item></product-item>
@@ -457,6 +457,7 @@ export default {
         autoplay: true,
       },
       options: {
+        type: "loop",
         rewind: true,
         perPage: 4,
         gap: "3rem",
@@ -467,7 +468,7 @@ export default {
         autoplay: true,
         interval: 1,
         strart: 3,
-        focus: "center",
+        
         breakpoints: {
           1150: {
             perPage: 3,
@@ -477,6 +478,7 @@ export default {
           },
           600: {
             perPage: 1,
+            focus: "center",
           },
         },
       },
