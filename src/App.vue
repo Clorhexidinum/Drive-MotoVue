@@ -148,7 +148,8 @@
                   <li class="aside-filter__item">
                     <topdrop-title title="Цена" titleClass="filter-title">
                       <div class="aside-filter__content">
-                        <div id="id66" class="range">
+                         <range-slider :min="0" :max="1000000" @update:min="value => min = value" @update:max="value => max = value"></range-slider>
+                        <!-- <div id="id66" class="range">
                           <input
                             id="id66i1"
                             class="range__inpt range__inpt--left"
@@ -170,7 +171,7 @@
                           <div id="id66b" class="range__between"></div>
                           <a id="id661" class="range__button"></a>
                           <a id="id662" class="range__button"></a>
-                        </div>
+                        </div> -->
                       </div>
                     </topdrop-title>
                   </li>
@@ -392,6 +393,7 @@ import Tabs from "./components/Tabs.vue";
 import ActiveFilter from "./components/ActiveFilter.vue";
 import FilterInput from "./components/FilterInput.vue";
 import FilterSelect from "./components/FilterSelect.vue";
+import RangeSlider from "./components/RangeSlider.vue";
 // import BannerSlider from "./components/BannerSlider.vue";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
@@ -432,6 +434,7 @@ export default {
     // BannerSlider,
     Splide,
     SplideSlide,
+    RangeSlider,
   },
   data: function () {
     return {
