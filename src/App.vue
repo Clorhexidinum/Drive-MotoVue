@@ -306,7 +306,7 @@
               ]"
               @clicked="clickProductTab"
             >
-              <div v-if="activeProductTab === 'Самовывоз'">
+              <div class="pickup" v-if="activeProductTab === 'Самовывоз'">
                 <pickup-form></pickup-form>
                 <pickup-box></pickup-box>
               </div>
@@ -462,11 +462,11 @@ export default {
         perPage: 4,
         gap: "3rem",
         speed: 4000,
-        rewindSpeed: 1,
+        // rewindSpeed: 1,
         pagination: false,
         width: "100%",
         autoplay: true,
-        interval: 1,
+        interval: 100,
         strart: 3,
         
         breakpoints: {
@@ -585,5 +585,9 @@ export default {
     justify-content: space-between;
     flex-wrap: wrap;
   }
+}
+
+.pickup {
+  margin: 0 auto;
 }
 </style>
