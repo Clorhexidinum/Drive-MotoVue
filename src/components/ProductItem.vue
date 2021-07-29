@@ -302,8 +302,11 @@ export default {
 }
 
 @media (max-width: 640px) {
-  .page-section > .product-item__wrapper {
-    margin: 0 0 20px 0;
+  .products-inner {
+    justify-content: center !important;
+    & > .product-item__wrapper {
+      margin: 0 0 20px 0;
+    }
   }
 }
 </style>

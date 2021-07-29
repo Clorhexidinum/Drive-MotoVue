@@ -120,7 +120,7 @@ export default {
         img: "gidrotsikl-1.png",
         price: 1100475,
         sale: 10,
-        availability: 0,
+        availability: 1,
       },
       isFavotite: false,
       isСompare: false,
