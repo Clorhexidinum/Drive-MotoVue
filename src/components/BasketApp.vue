@@ -97,6 +97,7 @@ export default {
     padding: 10px 20px;
     display: flex;
     align-items: center;
+    position: relative;
   }
 
   &__item {
@@ -210,6 +211,27 @@ export default {
 
   &__form-price span {
     margin-left: 10px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .basket {
+  &__item,
+  &__total {
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  &__remove-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  &__item-check,
+  &__form-price {
+    margin-bottom: 10px;
+  }
   }
 }
 </style>

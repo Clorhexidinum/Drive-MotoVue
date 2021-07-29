@@ -16,7 +16,14 @@ export default {
     };
   },
 
-  props: ["title", "titleClass"],
+  props: {
+    title: {
+      type: String,
+    },
+    titleClass: {
+      type: String,
+    },
+  },
 
   created() {
     window.addEventListener('resize', this.onResize);
