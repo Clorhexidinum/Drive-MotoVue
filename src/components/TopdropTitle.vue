@@ -65,6 +65,24 @@ export default {
   }
 }
 
+.garanty__title {
+  position: relative;
+  &::after {
+      position: absolute;
+      content: "";
+      background-image: url("/images/arrow-down.svg");
+      background-size: cover;
+      right: 10px;
+      top: 21px;
+      width: 20px;
+      height: 12px;
+    }
+
+    .rotate::after {
+    transform: rotate(180deg);
+  }
+}
+
 .footer-title:hover {
   color: $main-text-hover;
 }

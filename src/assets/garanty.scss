@@ -1,0 +1,32 @@
+.garanty {
+  width: 100%;
+  & > .topdrop-title__content {
+    padding: 15px;
+  }
+  &__title {
+    font-size: $fs-bigger;
+    background-color: $base;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  &__subtitle {
+    font-size: $fs-small;
+    margin-bottom: 15px;
+  }
+
+  &__num-list,
+  &__list {
+    font-size: $fs-small;
+  }
+
+  &__num-list li {
+    list-style-type: decimal !important;
+    margin-bottom: 5px;
+  }
+
+  &__list li {
+    margin-bottom: 5px;
+  }
+}

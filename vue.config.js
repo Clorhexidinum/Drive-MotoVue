@@ -9,6 +9,7 @@ module.exports = {
                   @import "@/assets/aside-filter.scss";
                   @import "@/assets/catalog-sort.scss";
                   @import "@/assets/slider.scss";
+                  @import "@/assets/garanty.scss";
                 `,
             },
         },
