@@ -74,11 +74,11 @@
       <section class="page-section">
         <div class="products__inner">
           <h4 class="title">Популярные товары</h4>
-        <splide :options="options">
-          <splide-slide v-for="slide in 10" :key="slide">
-            <product-item></product-item>
-          </splide-slide>
-        </splide>
+          <splide :options="options">
+            <splide-slide v-for="slide in 10" :key="slide">
+              <product-item></product-item>
+            </splide-slide>
+          </splide>
         </div>
       </section>
 
@@ -148,7 +148,12 @@
                   <li class="aside-filter__item">
                     <topdrop-title title="Цена" titleClass="filter-title">
                       <div class="aside-filter__content">
-                         <range-slider :min="0" :max="1000000" @update:min="value => min = value" @update:max="value => max = value"></range-slider>
+                        <range-slider
+                          :min="0"
+                          :max="1000000"
+                          @update:min="(value) => (min = value)"
+                          @update:max="(value) => (max = value)"
+                        ></range-slider>
                       </div>
                     </topdrop-title>
                   </li>
@@ -298,6 +303,11 @@
           </splide-slide>
         </splide>
       </section>
+
+      <section class="page-section">
+        <h4 class="title">Ваша корзина</h4>
+        <basket-app/>
+      </section>
     </div>
   </main>
 
@@ -368,6 +378,7 @@ import ActiveFilter from "./components/ActiveFilter.vue";
 import FilterInput from "./components/FilterInput.vue";
 import FilterSelect from "./components/FilterSelect.vue";
 import RangeSlider from "./components/RangeSlider.vue";
+import BasketApp from "./components/BasketApp.vue";
 // import BannerSlider from "./components/BannerSlider.vue";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
@@ -409,6 +420,7 @@ export default {
     Splide,
     SplideSlide,
     RangeSlider,
+    BasketApp,
   },
   data: function () {
     return {
@@ -445,7 +457,7 @@ export default {
         autoplay: true,
         interval: 100,
         strart: 3,
-        
+
         breakpoints: {
           1150: {
             perPage: 3,

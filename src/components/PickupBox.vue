@@ -64,6 +64,7 @@ export default {
 
 <style lang="scss">
 .pickup {
+  width: 100%;
   &__item {
     padding: 20px 0;
     border-bottom: 1px solid rgba(47, 48, 51, 0.1);
@@ -72,6 +73,7 @@ export default {
     font-size: $fs-small;
     line-height: $lh-small;
     color: rgba(47, 48, 53, 0.7);
+    justify-content: space-between;
   }
 
   &__item-title {
@@ -117,39 +119,62 @@ export default {
   }
 }
 
-@media (max-width: 940px) {
+@media (max-width: 1040px) {
   .pickup {
-    display: flex;
-    overflow-x: scroll;
-
-    &__item {
-      display: block;
+    &__address,
+    &__workhours,
+    &__avialable {
+      margin-right: 10px;
     }
 
-    &__item div {
-      margin-bottom: 15px;
-    }
-
-    &__item-title {
-      display: none;
+    &__btn {
+      margin-left: 10px;
     }
   }
 }
 
 @media (max-width: 940px) {
   .pickup {
+    &__list {
+      width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: scroll;
+    }
+
     &__item {
+      display: flex;
+      width: 100%;
       font-size: $fs-smaller;
+      justify-content: space-between;
     }
 
     &__item div {
       margin-bottom: 12px;
     }
 
+    &__item-title {
+      display: none;
+    }
+
     &__avialable,
     &__num {
       width: auto;
       display: inline-block;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .pickup {
+    &__item {
+      flex-wrap: wrap;
+    }
+
+    &__address,
+    &__workhours,
+    &__avialable {
+      width: 100%;
     }
   }
 }
