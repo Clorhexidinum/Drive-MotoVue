@@ -24,6 +24,9 @@
     </div>
   </header>
 
+
+  <maximum-education/>
+
   <main>
     <div class="container">
       <section class="page-section">
@@ -483,6 +486,7 @@ import FilterSelect from "./components/FilterSelect.vue";
 import RangeSlider from "./components/RangeSlider.vue";
 import BasketApp from "./components/BasketApp.vue";
 import RewiewsApp from "./components/RewiewsApp.vue";
+import MaximumEducation from "./components/MaximumEducation.vue";
 // import BannerSlider from "./components/BannerSlider.vue";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
@@ -526,6 +530,7 @@ export default {
     RangeSlider,
     BasketApp,
     RewiewsApp,
+    MaximumEducation,
   },
   data: function () {
     return {

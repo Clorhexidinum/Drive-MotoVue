@@ -6,11 +6,11 @@
         <input class="pickup-form__input-search" type="text" />
       </label>
       <label class="pickup-form__label-pickup">
-        <input class="filter-style" type="radio" name="pickup" />
+        <input type="radio" name="pickup" />
         Забрать сегодня
       </label>
       <label class="pickup-form__label-pickup">
-        <input class="filter-style" type="radio" name="pickup" checked />
+        <input type="radio" name="pickup" checked />
         Забрать в течение недели
       </label>
     </div>
