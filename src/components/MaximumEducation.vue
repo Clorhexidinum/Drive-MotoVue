@@ -3,7 +3,7 @@
     <h2 class="form__title">Форма подачи заявки в отдел сервиса и качества</h2>
     <div class="form__wrapper" action="">
       <fieldset class="form__item">
-        <p class="form__subtitle">Ваш филиал<span>*</span></p>
+        <legend class="form__subtitle">Ваш филиал<span>*</span></legend>
         <select :disabled="isOnline" class="form__select" name="branch" id="" >
           <option selected>Выберите город</option>
         </select>
@@ -13,7 +13,7 @@
         </label>
       </fieldset>
       <fieldset class="form__item">
-        <p class="form__subtitle">Тема обращения<span>*</span></p>
+        <legend class="form__subtitle">Тема обращения<span>*</span></legend>
         <label
           v-for="(theme, idx) in themes"
           :key="`radio${idx}`"
@@ -30,7 +30,7 @@
         <label for="themeTxt" class="visually-hidden"></label>
       </fieldset>
       <fieldset class="form__item">
-        <p class="form__subtitle">Описание проблемы<span>*</span></p>
+        <legend class="form__subtitle">Описание проблемы<span v-if="required">*</span></legend>
         <textarea
           class="form__text"
           placeholder="Введите текст"
@@ -39,7 +39,7 @@
         ></textarea>
       </fieldset>
       <fieldset class="form__item">
-        <p class="form__subtitle">Загрузка документов</p>
+        <legend class="form__subtitle">Загрузка документов</legend>
         <p class="form__upload-descr">
           Приложите, пожалуйста, полноэкранный скриншот. Это поможет быстрее
           решить проблему.
