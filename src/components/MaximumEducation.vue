@@ -4,11 +4,11 @@
     <div class="form__wrapper" action="">
       <fieldset class="form__item">
         <p class="form__subtitle">Ваш филиал<span>*</span></p>
-        <select class="form__select" name="branch" id="">
+        <select :disabled="isOnline" class="form__select" name="branch" id="" >
           <option selected>Выберите город</option>
         </select>
         <label class="form__label form__check">
-          <input type="checkbox" class="visually-hidden"/>
+          <input type="checkbox" class="visually-hidden" @change="isOnline = !isOnline"/>
           <span>Онлайн</span>
         </label>
       </fieldset>
@@ -22,6 +22,7 @@
             type="radio"
             name="theme"
             :id="`radio${idx}`"
+            :value="`radio${idx}`"
             class="visually-hidden"
           /><span>{{ theme }}</span></label
         >
@@ -30,7 +31,12 @@
       </fieldset>
       <fieldset class="form__item">
         <p class="form__subtitle">Описание проблемы<span>*</span></p>
-        <textarea class="form__text" placeholder="Введите текст" rows="6" name="descr"></textarea>
+        <textarea
+          class="form__text"
+          placeholder="Введите текст"
+          rows="6"
+          name="descr"
+        ></textarea>
       </fieldset>
       <fieldset class="form__item">
         <p class="form__subtitle">Загрузка документов</p>
@@ -39,13 +45,13 @@
           решить проблему.
         </p>
         <label for="file" class="visually-hidden"></label>
-          <input
-            class="form__upload-btn"
-            type="file"
-            id="file"
-            name="file"
-            multiple
-            placeholder="Выберете файл"
+        <input
+          class="form__upload-btn"
+          type="file"
+          id="file"
+          name="file"
+          multiple
+          placeholder="Выберете файл"
         />
       </fieldset>
       <div class="form__item">
@@ -67,6 +73,7 @@ export default {
         "Не приходит письмо активации на почту",
         "Не работает личный кабинет",
       ],
+      isOnline: false,
     };
   },
 };
@@ -74,7 +81,7 @@ export default {
 
 <style lang="scss">
 $outline: #e1e1e1;
-$active: #FF9767;
+$active: #ff9767;
 
 .visually-hidden {
   position: absolute;
@@ -132,7 +139,8 @@ $active: #FF9767;
   &__radio,
   &__label span,
   &__btn,
-  &__upload-btn {
+  &__upload-btn,
+  &__select {
     cursor: pointer;
   }
 
@@ -140,16 +148,54 @@ $active: #FF9767;
     padding-left: 25px;
   }
 
+  &__check span::before,
   &__radio span::before {
     position: absolute;
     content: "";
     width: 25px;
     height: 25px;
     padding: 5px;
-    border: 2px solid black;
-    border-radius: 50%;
+    border: 1px solid black;
     top: 0;
     left: 0;
+    box-sizing: border-box;
+  }
+
+  &__check span::before {
+    border-radius: 2px;
+  }
+
+  &__radio span::before {
+    border-radius: 50%;
+  }
+
+  &__check input:checked + span::after {
+    position: absolute;
+    content: "";
+    top: 5px;
+    left: 4px;
+    width: 17px;
+    height: 17px;
+    background-image: url('/images/checked-icon-black.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+
+  &__radio input:checked + span:before {
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 1) 40%,
+      rgba(249, 249, 249, 1) 50%
+    );
+  }
+
+  &__radio:hover span::before,
+  &__radio input:focus + span::before,
+  &__check:hover span::before,
+  &__check input:focus + span::before {
+    border: 2px solid #000;
   }
 
   &__text {
