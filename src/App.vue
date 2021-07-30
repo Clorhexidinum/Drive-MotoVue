@@ -287,15 +287,19 @@
               @clicked="clickProductTab"
             >
               <div class="pickup" v-if="activeProductTab === 'Самовывоз'">
-                <pickup-form></pickup-form>
-                <pickup-box></pickup-box>
-              </div>
+                <div class="container">
+                  <pickup-form></pickup-form>
+                  <pickup-box></pickup-box></div>
+                </div>
 
               <div class="rewiews" v-if="activeProductTab === 'Отзывы'">
+                <div class="container">
                 <rewiews-app></rewiews-app>
+                </div>
               </div>
               <div class="garanty" v-if="activeProductTab === 'Гарантия'">
-                <topdrop-title
+                <div class="container">
+                  <topdrop-title
                   title="Пересорт или некомплектность"
                   titleClass="garanty__title"
                 >
@@ -385,6 +389,8 @@
                     </ul>
                   </div>
                 </topdrop-title>
+                </div>
+                
               </div>
             </tabs>
           </div>

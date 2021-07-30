@@ -3,7 +3,7 @@
     <div class="product-card__img-box">
       <span
         v-if="item.availability > 0 && item.sale > 0"
-        class="product-item__sale"
+        class="product-card__sale"
         >sale</span
       >
       <img
@@ -164,6 +164,7 @@ export default {
     @extend %barlow-regular;
     display: flex;
     flex-direction: column;
+    position: relative;
   }
 
   &__img-box::before {
@@ -323,6 +324,10 @@ export default {
     &__content {
       order: -1;
     }
+
+  //   &__sale {
+  //   top: 136px;
+  // }
 
     &__btn-mobile {
       display: block;
