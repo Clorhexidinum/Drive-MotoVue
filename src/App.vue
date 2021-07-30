@@ -297,6 +297,7 @@
                 <rewiews-app></rewiews-app>
                 </div>
               </div>
+
               <div class="garanty" v-if="activeProductTab === 'Гарантия'">
                 <div class="container">
                   <topdrop-title
@@ -601,6 +602,7 @@ export default {
 
       if (window.innerWidth < 910) {
         this.openFilter = false;
+        this.gridCatalog = true;
       } else {
         this.openFilter = true;
       }

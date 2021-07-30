@@ -38,3 +38,9 @@
     height: 19px;
   }
 }
+
+@media (max-width: 1000px) {
+  .catalog-sort {
+    display: none;
+  }
+}
