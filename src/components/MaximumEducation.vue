@@ -1,4 +1,5 @@
 <template>
+  <div class="container">
   <form class="form">
     <h2 class="form__title">Форма подачи заявки в отдел сервиса и качества</h2>
     <div class="form__wrapper" action="">
@@ -59,6 +60,7 @@
       </div>
     </div>
   </form>
+  </div>
 </template>
 
 <script>
@@ -89,6 +91,12 @@ $active: #ff9767;
   width: 1px;
   height: 1px;
   margin: -1px;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
 .form {
